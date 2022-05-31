@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7b9cca21-353e-4b46-86cc-2f9be7a51b06" name="Changes" comment="README TEST">
+    <list default="true" id="7b9cca21-353e-4b46-86cc-2f9be7a51b06" name="Changes" comment="Project 기획안작성">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
@@ -41,7 +41,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1653971405112</updated>
-      <workItem from="1653971408973" duration="5737000" />
+      <workItem from="1653971408973" duration="7871000" />
     </task>
     <task id="LOCAL-00001" summary="git commit test">
       <created>1653971487845</created>
@@ -57,7 +57,14 @@
       <option name="project" value="LOCAL" />
       <updated>1653972549375</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Project 기획안작성">
+      <created>1653977425628</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1653977425628</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -77,6 +84,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="git commit test" />
     <MESSAGE value="README TEST" />
-    <option name="LAST_COMMIT_MESSAGE" value="README TEST" />
+    <MESSAGE value="Project 기획안작성" />
+    <option name="LAST_COMMIT_MESSAGE" value="Project 기획안작성" />
   </component>
 </project>
