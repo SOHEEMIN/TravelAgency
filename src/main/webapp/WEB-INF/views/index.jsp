@@ -1,5 +1,5 @@
 <!doctype html>
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <html lang="ko">
 <head>
     <meta charset="utf-8">
@@ -7,14 +7,14 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.98.0">
-    <title>Album example · Bootstrap v5.2</title>
+    <title>SH Travel Agency</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/album/">
     <link href="/resources/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/resources/css/index.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Passion+One:wght@900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
 
 
     <style>
@@ -68,26 +68,52 @@
             white-space: nowrap;
             -webkit-overflow-scrolling: touch;
         }
+
+        a {
+            text-decoration-line: none;
+        }
+
+        @font-face {
+            font-family: 'IM_Hyemin-Bold';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2106@1.1/IM_Hyemin-Bold.woff2') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
     </style>
 
 
 </head>
 <body>
-
 <header>
     <div class="collapse bg-dark" id="navbarHeader">
         <div class="container">
             <div class="row">
-                <div class="col-sm-8 col-md-7 py-4">
-                    <h4 class="text-white">About</h4>
-                    <p class="text-muted">Add some information about the album below, the author, or any other background context. Make it a few sentences long so folks can pick up some informative tidbits. Then, link them off to some social networking sites or contact information.</p>
+                <div class="col-sm-4 col-md-6 py-6">
+                    <p class="text-muted">Portuguese Republic is a country whose mainland is located on the Iberian
+                        Peninsula of Southwestern Europe</p>
                 </div>
-                <div class="col-sm-4 offset-md-1 py-4">
-                    <h4 class="text-white">Contact</h4>
+                <div class="col-sm-2 offset-md-0.1 py-0.1">
+                    <h4 class="text-white" style="font-family: 'Pacifico', cursive;font-size: 30px">Trip</h4>
                     <ul class="list-unstyled">
-                        <li><a href="#" class="text-white">Follow on Twitter</a></li>
-                        <li><a href="#" class="text-white">Like on Facebook</a></li>
-                        <li><a href="#" class="text-white">Email me</a></li>
+                        <li><a href="#" class="text-white" style="font-size: 18px">Trip to Porto</a></li>
+                        <li><a href="#" class="text-white" style="font-size: 18px">Trip to Lisbon</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-2 offset-md-0.1 py-0.1">
+                    <h4 class="text-white" style="font-family: 'Pacifico', cursive; font-size: 30px">Reservation</h4>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white" style="font-size: 18px">Manage Booking</a></li>
+                        <li><a href="#" class="text-white" style="font-size: 18px">Cart</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-2 offset-md-0.1 py-0.1">
+                    <h4 class="text-white" style="font-family: 'Pacifico', cursive; font-size: 30px">members</h4>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white" style="font-size: 18px">Login</a></li>
+                        <li><a href="#" class="text-white" style="font-size: 18px">Join us</a></li>
+                        <li><a href="#" class="text-white" style="font-size: 18px">Notice</a></li>
+                        <li><a href="#" class="text-white" style="font-size: 18px">Event</a></li>
+
                     </ul>
                 </div>
             </div>
@@ -96,12 +122,14 @@
     <div class="navbar navbar-dark bg-dark shadow-sm">
         <div class="container">
             <a href="#" class="navbar-brand d-flex align-items-center">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true" class="me-2" viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
-                <strong style="font-family: 'Passion One', cursive; font-size: 35px">SH Travel Agency</strong>
+
+                <strong style="font-family: 'Pacifico', cursive; font-size: 35px">SH Travel Agency</strong>
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader"
+                    aria-controls="offcanvasRight" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
+
         </div>
     </div>
 </header>
@@ -109,28 +137,37 @@
 <main>
 
     <section class="py-5 text-center container">
-        <br class="row py-lg-5">
-            <br class="col-lg-6 col-md-8 mx-auto">
-            <h1 class="fw-light" style="font-family: 'Passion One', cursive;">SH Travel Agency</h1>
-                <p class="lead text-muted" style="font-family: 'KyoboHandwriting2020A'">포르투갈을 여행하시면 가장 다양하고 흥미로운 목적지를 방문하실 수 있습니다. SH Travel Agency를 이용해 여행하며 알가르브(Algarve) 해변의 백사장, 맛있는 포르토 와인 그리고 리스본의 마법 같은 활력을 느껴보세요. SH Travel Agency가 이 모든 것을 경험하실 수 있는 곳으로 안내합니다.</p>
+        <div class="row py-lg-5">
+            <div class="col-lg-6 col-md-8 mx-auto">
+                <h1 class="fw-light" style="font-family: 'Pacifico', cursive;">SH Travel Agency</h1>
+                <p class="lead text-muted" style="font-family: 'IM_Hyemin-Bold'; font-size: 19px;"><br>포르투갈을 여행하시면 가장
+                    다양하고
+                    흥미로운 목적지를
+                    방문하실 수 있습니다. <br> SH Travel Agency를 이용해 여행하며 알가르브(Algarve) 해변의 백사장, <br>맛있는 포르토 와인 그리고 리스본의 마법 같은
+                    활력을
+                    느껴보세요.<br>
+                    SH Travel Agency가 이 모든 것을 경험하실 수 있는 곳으로 안내합니다.</p>
                 <p>
-                    <a href="#" class="btn btn-primary my-2"> Porto </a>
-                    <a href="#" class="btn btn-secondary my-2">Lisbon</a>
+                    <a href="#" class="btn btn-info my-2">Go Porto!</a>
+                    <a href="#" class="btn btn-info my-2">Go Lisbon!</a>
                 </p>
             </div>
         </div>
     </section>
-
     <div class="album py-5 bg-light">
         <div class="container">
-
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
                 <div class="col">
                     <div class="card shadow-sm">
-                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-
+                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225"
+                             xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail"
+                             preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title>
+                            <rect width="100%" height="100%" fill="#55595c"/>
+                            <text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text>
+                        </svg>
                         <div class="card-body">
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                                additional content. This content is a little bit longer.</p>
                             <div class="d-flex justify-content-between align-items-center">
                                 <div class="btn-group">
                                     <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
@@ -143,10 +180,16 @@
                 </div>
                 <div class="col">
                     <div class="card shadow-sm">
-                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225"
+                             xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail"
+                             preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title>
+                            <rect width="100%" height="100%" fill="#55595c"/>
+                            <text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text>
+                        </svg>
 
                         <div class="card-body">
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                                additional content. This content is a little bit longer.</p>
                             <div class="d-flex justify-content-between align-items-center">
                                 <div class="btn-group">
                                     <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
@@ -159,108 +202,16 @@
                 </div>
                 <div class="col">
                     <div class="card shadow-sm">
-                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225"
+                             xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail"
+                             preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title>
+                            <rect width="100%" height="100%" fill="#55595c"/>
+                            <text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text>
+                        </svg>
 
                         <div class="card-body">
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                                </div>
-                                <small class="text-muted">9 mins</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col">
-                    <div class="card shadow-sm">
-                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-
-                        <div class="card-body">
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                                </div>
-                                <small class="text-muted">9 mins</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card shadow-sm">
-                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-
-                        <div class="card-body">
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                                </div>
-                                <small class="text-muted">9 mins</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card shadow-sm">
-                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-
-                        <div class="card-body">
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                                </div>
-                                <small class="text-muted">9 mins</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col">
-                    <div class="card shadow-sm">
-                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-
-                        <div class="card-body">
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                                </div>
-                                <small class="text-muted">9 mins</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card shadow-sm">
-                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-
-                        <div class="card-body">
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                                </div>
-                                <small class="text-muted">9 mins</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card shadow-sm">
-                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-
-                        <div class="card-body">
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                                additional content. This content is a little bit longer.</p>
                             <div class="d-flex justify-content-between align-items-center">
                                 <div class="btn-group">
                                     <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
@@ -278,18 +229,41 @@
 </main>
 
 <footer class="text-muted py-5">
+    <p class="float-end mb-1">
+        <a href="#" style="color: #080808"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-up" viewBox="0 0 16 16">
+            <path d="M3.204 11h9.592L8 5.519 3.204 11zm-.753-.659 4.796-5.48a1 1 0 0 1 1.506 0l4.796 5.48c.566.647.106 1.659-.753 1.659H3.204a1 1 0 0 1-.753-1.659z"/>
+        </svg>Click! Go Up</a>
     <div class="container">
-        <p class="float-end mb-1">
-            <a href="#">Back to top</a>
-        </p>
-        <p class="mb-1">Album example is &copy; Bootstrap, but please download and customize it for yourself!</p>
-        <p class="mb-0">New to Bootstrap? <a href="/">Visit the homepage</a> or read our <a href="../getting-started/introduction/">getting started guide</a>.</p>
+        <div class="row">
+            <div class="col-sm-5">
+                <p class="mb-1" style="font-size: medium; font-weight: bold">주식회사 SH여행사</p>
+                <span style="font-size: small">대표이사 : 민소희</span>
+                <p class="mb-1" style="font-size: xx-small">
+                    SH여행사는 영업보증 보험 - 국외여행업의 기획여행(2억원), 국외여행업(4천만원)에 가입되어 있습니다.<a href="#">(자세히보기)</a>
+                </p>
+            </div>
+            <div class="col-sm-7">
+                <ul class="list-unstyled" style="font-size: small">
+                    <li>사업자등록번호: 123-45-6789 &nbsp;| 통신판매업신고: 인천중구 - 0001</li>
+                    <li>관광사업자 등록번호: 제 2022 - 000001호 &nbsp;| 개인정보관리책임자: 민소희</li>
+                    <li>주소: 인천 중구 영종대로 123길 123호 &nbsp;| 대표번호:&nbsp;<a href="tel:010-1234-5678">010-1234-5678</a></li>
+                    <li>e-mail:&nbsp;<a href="minsohee94@naver.com" target="_blank">minsohee94@naver.com</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <section class="py-5 text-center container">
+        <div class="row py-lg-5">
+            <div class="col-lg-6 col-md-8 mx-auto">
+                Copyrightⓒ 2022 IOS All Rights Reserved
+            </div>
+        </div>
+    </section>
     </div>
 </footer>
-
-
-<script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
-
-
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
 </body>
 </html>
