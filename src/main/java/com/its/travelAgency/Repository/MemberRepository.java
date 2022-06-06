@@ -7,10 +7,14 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public class MemberRepository {
-//    @Autowired
-//    private SqlSessionTemplate sql;
-//
-//    public int save(MemberDTO memberDTO) {
-//        return sql.insert("Member.save", memberDTO);
-//    }
+    @Autowired
+    private SqlSessionTemplate sql;
+
+    public int save(MemberDTO memberDTO) {
+        return sql.insert("Member.save", memberDTO);
+
+    }
+    public String duplicateCheck(String memberId) {
+        return sql.selectOne("Member.duplicateCheck", memberId);
+    }
 }

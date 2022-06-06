@@ -9,11 +9,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7b9cca21-353e-4b46-86cc-2f9be7a51b06" name="Changes" comment="index css적용">
+    <list default="true" id="7b9cca21-353e-4b46-86cc-2f9be7a51b06" name="Changes" comment="index 카테고리 및 css적용">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/its/travelAgency/Controller/MemberController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/its/travelAgency/Controller/MemberController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/its/travelAgency/Repository/MemberRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/its/travelAgency/Repository/MemberRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/its/travelAgency/Service/MemberService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/its/travelAgency/Service/MemberService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/memberMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/memberMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/root-context.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/root-context.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/css/bootstrap.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/css/index.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/memberPage/saveFile.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/memberPage/saveFile.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,7 +60,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/development_msh/travelAgency",
+    "last_opened_file_path": "D:/development_msh/travelAgency/src/main/webapp/resources/css",
     "list.type.of.created.stylesheet": "CSS",
     "nodejs_package_manager_path": "npm",
     "project.structure.last.edited": "Modules",
@@ -64,10 +68,16 @@
     "project.structure.side.proportion": "0.0",
     "settings.editor.selected.configurable": "File.Encoding",
     "spring.configuration.checksum": "4d1f86316f4338d204a426975251362a"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
+    ]
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\development_msh\travelAgency\src\main\webapp\resources\css" />
       <recent name="D:\development_msh\source\travelAgency\src\main\webapp\WEB-INF\views" />
       <recent name="D:\development_msh\source\travelAgency\src\main\webapp\WEB-INF" />
       <recent name="D:\development_msh\source\travelAgency\src\main\resources" />
@@ -202,7 +212,8 @@
       <workItem from="1654126419727" duration="3757000" />
       <workItem from="1654214750652" duration="17372000" />
       <workItem from="1654327077410" duration="2189000" />
-      <workItem from="1654331052549" duration="20665000" />
+      <workItem from="1654331052549" duration="20875000" />
+      <workItem from="1654492055737" duration="9046000" />
     </task>
     <task id="LOCAL-00001" summary="git commit test">
       <created>1653971487845</created>
@@ -260,7 +271,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654243107185</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="index 카테고리 및 css적용">
+      <created>1654355889968</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1654355889968</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -283,6 +301,7 @@
     <MESSAGE value="Project 기획안작성" />
     <MESSAGE value="프로젝트 세팅" />
     <MESSAGE value="index css적용" />
-    <option name="LAST_COMMIT_MESSAGE" value="index css적용" />
+    <MESSAGE value="index 카테고리 및 css적용" />
+    <option name="LAST_COMMIT_MESSAGE" value="index 카테고리 및 css적용" />
   </component>
 </project>

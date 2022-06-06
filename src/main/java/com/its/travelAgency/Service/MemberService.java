@@ -7,16 +7,24 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class MemberService {
-//    @Autowired
-//    private MemberRepository memberRepository;
-//
-//    public boolean saveFile(MemberDTO memberDTO) {
-//        int saveResult = memberRepository.save(memberDTO);
-//        if (saveResult > 0) {
-//            return true;
-//        } else {
-//            return false;
-//        }
-//
-//    }
+    @Autowired
+    private MemberRepository memberRepository;
+
+    public boolean saveFile(MemberDTO memberDTO) {
+        int saveResult = memberRepository.save(memberDTO);
+        if (saveResult > 0) {
+            return true;
+        } else {
+            return false;
+        }
+
+    }
+    public String duplicateCheck(String memberId) {
+        String checkResult = memberRepository.duplicateCheck(memberId);
+        if(checkResult==null){
+            return "ok";
+        }else {
+            return "no";
+        }
+    }
 }

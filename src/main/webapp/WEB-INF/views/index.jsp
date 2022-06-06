@@ -110,7 +110,7 @@
                     <h4 class="text-white" style="font-family: 'Pacifico', cursive; font-size: 30px">members</h4>
                     <ul class="list-unstyled">
                         <li><a href="#" class="text-white" style="font-size: 18px">Login</a></li>
-                        <li><a href="#" class="text-white" style="font-size: 18px">Join us</a></li>
+                        <li><a href="/member/saveFile" class="text-white" style="font-size: 18px">Join us</a></li>
                         <li><a href="#" class="text-white" style="font-size: 18px">Notice</a></li>
                         <li><a href="#" class="text-white" style="font-size: 18px">Event</a></li>
 
@@ -121,7 +121,7 @@
     </div>
     <div class="navbar navbar-dark bg-dark shadow-sm">
         <div class="container">
-            <a href="#" class="navbar-brand d-flex align-items-center">
+            <a href="/" class="navbar-brand d-flex align-items-center">
 
                 <strong style="font-family: 'Pacifico', cursive; font-size: 35px">SH Travel Agency</strong>
             </a>
@@ -243,10 +243,9 @@
                 </p>
             </div>
             <div class="col-sm-7">
-                <ul class="list-unstyled" style="font-size: small">
-                    <li>사업자등록번호: 123-45-6789 &nbsp;| 통신판매업신고: 인천중구 - 0001</li>
-                    <li>관광사업자 등록번호: 제 2022 - 000001호 &nbsp;| 개인정보관리책임자: 민소희</li>
-                    <li>주소: 인천 중구 영종대로 123길 123호 &nbsp;| 대표번호:&nbsp;<a href="tel:010-1234-5678">010-1234-5678</a></li>
+                <ul class="list-unstyled" style="font-size: 12px">
+                    <li><br>사업자등록번호: 123-45-6789 &nbsp;| 통신판매업신고: 인천중구 - 0001 | 관광사업자 등록번호: 제 2022 - 000001호</li>
+                    <li>개인정보관리책임자: 민소희 | 주소: 인천 중구 영종대로 123길 123호 &nbsp;| 대표번호:&nbsp;<a href="tel:010-1234-5678">010-1234-5678</a></li>
                     <li>e-mail:&nbsp;<a href="minsohee94@naver.com" target="_blank">minsohee94@naver.com</a>
                     </li>
                 </ul>
