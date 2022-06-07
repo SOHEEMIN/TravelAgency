@@ -154,16 +154,17 @@
                                  style="background-color: #f9f2f9; padding:20px; font-family:'IM_Hyemin-Bold'; font-size: 22px; border-radius: 20px;">
                                 <br>
                                 아이디<br>
-                                <input type="text" name="memberId" onblur="duplicateCheck()" placeholder="5~12자 이내로 작성"
+                                <input type="text" name="memberId" onblur="duplicateCheck()" placeholder="6~16자 이내로 작성"
                                        id="memberId">
                                 <p id="dup-check-result"></p>
                                 비밀번호<br>
                                 <input type="password" name="memberPassword" placeholder="비밀번호 8~16자 숫자"
-                                       id="memberPassword" onblur="pwCheck()">
-                                <br><br>비밀번호 재확인<br>
-                                <input type="password" name="memberPassword2" placeholder="비밀번호 확인"
-                                       id="memberPassword2">
+                                       id="memberPassword">
                                 <p id="password-check-result"></p>
+                                비밀번호 재확인<br>
+                                <input type="password" name="memberPassword2" onblur="pwCheck2()" placeholder="비밀번호 확인"
+                                       id="memberPassword2">
+                                <p id="pw-check-result"></p>
                                 이름<br> <input type="text" name="memberName" id="memberName" value=""> <br></br>
                                 생년월일<br>
                                 <input type="hidden" name="memberBirth" id="memberBirth">
@@ -234,10 +235,11 @@
                                     <option value="31">31</option>
                                 </select>
                                 <br><br>
-                                이메일<br><input type="text" id="memberEmail" name="memberEmail">
-                                </br>
+                                이메일<br><input type="text" id="memberEmail" name="memberEmail" onblur="email_check()">
+                                <p id="email_result"></p>
                                 <br>휴대전화<br>
-                                <input type="text" name="memberPhone" ONBLUR="mbCheck()" placeholder="010-****-****">
+                                <input type="text" name="memberPhone" id="memberPhone" onblur="mbCheck()" placeholder="010-****-****">
+                                <p id="mobile-check-result"></p>
                                 <input type="button" name="certification" value="인증번호 받기"><br></br>
                                 <input type="text" name="certification" placeholder="인증번호를 입력하세요">
                                 <input type="button" name="certification" value="확인"><br><br>
@@ -295,10 +297,9 @@
 </body>
 <script>
     function duplicateCheck() {
-        console.log(`memberId:  ${memberId}`);
         const memberId = document.getElementById("memberId").value;
         const checkResult = document.getElementById("dup-check-result");
-        const exp = /^(?=.*[a-z])(?=.*\d)[a-z\d]{5,10}$/;
+        const exp = /^(?=.*[a-z])(?=.*\d)[a-z\d]{5,16}$/;
         $.ajax({
             type: "post",
             url: "duplicate-check",
@@ -309,8 +310,11 @@
                     if (memberId.match(exp)) {
                         checkResult.innerHTML = "사용가능한 아이디입니다.";
                         checkResult.style.color = "green";
+                    } else if (result == 0) {
+                        checkResult.innerHTML = "필수 입력"
+                        checkResult.style.color = "red";
                     } else {
-                        checkResult.innerHTML = "영문소문자와 숫자를 포함한 5~10글자 입력"
+                        checkResult.innerHTML = "영문소문자와 숫자를 포함한 5~16글자 입력"
                         checkResult.style.color = "red";
                     }
                 } else {
@@ -323,25 +327,25 @@
         });
 
     }
-
-    function pwCheck() {
+    function pwCheck2(){
         const memberPassword = document.getElementById("memberPassword").value;
-        const checkResult = document.getElementById("password-check-result");
-        const exp = /^(?=.*[a-z])(?=.*\d)[a-z\d]{5,10}$/;
-        if (memberPassword.match(exp)) {
-            checkResult.innerHTML = "사용 가능한 비밀번호입니다";
-            checkResult.style.color = "green";
-        } else {
-            checkResult.innerHTML = "영문소문자와 숫자를 포함한 5~10글자 입력";
-            checkResult.style.color = "red";
+        const memberPassword2 = document.getElementById("memberPassword2").value;
+        const checkResult = document.getElementById("pw-check-result");
+        if (memberPassword==memberPassword2){
+            checkResult.innerHTML = "일치합니다.";
+            checkResult.style.color="green";
+
+        }else{
+            checkResult.innerHTML = "일치하지않습니다.";
+            checkResult.style.color="red";
         }
     }
 
     function mbCheck() {
-        const memberMobile = document.getElementById("memberMobile").value;
+        const memberPhone = document.getElementById("memberPhone").value;
         const checkResult = document.getElementById("mobile-check-result");
         const exp = /^01([0|1|6|7|8|9])-?([0-9]{3,4})-?([0-9]{4})$/;
-        if (memberMobile.match(exp)) {
+        if (memberPhone.match(exp)) {
             checkResult.innerHTML = "사용 가능한 전화번호입니다."
             checkResult.style.color = "green";
         } else {
@@ -359,6 +363,18 @@
         console.log(Birth);
         document.getElementById("memberBirth").value = Birth;
 
+    }
+    function email_check(){
+        let email_check = document.getElementById("memberEmail").value;
+        let result = document.getElementById("email_result");
+        let exp = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/;
+        if(email_check.match(exp)){
+            result.innerHTML = "사용가능한 이메일 입니다.";
+            result.style.color = "green";
+        }else{
+            result.innerHTML = "이메일 주소를 다시 확인해주세요";
+            result.style.color = "red";
+        }
     }
 </script>
 </html>
