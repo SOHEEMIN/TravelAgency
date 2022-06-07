@@ -1,6 +1,7 @@
-<!doctype html>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
+
 <html lang="ko">
 <head>
     <meta charset="utf-8">
@@ -11,14 +12,14 @@
     <title>SH Travel Agency</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/album/">
-<%--    <link href="/resources/css/bootstrap.min.css" rel="stylesheet">--%>
-    <!-- CSS only -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <%--    <link href="/resources/css/bootstrap.min.css" rel="stylesheet">--%>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Passion+One:wght@900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
     <style>
         .bd-placeholder-img {
@@ -82,6 +83,10 @@
             font-weight: normal;
             font-style: normal;
         }
+
+        input {
+            border-radius: 5px;
+        }
     </style>
 
 
@@ -112,18 +117,10 @@
                 <div class="col-sm-2 offset-md-0.1 py-0.1">
                     <h4 class="text-white" style="font-family: 'Pacifico', cursive; font-size: 30px">members</h4>
                     <ul class="list-unstyled">
-                    <c:if test="${sessionScope.loginMemberId == null}">
                         <li><a href="/member/login" class="text-white" style="font-size: 18px">Login</a></li>
                         <li><a href="/member/saveFile" class="text-white" style="font-size: 18px">Join us</a></li>
-                    </c:if>
-                    <c:if test="${sessionScope.loginMemberId != null}">
-                        <li><a href="/member/logout" class="text-white" style="font-size: 18px">Logout</a></li>
-                    </c:if>
-                        <li><a href="/board/paging" class="text-white" style="font-size: 18px">Notice</a></li>
+                        <li><a href="/board/saveFile" class="text-white" style="font-size: 18px">Notice</a></li>
                         <li><a href="#" class="text-white" style="font-size: 18px">Event</a></li>
-                     <c:if test="${sessionScope.loginMemberId == 'admin'}">
-                         <li><a href="/board/saveFile" class="text-white" style="font-size: 18px">Manage notice</a></li>
-                     </c:if>
 
                     </ul>
                 </div>
@@ -146,104 +143,39 @@
 </header>
 
 <main>
-
     <section class="py-5 text-center container">
         <div class="row py-lg-5">
-            <div class="col-lg-6 col-md-8 mx-auto">
+            <div class="col-lg-5 col-md-8 mx-auto">
                 <h1 class="fw-light" style="font-family: 'Pacifico', cursive;">SH Travel Agency</h1>
-                <p class="lead text-muted" style="font-family: 'IM_Hyemin-Bold'; font-size: 19px;"><br>포르투갈을 여행하시면 가장
-                    다양하고
-                    흥미로운 목적지를
-                    방문하실 수 있습니다. <br> SH Travel Agency를 이용해 여행하며 알가르브(Algarve) 해변의 백사장, <br>맛있는 포르토 와인 그리고 리스본의 마법 같은
-                    활력을
-                    느껴보세요.<br>
-                    SH Travel Agency가 이 모든 것을 경험하실 수 있는 곳으로 안내합니다.</p>
-                <p>
-                    <a href="#" class="btn btn-info my-2">Go Porto!</a>
-                    <a href="#" class="btn btn-info my-2">Go Lisbon!</a>
-                </p>
+                <p class="lead text-muted" style="font-family: 'IM_Hyemin-Bold'; font-size: 24px;"><br>로그인<br></p>
+                <form action="/board/saveFile" method="post" enctype="multipart/form-data">
+                    <div align="center"
+                         style="background-color: #f9f2f9; padding:20px; font-family:'IM_Hyemin-Bold'; font-size: 22px; border-radius: 20px;">
+                        <br>
+                        작성자<br>
+                        <input class="form-control mb-2" type="text" name="memberId" value="${sessionScope.loginMemberId}"
+                               readonly><br>
+                        제목<br>
+                        <input class="form-control mb-2" type="text" name="boardTitle" placeholder="제목"><br>
+                        내용<br>
+                        <textarea class="form-control mb-2" name="boardContents" rows="10" cols="50"></textarea><br>
+                        첨부파일<br>
+                        <input type="file" name="boardFile" value="file"><br>
+                        <input type="submit" id="SaveButton" value="글작성">
+                    </div>
+                </form>
             </div>
         </div>
     </section>
-    <div class="album py-5 bg-light">
-        <div class="container">
-            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-                <div class="col">
-                    <div class="card shadow-sm">
-                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225"
-                             xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail"
-                             preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title>
-                            <rect width="100%" height="100%" fill="#55595c"/>
-                            <text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text>
-                        </svg>
-                        <div class="card-body">
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                                additional content. This content is a little bit longer.</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                                </div>
-                                <small class="text-muted">9 mins</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card shadow-sm">
-                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225"
-                             xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail"
-                             preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title>
-                            <rect width="100%" height="100%" fill="#55595c"/>
-                            <text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text>
-                        </svg>
-
-                        <div class="card-body">
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                                additional content. This content is a little bit longer.</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                                </div>
-                                <small class="text-muted">9 mins</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card shadow-sm">
-                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225"
-                             xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail"
-                             preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title>
-                            <rect width="100%" height="100%" fill="#55595c"/>
-                            <text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text>
-                        </svg>
-
-                        <div class="card-body">
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                                additional content. This content is a little bit longer.</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                                </div>
-                                <small class="text-muted">9 mins</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
 </main>
-
 <footer class="text-muted py-5">
     <p class="float-end mb-1">
-        <a href="#" style="color: #080808"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-up" viewBox="0 0 16 16">
-            <path d="M3.204 11h9.592L8 5.519 3.204 11zm-.753-.659 4.796-5.48a1 1 0 0 1 1.506 0l4.796 5.48c.566.647.106 1.659-.753 1.659H3.204a1 1 0 0 1-.753-1.659z"/>
-        </svg>Click! Go Up</a>
+        <a href="#" style="color: #080808">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-up"
+                 viewBox="0 0 16 16">
+                <path d="M3.204 11h9.592L8 5.519 3.204 11zm-.753-.659 4.796-5.48a1 1 0 0 1 1.506 0l4.796 5.48c.566.647.106 1.659-.753 1.659H3.204a1 1 0 0 1-.753-1.659z"/>
+            </svg>
+            Click! Go Up</a>
     <div class="container">
         <div class="row">
             <div class="col-sm-5">
@@ -256,7 +188,8 @@
             <div class="col-sm-7">
                 <ul class="list-unstyled" style="font-size: 12px">
                     <li><br>사업자등록번호: 123-45-6789 &nbsp;| 통신판매업신고: 인천중구 - 0001 | 관광사업자 등록번호: 제 2022 - 000001호</li>
-                    <li>개인정보관리책임자: 민소희 | 주소: 인천 중구 영종대로 123길 123호 &nbsp;| 대표번호:&nbsp;<a href="tel:010-1234-5678">010-1234-5678</a></li>
+                    <li>개인정보관리책임자: 민소희 | 주소: 인천 중구 영종대로 123길 123호 &nbsp;| 대표번호:&nbsp;<a href="tel:010-1234-5678">010-1234-5678</a>
+                    </li>
                     <li>e-mail:&nbsp;<a href="minsohee94@naver.com" target="_blank">minsohee94@naver.com</a>
                     </li>
                 </ul>
@@ -276,4 +209,5 @@
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
 </body>
+
 </html>

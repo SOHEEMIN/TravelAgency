@@ -2,22 +2,25 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="travelAgency:war exploded" />
+      <artifact name="travelfri:war exploded" />
     </artifacts-to-build>
   </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7b9cca21-353e-4b46-86cc-2f9be7a51b06" name="Changes" comment="프로젝트 세팅">
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/index.jsp" afterDir="false" />
+    <list default="true" id="7b9cca21-353e-4b46-86cc-2f9be7a51b06" name="Changes" comment="index css적용">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/its/travelAgency/Controller/MemberController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/its/travelAgency/Controller/MemberController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/its/travelAgency/Repository/MemberRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/its/travelAgency/Repository/MemberRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/its/travelAgency/Service/MemberService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/its/travelAgency/Service/MemberService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/memberMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/memberMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/servlet-context.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/servlet-context.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mybatis-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mybatis-config.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/root-context.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/root-context.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/memberPage/saveFile.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/memberPage/saveFile.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/css/bootstrap.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/css/bootstrap.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/css/index.css" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,8 +32,8 @@
       <list>
         <option value="spring-beans.schema" />
         <option value="CSS File" />
-        <option value="Jsp File" />
         <option value="Class" />
+        <option value="Jsp File" />
       </list>
     </option>
   </component>
@@ -60,17 +63,24 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/development_msh/source/travelAgency/src/main/webapp/WEB-INF/views",
+    "last_opened_file_path": "D:/travel/membershipBoardProject",
     "list.type.of.created.stylesheet": "CSS",
     "nodejs_package_manager_path": "npm",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
     "settings.editor.selected.configurable": "File.Encoding"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql",
+      "bigquery"
+    ]
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\travel\travelfri\src\main\webapp\resources\css" />
       <recent name="D:\development_msh\source\travelAgency\src\main\webapp\WEB-INF\views" />
       <recent name="D:\development_msh\source\travelAgency\src\main\webapp\WEB-INF" />
       <recent name="D:\development_msh\source\travelAgency\src\main\resources" />
@@ -82,6 +92,9 @@
       <recent name="D:\development_msh\source\travelAgency\src\main\webapp\resources\css" />
       <recent name="D:\development_msh\source\travelAgency\src\main\webapp\resources" />
       <recent name="D:\development_msh\source\travelAgency\src\main\resources\mapper" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.its.travelAgency.Controller" />
     </key>
   </component>
   <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.62">
@@ -103,7 +116,7 @@
       <option name="COMMON_VM_ARGUMENTS" value="-Dfile.encoding=UTF-8" />
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
-        <artifact name="travelAgency:war exploded">
+        <artifact name="travelfri:war exploded">
           <settings>
             <option name="CONTEXT_PATH" value="/" />
           </settings>
@@ -185,6 +198,7 @@
         <option name="Make" enabled="true" />
         <option name="BuildArtifacts" enabled="true">
           <artifact name="travelAgency:war exploded" />
+          <artifact name="travelfri:war exploded" />
         </option>
       </method>
     </configuration>
@@ -203,7 +217,8 @@
       <updated>1653971405112</updated>
       <workItem from="1653971408973" duration="9934000" />
       <workItem from="1654126419727" duration="3757000" />
-      <workItem from="1654214750652" duration="17092000" />
+      <workItem from="1654214750652" duration="17372000" />
+      <workItem from="1654559479256" duration="12826000" />
     </task>
     <task id="LOCAL-00001" summary="git commit test">
       <created>1653971487845</created>
@@ -254,7 +269,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654217027322</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="index css적용">
+      <created>1654243107185</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1654243107185</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -276,6 +298,7 @@
     <MESSAGE value="README TEST" />
     <MESSAGE value="Project 기획안작성" />
     <MESSAGE value="프로젝트 세팅" />
-    <option name="LAST_COMMIT_MESSAGE" value="프로젝트 세팅" />
+    <MESSAGE value="index css적용" />
+    <option name="LAST_COMMIT_MESSAGE" value="index css적용" />
   </component>
 </project>
