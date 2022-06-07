@@ -11,7 +11,7 @@
     <title>SH Travel Agency</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/album/">
-<%--    <link href="/resources/css/bootstrap.min.css" rel="stylesheet">--%>
+    <%--    <link href="/resources/css/bootstrap.min.css" rel="stylesheet">--%>
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -112,18 +112,18 @@
                 <div class="col-sm-2 offset-md-0.1 py-0.1">
                     <h4 class="text-white" style="font-family: 'Pacifico', cursive; font-size: 30px">members</h4>
                     <ul class="list-unstyled">
-                    <c:if test="${sessionScope.loginMemberId == null}">
-                        <li><a href="/member/login" class="text-white" style="font-size: 18px">Login</a></li>
-                        <li><a href="/member/saveFile" class="text-white" style="font-size: 18px">Join us</a></li>
-                    </c:if>
-                    <c:if test="${sessionScope.loginMemberId != null}">
-                        <li><a href="/member/logout" class="text-white" style="font-size: 18px">Logout</a></li>
-                    </c:if>
+                        <c:if test="${sessionScope.loginMemberId == null}">
+                            <li><a href="/member/login" class="text-white" style="font-size: 18px">Login</a></li>
+                            <li><a href="/member/saveFile" class="text-white" style="font-size: 18px">Join us</a></li>
+                        </c:if>
+                        <c:if test="${sessionScope.loginMemberId != null}">
+                            <li><a href="/member/logout" class="text-white" style="font-size: 18px">Logout</a></li>
+                        </c:if>
                         <li><a href="/board/paging" class="text-white" style="font-size: 18px">Notice</a></li>
                         <li><a href="#" class="text-white" style="font-size: 18px">Event</a></li>
-                     <c:if test="${sessionScope.loginMemberId == 'admin'}">
-                         <li><a href="/board/saveFile" class="text-white" style="font-size: 18px">Manage notice</a></li>
-                     </c:if>
+                        <c:if test="${sessionScope.loginMemberId == 'admin'}">
+                            <li><a href="/board/saveFile" class="text-white" style="font-size: 18px">Manage notice</a></li>
+                        </c:if>
 
                     </ul>
                 </div>
