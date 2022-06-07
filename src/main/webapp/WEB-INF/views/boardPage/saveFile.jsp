@@ -147,9 +147,9 @@
         <div class="row py-lg-5">
             <div class="col-lg-5 col-md-8 mx-auto">
                 <h1 class="fw-light" style="font-family: 'Pacifico', cursive;">SH Travel Agency</h1>
-                <p class="lead text-muted" style="font-family: 'IM_Hyemin-Bold'; font-size: 24px;"><br>로그인<br></p>
+                <p class="lead text-muted" style="font-family: 'IM_Hyemin-Bold'; font-size: 24px;"><br>공지사항<br></p>
                 <form action="/board/saveFile" method="post" enctype="multipart/form-data">
-                    <div align="center"
+                    <div align="left"
                          style="background-color: #f9f2f9; padding:20px; font-family:'IM_Hyemin-Bold'; font-size: 22px; border-radius: 20px;">
                         <br>
                         작성자<br>
@@ -160,7 +160,7 @@
                         내용<br>
                         <textarea class="form-control mb-2" name="boardContents" rows="10" cols="50"></textarea><br>
                         첨부파일<br>
-                        <input type="file" name="boardFile" value="file"><br>
+                        <input type="file" name="boardFile" value="file"><br><br>
                         <input type="submit" id="SaveButton" value="글작성">
                     </div>
                 </form>
