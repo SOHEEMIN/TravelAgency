@@ -2,7 +2,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
-
 <html lang="ko">
 <head>
     <meta charset="utf-8">
@@ -21,6 +20,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Passion+One:wght@900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
 
     <style>
         .bd-placeholder-img {
@@ -88,18 +88,21 @@
         input {
             border-radius: 5px;
         }
-
-        th {
+        td{
             font-size: 20px;
-            border-bottom: 1px solid #444444;
+            height: 100%;
             padding: 10px;
         }
-
-        td {
+        th{
             font-size: 20px;
+            height: 100%;
             border-bottom: 1px solid #444444;
-            padding: 10px;
         }
+        tr{
+            font-size: 20px;
+            height: 100%;
+        }
+
     </style>
 
 
@@ -140,7 +143,8 @@
                         <li><a href="/board/paging" class="text-white" style="font-size: 18px">Notice</a></li>
                         <li><a href="#" class="text-white" style="font-size: 18px">Event</a></li>
                         <c:if test="${sessionScope.loginMemberId == 'admin'}">
-                            <li><a href="/board/saveFile" class="text-white" style="font-size: 18px">Manage notice</a></li>
+                            <li><a href="/board/saveFile" class="text-white" style="font-size: 18px">Manage notice</a>
+                            </li>
                         </c:if>
                     </ul>
                 </div>
@@ -161,97 +165,83 @@
         </div>
     </div>
 </header>
+
 <main>
     <section class="py-5 text-center container">
         <div class="row py-lg-5">
             <div class="col-lg-8 col-md-8 mx-auto">
                 <h1 class="fw-light" style="font-family: 'Pacifico', cursive;">SH Travel Agency</h1>
                 <p class="lead text-muted" style="font-family: 'IM_Hyemin-Bold'; font-size: 24px;"><br>공지사항<br></p>
-                <form action="/board/search" method="get">
-                    <div align="center"
-                         style="background-color: #f9f2f9; padding:20px; font-family:'IM_Hyemin-Bold'; font-size: 22px; border-radius: 20px;">
-                        <select name="searchType">
-                            <option value="boardTitle">제목</option>
-                            <option value="memberId">작성자</option>
-                        </select>
-                        <input type="text" name="q" placeholder="검색">
-                        <input type="submit" value="검색">
-                    </div>
-                </form>
-                <div class="container1" align="center"
+                <div align="center"
                      style="background-color: #f9f2f9; padding:20px; font-family:'IM_Hyemin-Bold'; font-size: 22px; border-radius: 20px;">
-                    <table style="width: 100%; border-top: 1px solid #444444;border-collapse: collapse;">
-                        <tr id="firstTr">
-                            <th style="width: 50px">no</th>
-                            <th style="width: 120px;">title</th>
-                            <th style="width: 100px;">writer</th>
-                            <th style="width: 60px">hits</th>
-                            <th style="width: 250px">date</th>
-                            <th style="width: 60px">pic</th>
-                        </tr>
-                        <c:forEach items="${boardList}" var="board">
-                            <tr>
-                                <td id="id">${board.b_id}</td>
-                                <td id="title"><a
-                                        href="/board/detail?page=${paging.page}&b_id=${board.b_id}">${board.boardTitle}</a>
-                                </td>
-                                <td id="writer">${board.memberId}</td>
-                                <td id="hits">${board.boardHits}</td>
-                                <td id="date">${board.boardCreatedDate}</td>
-                                <td id="pic"><img src="${pageContext.request.contextPath}/upload/${board.boardFileName}"
-                                                  alt="" height="40"
-                                                  width="40"></td>
-                            </tr>
-                        </c:forEach>
-                    </table>
                     <table>
-                        <p><br></p>
                         <tr>
-                            <c:choose>
-                                <c:when test="${paging.page<=1}">
-                                    <td class="page-item disabled">
-                                    <td><a class="page-link">[이전]</a></td>
-                                    </td>
-                                </c:when>
-                                <c:otherwise>
-                                    <td class="page-item">
-                                    <td><a class="page-link" href="/board/paging?page=${paging.page-1}">[이전]</a>
-                                    </td>
-                                    </td>
-                                </c:otherwise>
-                            </c:choose>
-                            <c:forEach begin="${paging.startPage}" end="${paging.endPage}" var="i" step="1">
-                                <c:choose>
-                                    <c:when test="${i eq paging.page}">
-                                        <td class="page-item active">
-                                        <td><a class="page-link">${i}</a></td>
-                                        </td>
-                                    </c:when>
-                                    <c:otherwise>
-                                        <td class="page-item">
-                                        <td><a class="page-link" href="/board/paging?page=${i}">${i}</a></td>
-                                        </td>
-                                    </c:otherwise>
-                                </c:choose>
-                            </c:forEach>
-                            <c:choose>
-                                <c:when test="${paging.page>=paging.maxPage}">
-                                    <td class="page-item disabled">
-                                    <td><a class="page-link">[다음]</a></td>
-                                    </td>
-                                </c:when>
-                                <c:otherwise>
-                                    <td class="page-item">
-                                    <td><a class="page-link" href="/board/paging?page=${paging.page+1}">[다음]</a>
-                                    </td>
-                                    <td/>
-                                </c:otherwise>
-                            </c:choose>
+                            <td colspan="2">No: ${board.b_id}</td>
+                            <td>Date: ${board.boardCreatedDate}</td>
+
+                        </tr>
+                        <tr>
+                            <td colspan="3" style="font-weight : bold ;">제목: ${board.boardTitle}</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">Writer: ${board.memberId}</td>
+                            <td>Hits: ${board.boardHits}</td>
+                        </tr>
+                        <tr>
+                            <td colspan="3" style="font-weight : bold ;">${board.boardContents}</td>
+                        </tr>
+                        <tr>
+                            <td colspan="3"><img src="${pageContext.request.contextPath}/upload/${board.boardFileName}"
+                                                 alt=""
+                                                 height="100"
+                                                 width="100"></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <button class="btn btn-info my-2" id="WriteButton4" onclick="paging()" style="font-size: 21px;">글목록</button>
+                            </td>
+                            <c:if test="${sessionScope.loginMemberId eq board.memberId}">
+                                <td>
+                                    <button class="btn btn-info my-2" id="WriteButton1" onclick="boardUpdate()" style="font-size: 21px;">글수정
+                                    </button>
+                                </td>
+                                <td>
+                                    <button class="btn btn-info my-2" id="WriteButton2" onclick="boardDelete()" style="font-size: 21px;">글삭제
+                                    </button>
+                                </td>
+                            </c:if>
+                        </tr>
+                        <tr>
+                            <td><input type="text" id="memberId" class="form-control"
+                                       value="${sessionScope.loginMemberId}" style="width: 135px;"
+                                       readonly></td>
+                            <td><input type="text" id="commentContents" class="form-control" placeholder="댓글"
+                                       style="width: 200px;"></td>
+                            <td>
+                                <button id="comment-write-btn" class="btn btn-danger">write</button>
+                            </td>
                         </tr>
                     </table>
+                    <div id="comment-list">
+                        <table class="table">
+                            <tr>
+                                <th>NO.</th>
+                                <th>작성자</th>
+                                <th>내용</th>
+                                <th>작성시간</th>
+                            </tr>
+                            <c:forEach items="${commentList}" var="comment">
+                                <tr>
+                                    <td>${comment.c_id}</td>
+                                    <td>${comment.memberId}</td>
+                                    <td>${comment.commentContents}</td>
+                                    <td>${comment.commentCreatedDate}</td>
+                                </tr>
+                            </c:forEach>
+                        </table>
+                    </div>
                 </div>
             </div>
-        </div>
         </div>
     </section>
 </main>
@@ -296,5 +286,56 @@
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
 </body>
-
+<script>
+    $("#comment-write-btn").click(function () {
+        //댓글 작성자, 내용을 가져오고 ajax 문법을 활용하여 /comment/save 주소로 post방식으로 작성자, 내용, 글번호
+        //세개의 값을 보내는 코드를 작성하시오
+        const memberId = document.getElementById("memberId").value;
+        const commentContents = $("#commentContents").val();
+        const b_id = '${board.b_id}';
+        console.log(memberId, commentContents, b_id)
+        $.ajax({
+            type: "post",
+            url: "/comment/save",
+            data: {
+                "memberId": memberId,
+                "commentContents": commentContents,
+                "b_id": b_id
+            },
+            dataType: "json",
+            success: function (result) {
+                console.log(result);
+                let output = "<table class='table'>";
+                output += "<tr><th>no</th>";
+                output += "<th>작성자</th>";
+                output += "<th>내용</th>";
+                output += "<th>작성시간</th></tr>";
+                for (let i in result) {
+                    output += "<tr>";
+                    output += "<td>" + result[i].c_id + "</td>";
+                    output += "<td>" + result[i].memberId + "</td>";
+                    output += "<td>" + result[i].commentContents + "</td>";
+                    output += "<td>" + result[i].commentCreatedDate + "</td>";
+                    output += "</tr>";
+                }
+                output += "</table>";
+                document.getElementById('comment-list').innerHTML = output;
+                document.getElementById('memberId').value = '';
+                document.getElementById('commentContents').value = '';
+            },
+            error: function () {
+                alert("오류");
+            }
+        });
+    });
+    const paging = () => {
+        location.href = "/board/paging?page=${page}";
+    }
+    const boardUpdate = () => {
+        location.href = "/board/update?b_id=${board.b_id}";
+    }
+    const boardDelete = () => {
+        location.href = "/board/delete?b_id=${board.b_id}";
+    }
+</script>
 </html>

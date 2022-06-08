@@ -29,4 +29,17 @@ public class BoardRepository {
     public int boardCount() {
         return sql.selectOne("Board.count");
     }
+    public List<BoardDTO> search(Map<String, String> searchParam) {
+        return sql.selectList("Board.search", searchParam);
+    }
+    public BoardDTO findById(long id) {
+        sql.update("Board.updateHits", id);
+        return sql.selectOne("Board.findById", id);
+    }
+    public void update(BoardDTO boardDTO) {
+        sql.update("Board.update", boardDTO);
+    }
+    public void delete(long b_id) {
+        sql.delete("Board.delete", b_id);
+    }
 }

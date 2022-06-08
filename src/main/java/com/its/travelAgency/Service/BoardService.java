@@ -47,7 +47,6 @@ public class BoardService {
     }
 
     public PageDTO paging(int page) {
-        System.out.println("page = " + page);
         int boardCount = boardRepository.boardCount();
         int maxPage = (int) (Math.ceil((double) boardCount / PAGE_LIMIT));
         int startPage = (((int) (Math.ceil((double) page / BLOCK_LIMIT))) - 1) * BLOCK_LIMIT + 1;
@@ -60,5 +59,23 @@ public class BoardService {
         paging.setEndPage(endPage);
         paging.setMaxPage(maxPage);
         return paging;
+    }
+    public List<BoardDTO> search(String searchType, String q) {
+        Map<String, String> searchParam = new HashMap<>();
+        searchParam.put("type", searchType);
+        searchParam.put("q", q);
+        List<BoardDTO> searchList = boardRepository.search(searchParam);
+        return searchList;
+    }
+    public BoardDTO findById(long id) {
+        return boardRepository.findById(id);
+    }
+
+    public void update(BoardDTO boardDTO) {
+        boardRepository.update(boardDTO);
+    }
+
+    public void delete(long b_id) {
+        boardRepository.delete(b_id);
     }
 }

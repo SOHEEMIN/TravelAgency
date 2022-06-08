@@ -115,11 +115,18 @@
                 <div class="col-sm-2 offset-md-0.1 py-0.1">
                     <h4 class="text-white" style="font-family: 'Pacifico', cursive; font-size: 30px">members</h4>
                     <ul class="list-unstyled">
-                        <li><a href="/member/login" class="text-white" style="font-size: 18px">Login</a></li>
-                        <li><a href="/member/saveFile" class="text-white" style="font-size: 18px">Join us</a></li>
-                        <li><a href="/board/saveFile" class="text-white" style="font-size: 18px">Notice</a></li>
+                        <c:if test="${sessionScope.loginMemberId == null}">
+                            <li><a href="/member/login" class="text-white" style="font-size: 18px">Login</a></li>
+                            <li><a href="/member/saveFile" class="text-white" style="font-size: 18px">Join us</a></li>
+                        </c:if>
+                        <c:if test="${sessionScope.loginMemberId != null}">
+                            <li><a href="/member/logout" class="text-white" style="font-size: 18px">Logout</a></li>
+                        </c:if>
+                        <li><a href="/board/paging" class="text-white" style="font-size: 18px">Notice</a></li>
                         <li><a href="#" class="text-white" style="font-size: 18px">Event</a></li>
-
+                        <c:if test="${sessionScope.loginMemberId == 'admin'}">
+                            <li><a href="/board/saveFile" class="text-white" style="font-size: 18px">Manage notice</a></li>
+                        </c:if>
                     </ul>
                 </div>
             </div>

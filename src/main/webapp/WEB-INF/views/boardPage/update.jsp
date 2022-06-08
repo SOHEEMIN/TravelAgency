@@ -1,7 +1,4 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-
 
 <html lang="ko">
 <head>
@@ -20,7 +17,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Passion+One:wght@900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
 
     <style>
         .bd-placeholder-img {
@@ -88,18 +85,6 @@
         input {
             border-radius: 5px;
         }
-
-        th {
-            font-size: 20px;
-            border-bottom: 1px solid #444444;
-            padding: 10px;
-        }
-
-        td {
-            font-size: 20px;
-            border-bottom: 1px solid #444444;
-            padding: 10px;
-        }
     </style>
 
 
@@ -161,97 +146,29 @@
         </div>
     </div>
 </header>
+
 <main>
     <section class="py-5 text-center container">
         <div class="row py-lg-5">
-            <div class="col-lg-8 col-md-8 mx-auto">
+            <div class="col-lg-5 col-md-8 mx-auto">
                 <h1 class="fw-light" style="font-family: 'Pacifico', cursive;">SH Travel Agency</h1>
-                <p class="lead text-muted" style="font-family: 'IM_Hyemin-Bold'; font-size: 24px;"><br>공지사항<br></p>
-                <form action="/board/search" method="get">
-                    <div align="center"
+                <p class="lead text-muted" style="font-family: 'IM_Hyemin-Bold'; font-size: 24px;"><br>글 수정<br></p>
+                <form action="/board/update" method="post" name="updateForm">
+                    <div align="left"
                          style="background-color: #f9f2f9; padding:20px; font-family:'IM_Hyemin-Bold'; font-size: 22px; border-radius: 20px;">
-                        <select name="searchType">
-                            <option value="boardTitle">제목</option>
-                            <option value="memberId">작성자</option>
-                        </select>
-                        <input type="text" name="q" placeholder="검색">
-                        <input type="submit" value="검색">
+                            글번호</br>
+                            <input type="text" name="b_id" value="${boardUpdate.b_id}" class="form-control" readonly>
+                            <br>작성자</br>
+                            <input type="text" name="${sessionScope.loginMemberId}" value="${sessionScope.loginMemberId}"
+                                       class="form-control" style="font-size: 22px" readonly><br>
+                            제목</br>
+                            <td><input type="text" name="boardTitle" id="title" value="${boardUpdate.boardTitle}" style="font-size: 22px" class="form-control"></td>
+                            <br>내용</br>
+                            <textarea id="contents" name="boardContents" cols=45" rows="10">${boardUpdate.boardContents}</textarea><br>
+                            <br><input type="button" class="btn btn-danger" id="changeButton" onclick="updateForm.submit()" style="font-size: 22px" value="수정"></br>
                     </div>
                 </form>
-                <div class="container1" align="center"
-                     style="background-color: #f9f2f9; padding:20px; font-family:'IM_Hyemin-Bold'; font-size: 22px; border-radius: 20px;">
-                    <table style="width: 100%; border-top: 1px solid #444444;border-collapse: collapse;">
-                        <tr id="firstTr">
-                            <th style="width: 50px">no</th>
-                            <th style="width: 120px;">title</th>
-                            <th style="width: 100px;">writer</th>
-                            <th style="width: 60px">hits</th>
-                            <th style="width: 250px">date</th>
-                            <th style="width: 60px">pic</th>
-                        </tr>
-                        <c:forEach items="${boardList}" var="board">
-                            <tr>
-                                <td id="id">${board.b_id}</td>
-                                <td id="title"><a
-                                        href="/board/detail?page=${paging.page}&b_id=${board.b_id}">${board.boardTitle}</a>
-                                </td>
-                                <td id="writer">${board.memberId}</td>
-                                <td id="hits">${board.boardHits}</td>
-                                <td id="date">${board.boardCreatedDate}</td>
-                                <td id="pic"><img src="${pageContext.request.contextPath}/upload/${board.boardFileName}"
-                                                  alt="" height="40"
-                                                  width="40"></td>
-                            </tr>
-                        </c:forEach>
-                    </table>
-                    <table>
-                        <p><br></p>
-                        <tr>
-                            <c:choose>
-                                <c:when test="${paging.page<=1}">
-                                    <td class="page-item disabled">
-                                    <td><a class="page-link">[이전]</a></td>
-                                    </td>
-                                </c:when>
-                                <c:otherwise>
-                                    <td class="page-item">
-                                    <td><a class="page-link" href="/board/paging?page=${paging.page-1}">[이전]</a>
-                                    </td>
-                                    </td>
-                                </c:otherwise>
-                            </c:choose>
-                            <c:forEach begin="${paging.startPage}" end="${paging.endPage}" var="i" step="1">
-                                <c:choose>
-                                    <c:when test="${i eq paging.page}">
-                                        <td class="page-item active">
-                                        <td><a class="page-link">${i}</a></td>
-                                        </td>
-                                    </c:when>
-                                    <c:otherwise>
-                                        <td class="page-item">
-                                        <td><a class="page-link" href="/board/paging?page=${i}">${i}</a></td>
-                                        </td>
-                                    </c:otherwise>
-                                </c:choose>
-                            </c:forEach>
-                            <c:choose>
-                                <c:when test="${paging.page>=paging.maxPage}">
-                                    <td class="page-item disabled">
-                                    <td><a class="page-link">[다음]</a></td>
-                                    </td>
-                                </c:when>
-                                <c:otherwise>
-                                    <td class="page-item">
-                                    <td><a class="page-link" href="/board/paging?page=${paging.page+1}">[다음]</a>
-                                    </td>
-                                    <td/>
-                                </c:otherwise>
-                            </c:choose>
-                        </tr>
-                    </table>
-                </div>
             </div>
-        </div>
         </div>
     </section>
 </main>
