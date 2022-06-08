@@ -127,7 +127,8 @@
                         <li><a href="/board/paging" class="text-white" style="font-size: 18px">Notice</a></li>
                         <li><a href="#" class="text-white" style="font-size: 18px">Event</a></li>
                         <c:if test="${sessionScope.loginMemberId == 'admin'}">
-                            <li><a href="/board/saveFile" class="text-white" style="font-size: 18px">Manage notice</a></li>
+                            <li><a href="/board/saveFile" class="text-white" style="font-size: 18px">Manage notice</a>
+                            </li>
                         </c:if>
                     </ul>
                 </div>
@@ -152,23 +153,47 @@
 <main>
     <section class="py-5 text-center container">
         <div class="row py-lg-5">
-            <div class="col-lg-5 col-md-8 mx-auto">
+            <div class="col-lg-12 col-md-8 mx-auto">
                 <h1 class="fw-light" style="font-family: 'Pacifico', cursive;">SH Travel Agency</h1>
-                <p class="lead text-muted" style="font-family: 'IM_Hyemin-Bold'; font-size: 24px;"><br>낭만이 있는 포르투 여행<br></p>
+                <p class="lead text-muted" style="font-family: 'IM_Hyemin-Bold'; font-size: 24px;"><br>Trip to Porto<br>
+                </p>
                 <form action="/board/saveFile" method="post" enctype="multipart/form-data">
                     <div align="left"
                          style="background-color: #f9f2f9; padding:20px; font-family:'IM_Hyemin-Bold'; font-size: 22px; border-radius: 20px;">
                         <br>
-                        작성자<br>
-                        <input class="form-control mb-2" type="text" name="memberId" value="${sessionScope.loginMemberId}"
-                               readonly><br>
-                        제목<br>
-                        <input class="form-control mb-2" type="text" name="boardTitle" placeholder="제목"><br>
-                        내용<br>
-                        <textarea class="form-control mb-2" name="boardContents" rows="10" cols="50"></textarea><br>
-                        첨부파일<br>
-                        <input type="file" name="boardFile" value="file"><br><br>
-                        <input type="submit" id="SaveButton" value="글작성">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                                        <div class="carousel-inner">
+                                            <div class="carousel-item active">
+                                                <img src="../../../resources/img/tripporto.jpg" height="600" width="600"
+                                                     class="d-block w-100" alt="...">
+                                            </div>
+                                            <div class="carousel-item">
+                                                <img src="../../../resources/img/tripporto2.jpg" height="600" width="600"
+                                                     class="d-block w-100" alt="...">
+                                            </div>
+                                            <div class="carousel-item">
+                                                <img src="../../../resources/img/tripporto3.jpg" height="600" width="600"
+                                                     class="d-block w-100" alt="...">
+                                            </div>
+                                            <button class="carousel-control-prev" type="button"
+                                                    data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                                <span class="visually-hidden">Previous</span>
+                                            </button>
+                                            <button class="carousel-control-next" type="button"
+                                                    data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                                <span class="visually-hidden">Next</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6">재즈와 함께하는 낭만의 포르투</div>
+                            </div>
+                        </div>
                     </div>
                 </form>
             </div>
