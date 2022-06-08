@@ -157,14 +157,32 @@
         </div>
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="/resources/img/porto2.jpg" width="1000" height="500" class="d-block w-100" alt="...">
+                <img src="/resources/img/beach.jpg" width="900" height="600" class="d-block w-100" alt="...">
                 <div class="carousel-caption d-none d-md-block">
                     <section class="py-5 text-center container">
                         <div class="row py-lg-5">
-                            <div class="col-lg-6 col-md-8 mx-auto">
+                            <div class="col-lg-8 col-md-8 mx-auto">
+                                <h1 class="fw-light" style="font-family: 'Pacifico', cursive; color: white; font-size: 50px;">SH Travel Agency</h1><br>
+                                <p class="lead text-muted" style="font-family: 'IM_Hyemin-Bold'; font-size: 30px; -webkit-text-stroke: 1px black;";>
+                                    Do you want to have the perfect trip in Portugal? <br> If so, welcome to SH travel agency                                </p>
+                                <p>
+                                    <a href="/porto/firstPorto" class="btn btn-info my-2" style="font-weight: bold">Go Porto!</a>
+                                    <a href="#" class="btn btn-info my-2" style="font-weight: bold">Go Lisbon!</a>
+                                </p>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="/resources/img/trip5.png" width="900" height="600" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <section class="py-5 text-center container">
+                        <div class="row py-lg-5">
+                            <div class="col-lg-11 col-md-8 mx-auto" align="right">
                                 <h1 class="fw-light" style="font-family: 'Pacifico', cursive;">SH Travel Agency</h1><br>
                                 <p class="lead text-muted" style="font-family: 'IM_Hyemin-Bold'; font-weight:bold; font-size: 19px; -webkit-text-stroke: 1px black;
-                                    background-color: rgba( 255, 255, 255, 0.4 )";>
+                                    background-color: rgba( 255, 255, 255, 0.1 )";>
                                     포르투갈을 여행하시면 가장
                                     다양하고
                                     흥미로운 목적지를
@@ -182,14 +200,13 @@
                 </div>
             </div>
             <div class="carousel-item">
-                <img src="/resources/img/porto3.jpg" width="1000" height="500" class="d-block w-100" alt="...">
+                <img src="/resources/img/plane.jpg" width="900" height="600" class="d-block w-100" alt="...">
                 <div class="carousel-caption d-none d-md-block">
                     <section class="py-5 text-center container">
                         <div class="row py-lg-5">
-                            <div class="col-lg-6 col-md-8 mx-auto">
+                            <div class="col-lg-11 col-md-8 mx-auto" align="right">
                                 <h1 class="fw-light" style="font-family: 'Pacifico', cursive;">SH Travel Agency</h1><br>
-                                <p class="lead text-muted" style="font-family: 'IM_Hyemin-Bold'; font-weight:bold; font-size: 19px; -webkit-text-stroke: 1px black;
-                                    background-color: rgba( 255, 255, 255, 0.4 )";>
+                                <p class="lead text-muted" style="font-family: 'IM_Hyemin-Bold'; font-weight:bold; font-size: 19px; -webkit-text-stroke: 1px black;";>
                                     포르투갈을 여행하시면 가장
                                     다양하고
                                     흥미로운 목적지를
@@ -198,32 +215,7 @@
                                     느껴보세요.<br>
                                     SH Travel Agency가 이 모든 것을 경험하실 수 있는 곳으로 안내합니다.</p>
                                 <p>
-                                    <a href="#" class="btn btn-info my-2" style="font-weight: bold">Go Porto!</a>
-                                    <a href="#" class="btn btn-info my-2" style="font-weight: bold">Go Lisbon!</a>
-                                </p>
-                            </div>
-                        </div>
-                    </section>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <img src="/resources/img/porto4.jpg" width="1000" height="500" class="d-block w-100" alt="...">
-                <div class="carousel-caption d-none d-md-block">
-                    <section class="py-5 text-center container">
-                        <div class="row py-lg-5">
-                            <div class="col-lg-6 col-md-8 mx-auto">
-                                <h1 class="fw-light" style="font-family: 'Pacifico', cursive;">SH Travel Agency</h1><br>
-                                <p class="lead text-muted" style="font-family: 'IM_Hyemin-Bold'; font-weight:bold; font-size: 19px; -webkit-text-stroke: 1px black;
-                                    background-color: rgba( 255, 255, 255, 0.4 )";>
-                                    포르투갈을 여행하시면 가장
-                                    다양하고
-                                    흥미로운 목적지를
-                                    방문하실 수 있습니다. <br> SH Travel Agency를 이용해 여행하며 알가르브(Algarve) 해변의 백사장, <br>맛있는 포르토 와인 그리고 리스본의 마법 같은
-                                    활력을
-                                    느껴보세요.<br>
-                                    SH Travel Agency가 이 모든 것을 경험하실 수 있는 곳으로 안내합니다.</p>
-                                <p>
-                                    <a href="#" class="btn btn-info my-2" style="font-weight: bold">Go Porto!</a>
+                                    <a href="/porto/firstPorto" class="btn btn-info my-2" style="font-weight: bold">Go Porto!</a>
                                     <a href="#" class="btn btn-info my-2" style="font-weight: bold">Go Lisbon!</a>
                                 </p>
                             </div>
