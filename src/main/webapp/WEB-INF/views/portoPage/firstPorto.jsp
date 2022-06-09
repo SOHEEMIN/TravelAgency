@@ -247,6 +247,16 @@
                                                 </select>
                                             </div>
                                             <div class="col-3" style="font-size: 21px;">
+                                                <li>출발 일자</li>
+                                            </div>
+                                            <div class="col-9" style="font-size: 21px;">
+                                                <div class="input-group input-daterange">
+                                                    <input type="date" class="form-control input1"
+                                                           id="datepicker" placeholder="Start Date" style="height: 50px; font-size: 21px;">
+                                                </div>
+                                            </div>
+                                            <p></p>
+                                            <div class="col-3" style="font-size: 21px;">
                                                 <li>기본 금액</li>
                                             </div>
                                             <div class="col-9" style="font-size: 21px;">
@@ -259,7 +269,7 @@
                                                 <li>총 금액</li>
                                             </div>
                                             <div class="col-9" style="font-size: 21px;">
-                                                <input type="text" id="result" value="0" readonly>원
+                                                <input type="text" id="result" value="0"  style="border: none; width: 110px; background: transparent;" readonly>원
                                             </div>
                                             <p></p>
                                         </div>
@@ -333,12 +343,13 @@
             const sum = (hotel2 + parseInt(result));
             document.getElementById("result").value = sum;
             document.getElementById("price2").value = sum;
-        }else if (selectHotel==basic){
+        } else if (selectHotel == basic) {
             const sum = (basic + parseInt(result));
             document.getElementById("result").value = sum;
             document.getElementById("price2").value = sum;
         }
     }
+
     function tour() {
         let selectTour = document.getElementById("selectTour").value;
         let wine = document.getElementById("wine").value;
@@ -358,14 +369,20 @@
         } else if (selectTour == nata) {
             const sum = (nata + parseInt(result2));
             document.getElementById("result").value = sum;
-        }else if(selectTour == basic2){
+        } else if (selectTour == basic2) {
             const sum = (basic2 + parseInt(result2));
             document.getElementById("result").value = sum;
-        }else if(selectTour == no){
+        } else if (selectTour == no) {
             const sum = (no + parseInt(result2));
             document.getElementById("result").value = sum;
         }
 
     }
+
+    $(function () {
+        $("#datepiker").datepicker({
+            dateFormat: 'yy-mm-dd'
+        });
+    });
 </script>
 </html>

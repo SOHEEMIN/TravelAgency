@@ -9,27 +9,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7b9cca21-353e-4b46-86cc-2f9be7a51b06" name="Changes" comment="공지사항 작성 및 페이징 목록화 구현">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/a7edc223-1c90-4f0a-9fec-5a6ce244da37.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/a7edc223-1c90-4f0a-9fec-5a6ce244da37.xml" afterDir="false" />
+    <list default="true" id="7b9cca21-353e-4b46-86cc-2f9be7a51b06" name="Changes" comment="여행상품 구현">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/its/travelAgency/Controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/its/travelAgency/Controller/HomeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/its/travelAgency/Controller/PortoController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/its/travelAgency/DTO/PageDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/its/travelAgency/DTO/PortoDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/its/travelAgency/Repository/PortoRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/its/travelAgency/Service/PortoService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/portoMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mybatis-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mybatis-config.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/boardPage/pagingList.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/boardPage/pagingList.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/boardPage/saveFile.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/boardPage/saveFile.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/boardPage/update.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/boardPage/update.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/memberPage/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/memberPage/login.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/memberPage/saveFile.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/memberPage/saveFile.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/js/jquery.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/jquery.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/portoPage/firstPorto.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/portoPage/firstPorto.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/portoPage/pagingList.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/portoPage/saveFile.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/img/p1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/img/p1.jpg" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,9 +24,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="spring-beans.schema" />
-        <option value="CSS File" />
         <option value="Jsp File" />
         <option value="Class" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -97,11 +81,11 @@
       <recent name="D:\development_msh\source\travelAgency\src\main\webapp\WEB-INF" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\travel\TravelAgency\src\main\webapp\resources" />
       <recent name="D:\development_msh\TravelAgency\src\main\webapp\resources\img" />
       <recent name="D:\development_msh\source\travelAgency\src\main\webapp\WEB-INF\views" />
       <recent name="D:\development_msh\source\travelAgency\src\main\webapp\WEB-INF\views\memberPage" />
       <recent name="D:\development_msh\source\travelAgency\src\main\webapp\resources\css" />
-      <recent name="D:\development_msh\source\travelAgency\src\main\webapp\resources" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.its.travelAgency.DTO" />
@@ -238,7 +222,7 @@
       <workItem from="1654644503841" duration="24655000" />
       <workItem from="1654687879687" duration="7961000" />
       <workItem from="1654731856305" duration="60000" />
-      <workItem from="1654731956515" duration="24846000" />
+      <workItem from="1654731956515" duration="31470000" />
     </task>
     <task id="LOCAL-00001" summary="git commit test">
       <created>1653971487845</created>
@@ -317,7 +301,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654670952486</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="여행상품 구현">
+      <created>1654761792965</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1654761792965</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -342,6 +333,18 @@
     <MESSAGE value="git commit test" />
     <MESSAGE value="git commit test2" />
     <MESSAGE value="공지사항 작성 및 페이징 목록화 구현" />
-    <option name="LAST_COMMIT_MESSAGE" value="공지사항 작성 및 페이징 목록화 구현" />
+    <MESSAGE value="여행상품 구현" />
+    <option name="LAST_COMMIT_MESSAGE" value="여행상품 구현" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/portoPage/firstPorto.jsp</url>
+          <line>15</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
