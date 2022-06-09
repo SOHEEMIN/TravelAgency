@@ -103,7 +103,7 @@
                 <div class="col-sm-2 offset-md-0.1 py-0.1">
                     <h4 class="text-white" style="font-family: 'Pacifico', cursive;font-size: 30px">Trip</h4>
                     <ul class="list-unstyled">
-                        <li><a href="#" class="text-white" style="font-size: 18px">Trip to Porto</a></li>
+                        <li><a href="" class="text-white" style="font-size: 18px">Trip to Porto</a></li>
                         <li><a href="#" class="text-white" style="font-size: 18px">Trip to Lisbon</a></li>
                     </ul>
                 </div>

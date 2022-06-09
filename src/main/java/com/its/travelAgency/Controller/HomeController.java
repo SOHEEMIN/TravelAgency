@@ -9,4 +9,8 @@ public class HomeController {
     public String index() {
         return "index";
     }
+    @GetMapping("/porto/firstPorto")
+    public String firstPorto () {
+        return "/portoPage/firstPorto";
+    }
 }

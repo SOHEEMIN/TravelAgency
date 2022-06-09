@@ -167,15 +167,17 @@
                                     <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                                         <div class="carousel-inner">
                                             <div class="carousel-item active">
-                                                <img src="../../../resources/img/tripporto.jpg" height="600" width="600"
+                                                <img src="../../../resources/img/p1.jpg" height="600" width="600"
                                                      class="d-block w-100" alt="...">
                                             </div>
                                             <div class="carousel-item">
-                                                <img src="../../../resources/img/tripporto2.jpg" height="600" width="600"
+                                                <img src="../../../resources/img/tripporto2.jpg" height="600"
+                                                     width="600"
                                                      class="d-block w-100" alt="...">
                                             </div>
                                             <div class="carousel-item">
-                                                <img src="../../../resources/img/tripporto3.jpg" height="600" width="600"
+                                                <img src="../../../resources/img/tripporto3.jpg" height="600"
+                                                     width="600"
                                                      class="d-block w-100" alt="...">
                                             </div>
                                             <button class="carousel-control-prev" type="button"
@@ -191,7 +193,78 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-6">재즈와 함께하는 낭만의 포르투</div>
+                                <div class="col-6"><h1 style="font-weight: bold; font-size: 30px;">🎼재즈와 함께하는 낭만의
+                                    포르투</h1>
+                                    <p></p>
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-3" style="font-size: 21px;">
+                                                <li>상품 특징</li>
+                                            </div>
+                                            <div class="col-9" style="font-size: 21px;">
+                                                포르투의 멋진 야경을 감상하며 재즈를 즐기는 낭만이 가득한 5박 6일 패키지여행 상품입니다.
+                                            </div>
+                                            <p></p>
+                                            <div class="col-3" style="font-size: 21px;">
+                                                <li>여행 지역</li>
+                                            </div>
+                                            <div class="col-9" style="font-size: 21px;">
+                                                포르투 3박 / 코스타노바 2박
+                                            </div>
+                                            <p></p>
+                                            <div class="col-3" style="font-size: 21px;">
+                                                <li>이용 항공</li>
+                                            </div>
+                                            <div class="col-9" style="font-size: 21px;">
+                                                대한항공 [인천출발] 08:00 / 18:40 <br> 대한항공 [리스본출발] 10:30 / 21:05
+                                            </div>
+                                            <p></p>
+                                            <div class="col-3" style="font-size: 21px;">
+                                                <li>숙박 시설</li>
+                                            </div>
+                                            <div class="col-9" style="font-size: 21px;">
+                                                (택1)인터컨티넨탈 포르토 / 쉐라톤 포르토
+                                                <select class="form-select form-select-lg mb-3"
+                                                        aria-label=".form-select-lg example" onchange="hotel()"
+                                                        id="selectHotel">
+                                                    <option value="0" id="basic">호텔 선택</option>
+                                                    <option value="200000" id="hotel1">인터컨티넨탈 포르토(+200,000원)</option>
+                                                    <option value="0" id="hotel2">쉐라톤 포르토(+0원)</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-3" style="font-size: 21px;">
+                                                <li>현지 투어</li>
+                                            </div>
+                                            <div class="col-9" style="font-size: 21px;">
+                                                (택1)와이너리 투어 / 나타 투어(에그타르트)
+                                                <select class="form-select form-select-lg mb-3"
+                                                        aria-label=".form-select-lg example" onchange="tour()"
+                                                        id="selectTour">
+                                                    <option value="0" id="basic2">투어 선택</option>
+                                                    <option value="50000" id="wine">와이너리 투어(+50,000원)</option>
+                                                    <option value="30000" id="nata">나타 투어(+30,000원)</option>
+                                                    <option value="0" id="no">투어 선택안함(+0원)</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-3" style="font-size: 21px;">
+                                                <li>기본 금액</li>
+                                            </div>
+                                            <div class="col-9" style="font-size: 21px;">
+                                                <h>2,500,000원</h>
+                                            </div>
+                                            <p></p>
+                                            <input type="hidden" value="2500000" id="price">
+                                            <input type="hidden" value="2500000" id="price2">
+                                            <div class="col-3" style="font-size: 21px;">
+                                                <li>총 금액</li>
+                                            </div>
+                                            <div class="col-9" style="font-size: 21px;">
+                                                <input type="text" id="result" value="0" readonly>원
+                                            </div>
+                                            <p></p>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -241,5 +314,58 @@
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
 </body>
+<script>
+    function hotel() {
+        let selectHotel = document.getElementById("selectHotel").value;
+        let hotel1 = document.getElementById("hotel1").value;
+        let hotel2 = document.getElementById("hotel2").value;
+        let result = document.getElementById("price").value;
+        let basic = document.getElementById("basic").value;
+        selectHotel = parseInt(selectHotel);
+        hotel1 = parseInt(hotel1);
+        hotel2 = parseInt(hotel2);
+        basic = parseInt(basic);
+        if (selectHotel == hotel1) {
+            const sum = (hotel1 + parseInt(result));
+            document.getElementById("result").value = sum;
+            document.getElementById("price2").value = sum;
+        } else if (selectHotel == hotel2) {
+            const sum = (hotel2 + parseInt(result));
+            document.getElementById("result").value = sum;
+            document.getElementById("price2").value = sum;
+        }else if (selectHotel==basic){
+            const sum = (basic + parseInt(result));
+            document.getElementById("result").value = sum;
+            document.getElementById("price2").value = sum;
+        }
+    }
+    function tour() {
+        let selectTour = document.getElementById("selectTour").value;
+        let wine = document.getElementById("wine").value;
+        let nata = document.getElementById("nata").value;
+        let result2 = document.getElementById("price2").value;
+        let basic2 = document.getElementById("basic2").value;
+        let no = document.getElementById("no").value;
+        selectTour = parseInt(selectTour);
+        wine = parseInt(wine);
+        nata = parseInt(nata);
+        basic2 = parseInt(basic2);
+        no = parseInt(no);
+        if (selectTour == wine) {
+            const sum = (wine + parseInt(result2));
+            console.log(sum)
+            document.getElementById("result").value = sum;
+        } else if (selectTour == nata) {
+            const sum = (nata + parseInt(result2));
+            document.getElementById("result").value = sum;
+        }else if(selectTour == basic2){
+            const sum = (basic2 + parseInt(result2));
+            document.getElementById("result").value = sum;
+        }else if(selectTour == no){
+            const sum = (no + parseInt(result2));
+            document.getElementById("result").value = sum;
+        }
 
+    }
+</script>
 </html>

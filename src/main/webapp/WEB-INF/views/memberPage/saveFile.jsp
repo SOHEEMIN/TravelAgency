@@ -117,18 +117,11 @@
                 <div class="col-sm-2 offset-md-0.1 py-0.1">
                     <h4 class="text-white" style="font-family: 'Pacifico', cursive; font-size: 30px">members</h4>
                     <ul class="list-unstyled">
-                        <c:if test="${sessionScope.loginMemberId == null}">
-                            <li><a href="/member/login" class="text-white" style="font-size: 18px">Login</a></li>
-                            <li><a href="/member/saveFile" class="text-white" style="font-size: 18px">Join us</a></li>
-                        </c:if>
-                        <c:if test="${sessionScope.loginMemberId != null}">
-                            <li><a href="/member/logout" class="text-white" style="font-size: 18px">Logout</a></li>
-                        </c:if>
-                        <li><a href="/board/paging" class="text-white" style="font-size: 18px">Notice</a></li>
+                        <li><a href="/member/login" class="text-white" style="font-size: 18px">Login</a></li>
+                        <li><a href="/member/saveFile" class="text-white" style="font-size: 18px">Join us</a></li>
+                        <li><a href="/board/saveFile" class="text-white" style="font-size: 18px">Notice</a></li>
                         <li><a href="#" class="text-white" style="font-size: 18px">Event</a></li>
-                        <c:if test="${sessionScope.loginMemberId == 'admin'}">
-                            <li><a href="/board/saveFile" class="text-white" style="font-size: 18px">Manage notice</a></li>
-                        </c:if>
+
                     </ul>
                 </div>
             </div>
@@ -152,25 +145,112 @@
 <main>
     <section class="py-5 text-center container">
         <div class="row py-lg-5">
-            <div class="col-lg-5 col-md-8 mx-auto">
+            <div class="col-lg-6 col-md-8 mx-auto">
                 <h1 class="fw-light" style="font-family: 'Pacifico', cursive;">SH Travel Agency</h1>
-                <p class="lead text-muted" style="font-family: 'IM_Hyemin-Bold'; font-size: 24px;"><br>공지사항<br></p>
-                <form action="/board/saveFile" method="post" enctype="multipart/form-data">
-                    <div align="left"
-                         style="background-color: #f9f2f9; padding:20px; font-family:'IM_Hyemin-Bold'; font-size: 22px; border-radius: 20px;">
-                        <br>
-                        작성자<br>
-                        <input class="form-control mb-2" type="text" name="memberId" value="${sessionScope.loginMemberId}"
-                               readonly><br>
-                        제목<br>
-                        <input class="form-control mb-2" type="text" name="boardTitle" placeholder="제목"><br>
-                        내용<br>
-                        <textarea class="form-control mb-2" name="boardContents" rows="10" cols="50"></textarea><br>
-                        첨부파일<br>
-                        <input type="file" name="boardFile" value="file"><br><br>
-                        <input type="submit" id="SaveButton" value="글작성">
+                <p class="lead text-muted" style="font-family: 'IM_Hyemin-Bold'; font-size: 24px;"><br>회원가입<br></p>
+                <div class="col col-lg-12">
+                    <div id="wrap">
+                        <form action="/member/saveFile" method="post" enctype="multipart/form-data">
+                            <div align="left"
+                                 style="background-color: #f9f2f9; padding:20px; font-family:'IM_Hyemin-Bold'; font-size: 22px; border-radius: 20px;">
+                                <br>
+                                아이디<br>
+                                <input type="text" name="memberId" onblur="duplicateCheck()" placeholder="6~16자 이내로 작성"
+                                       id="memberId">
+                                <p id="dup-check-result"></p>
+                                비밀번호<br>
+                                <input type="password" name="memberPassword" placeholder="비밀번호 8~16자 숫자"
+                                       id="memberPassword" onblur="pwCheck()">
+                                <p id="password-check-result"></p>
+                                비밀번호 재확인<br>
+                                <input type="password" name="memberPassword2" onblur="pwCheck2()" placeholder="비밀번호 확인"
+                                       id="memberPassword2">
+                                <p id="pw-check-result"></p>
+                                이름<br> <input type="text" name="memberName" id="memberName" value=""> <br></br>
+                                생년월일<br>
+                                <input type="hidden" name="memberBirth" id="memberBirth">
+                                <select name="year" id="year">
+                                    <option value="">-- 선택 --</option>
+                                    <option value="1987">1987</option>
+                                    <option value="1988">1988</option>
+                                    <option value="1989">1989</option>
+                                    <option value="1990">1990</option>
+                                    <option value="1991">1991</option>
+                                    <option value="1992">1992</option>
+                                    <option value="1993">1993</option>
+                                    <option value="1994">1994</option>
+                                    <option value="1995">1995</option>
+                                    <option value="1996">1996</option>
+                                    <option value="1997">1997</option>
+                                    <option value="1998">1998</option>
+                                    <option value="1999">1999</option>
+                                    <option value="2000">2000</option>
+                                </select>
+                                <select name="month" id="month">
+                                    <option value="">-- 선택 --</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
+                                    <option value="11">11</option>
+                                    <option value="12">12</option>
+                                </select>
+                                <select name="day" id="day" onchange="birth()">
+                                    <option value="">-- 선택 --</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
+                                    <option value="11">11</option>
+                                    <option value="12">12</option>
+                                    <option value="13">13</option>
+                                    <option value="14">14</option>
+                                    <option value="15">15</option>
+                                    <option value="16">16</option>
+                                    <option value="17">17</option>
+                                    <option value="18">18</option>
+                                    <option value="19">19</option>
+                                    <option value="20">20</option>
+                                    <option value="21">21</option>
+                                    <option value="22">22</option>
+                                    <option value="23">23</option>
+                                    <option value="24">24</option>
+                                    <option value="25">25</option>
+                                    <option value="26">26</option>
+                                    <option value="27">27</option>
+                                    <option value="28">28</option>
+                                    <option value="29">29</option>
+                                    <option value="30">30</option>
+                                    <option value="31">31</option>
+                                </select>
+                                <br><br>
+                                이메일<br><input type="text" id="memberEmail" name="memberEmail" onblur="email_check()">
+                                <p id="email_result"></p>
+                                휴대전화<br>
+                                <input type="text" name="memberPhone" id="memberPhone" onblur="mbCheck()"
+                                       placeholder="010-****-****">
+                                <p id="mobile-check-result"></p>
+                                <input type="button" name="certification" value="인증번호 받기"><br></br>
+                                <input type="text" name="certification" placeholder="인증번호를 입력하세요">
+                                <input type="button" name="certification" value="확인"><br><br>
+                                <input type="submit" value="가입">
+                            </div>
+                        </form>
                     </div>
-                </form>
+                    </form>
+                </div>
             </div>
         </div>
     </section>
@@ -216,5 +296,95 @@
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
 </body>
+<script>
+    function duplicateCheck() {
+        console.log(`memberId:  ${memberId}`);
+        const memberId = document.getElementById("memberId").value;
+        const checkResult = document.getElementById("dup-check-result");
+        const exp = /^(?=.*[a-z])(?=.*\d)[a-z\d]{5,16}$/;
+        $.ajax({
+            type: "post",
+            url: "duplicate-check",
+            data: {"memberId": memberId},
+            dataType: "text",
+            success: function (result) {
+                if (result == "ok") {
+                    if (memberId.match(exp)) {
+                        checkResult.innerHTML = "사용가능한 아이디입니다.";
+                        checkResult.style.color = "green";
+                    } else {
+                        checkResult.innerHTML = "영문소문자와 숫자를 포함한 5~16글자 입력"
+                        checkResult.style.color = "red";
+                    }
+                } else {
+                    checkResult.innerHTML = "이미 사용중인 아이디입니다.";
+                    checkResult.style.color = "red";
+                }
+            }, error: function () {
+                alert("형식에 맞지 않은 아이디입니다.");
+            }
+        });
+    }
 
+    function pwCheck() {
+        const memberPassword = document.getElementById("memberPassword").value;
+        const checkResult = document.getElementById("password-check-result");
+        const exp = /^(?=.*[a-z])(?=.*\d)(?=.*[-_!#$])[A-Za-z\d-_!#$]{8,16}$/;
+        if (memberPassword.match(exp)) {
+            checkResult.innerHTML = "좋은 비밀번호네요!"
+        } else {
+            checkResult.innerHTML = "영어소문자, 숫자, 특수문자를 포함하여 8~16글자"
+            checkResult.style.color = "red";
+        }
+
+    }
+
+    function pwCheck2() {
+        const memberPassword = document.getElementById("memberPassword").value;
+        const memberPassword2 = document.getElementById("memberPassword2").value;
+        const checkResult = document.getElementById("pw-check-result");
+        if (memberPassword == memberPassword2) {
+            checkResult.innerHTML = "일치합니다.";
+            checkResult.style.color = "green";
+        } else {
+            checkResult.innerHTML = "일치하지않습니다.";
+            checkResult.style.color = "red";
+        }
+    }
+
+    function mbCheck() {
+        const memberPhone = document.getElementById("memberPhone").value;
+        const checkResult = document.getElementById("mobile-check-result");
+        const exp = /^01([0|1|6|7|8|9])-?([0-9]{3,4})-?([0-9]{4})$/;
+        if (memberPhone.match(exp)) {
+            checkResult.innerHTML = "사용 가능한 전화번호입니다."
+            checkResult.style.color = "green";
+        } else {
+            checkResult.innerHTML = "다시 입력해주세요.";
+            checkResult.style.color = "red";
+        }
+    }
+
+    function birth() {
+        let year = document.getElementById("year").value;
+        let month = document.getElementById("month").value;
+        let day = document.getElementById("day").value;
+        let Birth = year + "-" + month + "-" + day;
+        console.log(Birth);
+        document.getElementById("memberBirth").value = Birth;
+    }
+
+    function email_check() {
+        let email_check = document.getElementById("memberEmail").value;
+        let result = document.getElementById("email_result");
+        let exp = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/;
+        if (email_check.match(exp)) {
+            result.innerHTML = "사용가능한 이메일 입니다.";
+            result.style.color = "green";
+        } else {
+            result.innerHTML = "이메일 주소를 다시 확인해주세요";
+            result.style.color = "red";
+        }
+    }
+</script>
 </html>

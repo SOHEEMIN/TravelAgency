@@ -166,7 +166,7 @@
                                 <p class="lead text-muted" style="font-family: 'IM_Hyemin-Bold'; font-size: 30px; -webkit-text-stroke: 1px black;";>
                                     Do you want to have the perfect trip in Portugal? <br> If so, welcome to SH travel agency                                </p>
                                 <p>
-                                    <a href="/porto/firstPorto" class="btn btn-info my-2" style="font-weight: bold">Go Porto!</a>
+                                    <a href="/item/firstPorto" class="btn btn-info my-2" style="font-weight: bold">Go Porto!</a>
                                     <a href="#" class="btn btn-info my-2" style="font-weight: bold">Go Lisbon!</a>
                                 </p>
                             </div>
@@ -191,7 +191,7 @@
                                     느껴보세요.<br>
                                     SH Travel Agency가 이 모든 것을 경험하실 수 있는 곳으로 안내합니다.</p>
                                 <p>
-                                    <a href="/porto/firstPorto" class="btn btn-info my-2" style="font-weight: bold">Go Porto!</a>
+                                    <a href="/item/firstPorto" class="btn btn-info my-2" style="font-weight: bold">Go Porto!</a>
                                     <a href="#" class="btn btn-info my-2" style="font-weight: bold">Go Lisbon!</a>
                                 </p>
                             </div>
@@ -215,7 +215,7 @@
                                     느껴보세요.<br>
                                     SH Travel Agency가 이 모든 것을 경험하실 수 있는 곳으로 안내합니다.</p>
                                 <p>
-                                    <a href="/porto/firstPorto" class="btn btn-info my-2" style="font-weight: bold">Go Porto!</a>
+                                    <a href="/item/firstPorto" class="btn btn-info my-2" style="font-weight: bold">Go Porto!</a>
                                     <a href="#" class="btn btn-info my-2" style="font-weight: bold">Go Lisbon!</a>
                                 </p>
                             </div>
