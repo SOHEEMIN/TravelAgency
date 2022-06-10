@@ -20,6 +20,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Passion+One:wght@900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
+
 
     <style>
         .bd-placeholder-img {
@@ -286,12 +288,9 @@
                                             <div class="col-3" style="font-size: 21px;">
                                             </div>
                                             <div align="right" class="col-9" style="font-size: 21px;">
-                                                <button type="button" onclick="shareWith()" class="btn btn-outline-danger">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-share" viewBox="0 0 16 16">
-                                                        <path d="M13.5 1a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM11 2.5a2.5 2.5 0 1 1 .603 1.628l-6.718 3.12a2.499 2.499 0 0 1 0 1.504l6.718 3.12a2.5 2.5 0 1 1-.488.876l-6.718-3.12a2.5 2.5 0 1 1 0-3.256l6.718-3.12A2.5 2.5 0 0 1 11 2.5zm-8.5 4a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm11 5.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3z"></path>
-                                                    </svg>
-                                                    공유하기
-                                                </button>
+                                                <img src="../../../resources/img/icon-twitter.png" onclick="javascript:shareTwitter();">
+                                                <img src="../../../resources/img/icon-facebook.png" onclick="javascript:shareFacebook();">
+                                                <img src="../../../resources/img/icon-kakao.png" id="kakao" onclick="javascript:shareKakao();">
                                                 <button type="button" onclick="cart()" class="btn btn-outline-danger">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart-plus" viewBox="0 0 16 16">
                                                         <path d="M9 5.5a.5.5 0 0 0-1 0V7H6.5a.5.5 0 0 0 0 1H8v1.5a.5.5 0 0 0 1 0V8h1.5a.5.5 0 0 0 0-1H9V5.5z"></path>
@@ -423,6 +422,39 @@
         cartSubmitForm.submit(); //노란줄있지만 잘되나..?
         // <a href="/cart/save"></a>
     }
+
+    function shareTwitter() {
+        var sendText = "소희 포트폴리오"; // 전달할 텍스트
+        var sendUrl = "SOHEEMIN.github.io"; // 전달할 URL
+        window.open("https://twitter.com/intent/tweet?text=" + sendText + "&url=" + sendUrl);
+    }
+
+    function shareFacebook() {
+        var sendUrl = "SOHEEMIN.github.io"; // 전달할 URL
+        window.open("http://www.facebook.com/sharer/sharer.php?u=" + sendUrl);
+    }
+
+    function shareKakao() {
+
+        // 사용할 앱의 JavaScript 키 설정
+        Kakao.init('51197c5fa7b097dab7da52a2e4fa9e48');
+
+        // 카카오링크 버튼 생성
+        Kakao.Link.createDefaultButton({
+            container: '#kakao', // 카카오공유버튼ID
+            objectType: 'feed',
+            content: {
+                title: "소희의 노션", // 보여질 제목
+                description: "소희의 노션입니다.", // 보여질 설명
+                imageUrl: "https://notion.so", // 콘텐츠 URL
+                link: {
+                    webUrl: "https://notion.so"
+                }
+            }
+        });
+    }
+
+
 
 </script>
 </html>
