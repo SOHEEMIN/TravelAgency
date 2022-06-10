@@ -157,7 +157,7 @@
                 <h1 class="fw-light" style="font-family: 'Pacifico', cursive;">SH Travel Agency</h1>
                 <p class="lead text-muted" style="font-family: 'IM_Hyemin-Bold'; font-size: 24px;"><br>Trip to Porto<br>
                 </p>
-                <form action="/board/saveFile" method="post" enctype="multipart/form-data">
+                <form action="/cart/save" method="post" name="cartSubmitForm">
                     <div align="left"
                          style="background-color: #f9f2f9; padding:20px; font-family:'IM_Hyemin-Bold'; font-size: 22px; border-radius: 20px;">
                         <br>
@@ -193,11 +193,20 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-6"><h1 style="font-weight: bold; font-size: 30px;">🎼재즈와 함께하는 낭만의
+                                <div class="col-6"><h1 style="font-weight: bold; font-size: 30px;" >🎼재즈와 함께하는 낭만의
                                     포르투</h1>
+                                    <input type="hidden" name="itemTitle" value="재즈와 함께하는 낭만의 포르투">
                                     <p></p>
                                     <div class="container">
                                         <div class="row">
+                                            <div class="col-3" style="font-size: 21px;">
+                                                <li>상품 번호</li>
+                                            </div>
+                                            <div class="col-9" style="font-size: 21px;">
+                                                001
+                                                <input type="hidden" name="i_id" value="001">
+                                            </div>
+                                            <p></p>
                                             <div class="col-3" style="font-size: 21px;">
                                                 <li>상품 특징</li>
                                             </div>
@@ -226,10 +235,10 @@
                                                 (택1)인터컨티넨탈 포르토 / 쉐라톤 포르토
                                                 <select class="form-select form-select-lg mb-3"
                                                         aria-label=".form-select-lg example" onchange="hotel()"
-                                                        id="selectHotel">
+                                                        id="selectHotel" name="Hotel">
                                                     <option value="0" id="basic">호텔 선택</option>
-                                                    <option value="200000" id="hotel1">인터컨티넨탈 포르토(+200,000원)</option>
-                                                    <option value="0" id="hotel2">쉐라톤 포르토(+0원)</option>
+                                                    <option value="200000" id="hotel1" name="인터컨티넨탈">인터컨티넨탈 포르토(+200,000원)</option>
+                                                    <option value="0" id="hotel2" name="쉐라톤">쉐라톤 포르토(+0원)</option>
                                                 </select>
                                             </div>
                                             <div class="col-3" style="font-size: 21px;">
@@ -239,11 +248,11 @@
                                                 (택1)와이너리 투어 / 나타 투어(에그타르트)
                                                 <select class="form-select form-select-lg mb-3"
                                                         aria-label=".form-select-lg example" onchange="tour()"
-                                                        id="selectTour">
+                                                        id="selectTour" name="Tour">
                                                     <option value="0" id="basic2">투어 선택</option>
-                                                    <option value="50000" id="wine">와이너리 투어(+50,000원)</option>
-                                                    <option value="30000" id="nata">나타 투어(+30,000원)</option>
-                                                    <option value="0" id="no">투어 선택안함(+0원)</option>
+                                                    <option value="50000" id="wine" name="wine">와이너리 투어(+50,000원)</option>
+                                                    <option value="30000" id="nata" name="nata">나타 투어(+30,000원)</option>
+                                                    <option value="0" id="no" name="no">투어 선택안함(+0원)</option>
                                                 </select>
                                             </div>
                                             <div class="col-3" style="font-size: 21px;">
@@ -251,7 +260,7 @@
                                             </div>
                                             <div class="col-9" style="font-size: 21px;">
                                                 <div class="input-group input-daterange">
-                                                    <input type="date" class="form-control input1"
+                                                    <input type="date" class="form-control input1" name="bookingStartDate"
                                                            id="datepicker" placeholder="Start Date" style="height: 50px; font-size: 21px;">
                                                 </div>
                                             </div>
@@ -264,14 +273,33 @@
                                             </div>
                                             <p></p>
                                             <input type="hidden" value="2500000" id="price">
+
+
                                             <input type="hidden" value="2500000" id="price2">
                                             <div class="col-3" style="font-size: 21px;">
                                                 <li>총 금액</li>
                                             </div>
                                             <div class="col-9" style="font-size: 21px;">
-                                                <input type="text" id="result" value="0"  style="border: none; width: 110px; background: transparent;" readonly>원
+                                                <input type="text" id="result" value="0" style="border: none; width: 110px; background: transparent;" name="Price" readonly>원
                                             </div>
                                             <p></p>
+                                            <div class="col-3" style="font-size: 21px;">
+                                            </div>
+                                            <div align="right" class="col-9" style="font-size: 21px;">
+                                                <button type="button" onclick="shareWith()" class="btn btn-outline-danger">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-share" viewBox="0 0 16 16">
+                                                        <path d="M13.5 1a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM11 2.5a2.5 2.5 0 1 1 .603 1.628l-6.718 3.12a2.499 2.499 0 0 1 0 1.504l6.718 3.12a2.5 2.5 0 1 1-.488.876l-6.718-3.12a2.5 2.5 0 1 1 0-3.256l6.718-3.12A2.5 2.5 0 0 1 11 2.5zm-8.5 4a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm11 5.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3z"></path>
+                                                    </svg>
+                                                    공유하기
+                                                </button>
+                                                <button type="button" onclick="cart()" class="btn btn-outline-danger">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart-plus" viewBox="0 0 16 16">
+                                                        <path d="M9 5.5a.5.5 0 0 0-1 0V7H6.5a.5.5 0 0 0 0 1H8v1.5a.5.5 0 0 0 1 0V8h1.5a.5.5 0 0 0 0-1H9V5.5z"></path>
+                                                        <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zm3.915 10L3.102 4h10.796l-1.313 7h-8.17zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"></path>
+                                                    </svg>
+                                                    장바구니
+                                                </button>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -380,9 +408,21 @@
     }
 
     $(function () {
-        $("#datepiker").datepicker({
+        $.datepicker.setDefaults({
             dateFormat: 'yy-mm-dd'
+            , minDate: "-1M" //최소 선택일자(-1D:하루전, -1M:한달전, -1Y:일년전)
         });
+        $("#datepicker").datepicker();
+        $('#datepicker').datepicker('option', 'minDate', '0');
     });
+
+    function shareWith(){
+
+    }
+    function cart(){
+        cartSubmitForm.submit(); //노란줄있지만 잘되나..?
+        // <a href="/cart/save"></a>
+    }
+
 </script>
 </html>

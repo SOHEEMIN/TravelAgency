@@ -2,6 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
+
 <html lang="ko">
 <head>
     <meta charset="utf-8">
@@ -88,24 +89,6 @@
         input {
             border-radius: 5px;
         }
-
-        td {
-            font-size: 20px;
-            height: 100%;
-            padding: 10px;
-        }
-
-        th {
-            font-size: 20px;
-            height: 100%;
-            border-bottom: 1px solid #444444;
-        }
-
-        tr {
-            font-size: 20px;
-            height: 100%;
-        }
-
     </style>
 
 
@@ -122,7 +105,7 @@
                 <div class="col-sm-2 offset-md-0.1 py-0.1">
                     <h4 class="text-white" style="font-family: 'Pacifico', cursive;font-size: 30px">Trip</h4>
                     <ul class="list-unstyled">
-                        <li><a href="#" class="text-white" style="font-size: 18px">Trip to Porto</a></li>
+                        <li><a href="" class="text-white" style="font-size: 18px">Trip to Porto</a></li>
                         <li><a href="#" class="text-white" style="font-size: 18px">Trip to Lisbon</a></li>
                     </ul>
                 </div>
@@ -164,7 +147,6 @@
                     aria-controls="offcanvasRight" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-
         </div>
     </div>
 </header>
@@ -172,81 +154,31 @@
 <main>
     <section class="py-5 text-center container">
         <div class="row py-lg-5">
-            <div class="col-lg-8 col-md-8 mx-auto">
+            <div class="col-lg-10 col-md-8 mx-auto">
                 <h1 class="fw-light" style="font-family: 'Pacifico', cursive;">SH Travel Agency</h1>
-                <p class="lead text-muted" style="font-family: 'IM_Hyemin-Bold'; font-size: 24px;"><br>공지사항<br></p>
-                <div align="center"
+                <p class="lead text-muted" style="font-family: 'IM_Hyemin-Bold'; font-size: 24px;"><br>장바구니<br></p>
+                <div class="container1" align="center"
                      style="background-color: #f9f2f9; padding:20px; font-family:'IM_Hyemin-Bold'; font-size: 22px; border-radius: 20px;">
-                    <table>
-                        <tr>
-                            <td colspan="2">No: ${board.b_id}</td>
-                            <td>Date: ${board.boardCreatedDate}</td>
-
+                    <table style="width: 100%; border-top: 1px solid #444444;border-collapse: collapse;">
+                        <tr id="firstTr">
+                            <th style="width: 50px">no</th>
+                            <th style="width: 120px;">title</th>
+                            <th style="width: 100px;">출발일자</th>
+                            <th style="width: 100px">투숙호텔</th>
+                            <th style="width: 100px">현지투어</th>
+                            <th style="width: 60px">총금액</th>
                         </tr>
-                        <tr>
-                            <td colspan="3" style="font-weight : bold ;">제목: ${board.boardTitle}</td>
-                        </tr>
-                        <tr>
-                            <td colspan="2">Writer: ${board.memberId}</td>
-                            <td>Hits: ${board.boardHits}</td>
-                        </tr>
-                        <tr>
-                            <td colspan="3" style="font-weight : bold ;">${board.boardContents}</td>
-                        </tr>
-                        <tr>
-                            <td colspan="3"><img src="${pageContext.request.contextPath}/upload/${board.boardFileName}"
-                                                 alt=""
-                                                 height="100"
-                                                 width="100"></td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <button class="btn btn-info my-2" id="WriteButton4" onclick="paging()"
-                                        style="font-size: 21px;">글목록
-                                </button>
-                            </td>
-                            <c:if test="${sessionScope.loginMemberId eq board.memberId}">
-                                <td>
-                                    <button class="btn btn-info my-2" id="WriteButton1" onclick="boardUpdate()"
-                                            style="font-size: 21px;">글수정
-                                    </button>
-                                </td>
-                                <td>
-                                    <button class="btn btn-info my-2" id="WriteButton2" onclick="boardDelete()"
-                                            style="font-size: 21px;">글삭제
-                                    </button>
-                                </td>
-                            </c:if>
-                        </tr>
-                        <tr>
-                            <td><input type="text" id="memberId" class="form-control"
-                                       value="${sessionScope.loginMemberId}" style="width: 135px;"
-                                       readonly></td>
-                            <td><input type="text" id="commentContents" class="form-control" placeholder="댓글"
-                                       style="width: 200px;"></td>
-                            <td>
-                                <button id="comment-write-btn" class="btn btn-danger">write</button>
-                            </td>
-                        </tr>
-                    </table>
-                    <div id="comment-list">
-                        <table class="table">
+                        <c:forEach items="${cartList}" var="cart">
                             <tr>
-                                <th>NO.</th>
-                                <th>작성자</th>
-                                <th>내용</th>
-                                <th>작성시간</th>
+                                <td>${cart.i_id}</td>
+                                <td>${cart.itemTitle}</td>
+                                <td>${cart.bookingStartDate}</td>
+                                <td>${cart.hotel}</td>
+                                <td>${cart.tour}</td>
+                                <td>${cart.price}</td>
                             </tr>
-                            <c:forEach items="${commentList}" var="comment">
-                                <tr>
-                                    <td>${comment.c_id}</td>
-                                    <td>${comment.memberId}</td>
-                                    <td>${comment.commentContents}</td>
-                                    <td>${comment.commentCreatedDate}</td>
-                                </tr>
-                            </c:forEach>
-                        </table>
-                    </div>
+                        </c:forEach>
+                    </table>
                 </div>
             </div>
         </div>
@@ -293,59 +225,5 @@
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
 </body>
-<script>
-    $("#comment-write-btn").click(function () {
-        //댓글 작성자, 내용을 가져오고 ajax 문법을 활용하여 /comment/save 주소로 post방식으로 작성자, 내용, 글번호
-        //세개의 값을 보내는 코드를 작성하시오
-        const memberId = document.getElementById("memberId").value;
-        const commentContents = $("#commentContents").val();
-        const b_id = '${board.b_id}';
-        console.log(memberId, commentContents, b_id)
-        $.ajax({
-            type: "post",
-            url: "/comment/save",
-            data: {
-                "memberId": memberId,
-                "commentContents": commentContents,
-                "b_id": b_id
-            },
-            dataType: "json",
-            success: function (result) {
-                console.log(result);
-                let output = "<table class='table'>";
-                output += "<tr><th>no</th>";
-                output += "<th>작성자</th>";
-                output += "<th>내용</th>";
-                output += "<th>작성시간</th></tr>";
-                for (let i in result) {
-                    output += "<tr>";
-                    output += "<td>" + result[i].c_id + "</td>";
-                    output += "<td>" + result[i].memberId + "</td>";
-                    output += "<td>" + result[i].commentContents + "</td>";
-                    output += "<td>" + result[i].commentCreatedDate + "</td>";
-                    output += "</tr>";
-                }
-                output += "</table>";
-                document.getElementById('comment-list').innerHTML = output;
-                document.getElementById('memberId').value = '';
-                document.getElementById('commentContents').value = '';
-            },
-            error: function () {
-                alert("오류");
-            }
-        });
-    });
-    const paging = () => {
-        location.href = "/board/paging?page=${page}";
-    }
-    const boardUpdate = () => {
-        location.href = "/board/update?b_id=${board.b_id}";
-    }
-    const boardDelete = () => {
-        answer = confirm("삭제하시겠습니까?");
-        if (answer == true) {
-            location.href = "/board/delete?b_id=${board.b_id}";
-        }
-    }
-</script>
+
 </html>

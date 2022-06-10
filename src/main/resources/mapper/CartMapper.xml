@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Cart">
+    <insert id="save" parameterType="cart">
+        insert into cart_table(i_id, itemTitle, memberId, bookingStartDate, Hotel, Tour, Price)
+            value(#{i_id}, #{itemTitle}, #{memberId}, #{bookingStartDate}, #{Hotel}, #{Tour}, #{Price})
+    </insert>
+    <select id="findAll" resultType="cart">
+        select * from cart_table;
+    </select>
+</mapper>

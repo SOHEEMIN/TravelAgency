@@ -109,7 +109,7 @@
                     <h4 class="text-white" style="font-family: 'Pacifico', cursive; font-size: 30px">Reservation</h4>
                     <ul class="list-unstyled">
                         <li><a href="#" class="text-white" style="font-size: 18px">Manage Booking</a></li>
-                        <li><a href="#" class="text-white" style="font-size: 18px">Cart</a></li>
+                        <li><a href="/cart/findAll" class="text-white" style="font-size: 18px">Cart</a></li>
                     </ul>
                 </div>
                 <div class="col-sm-2 offset-md-0.1 py-0.1">
