@@ -167,7 +167,7 @@
                                     Do you want to have the perfect trip in Portugal? <br> If so, welcome to SH travel agency                                </p>
                                 <p>
                                     <a href="/item/firstPorto" class="btn btn-info my-2" style="font-weight: bold">Go Porto!</a>
-                                    <a href="#" class="btn btn-info my-2" style="font-weight: bold">Go Lisbon!</a>
+                                    <a href="/item/firstLisbon" class="btn btn-info my-2" style="font-weight: bold">Go Lisbon!</a>
                                 </p>
                             </div>
                         </div>
@@ -238,21 +238,13 @@
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
                 <div class="col">
                     <div class="card shadow-sm">
-                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225"
-                             xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail"
-                             preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title>
-                            <rect width="100%" height="100%" fill="#55595c"/>
-                            <text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text>
-                        </svg>
+                            <img src="/resources/img/p2.jpg" onclick="location.href='/item/firstPorto'">
+                            <text x="50%" y="50%" fill="#eceeef" dy=".3em" style="font-family: 'IM_Hyemin-Bold'; font-size:21px; text-align: center;">🎼재즈와 함께하는 낭만의 포르투</text>
                         <div class="card-body">
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                                additional content. This content is a little bit longer.</p>
+                            <p class="card-text" style="font-family:'IM_Hyemin-Bold'">
+                                포르투의 멋진 야경을 감상하며 재즈를 즐기는 낭만이 가득한 5박 6일 패키지여행 상품입니다.</p>
                             <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                                </div>
-                                <small class="text-muted">9 mins</small>
+                                <a href="/item/firstPorto" class="btn btn-outline-dark">View</a>
                             </div>
                         </div>
                     </div>
@@ -344,4 +336,5 @@
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
 </body>
+
 </html>

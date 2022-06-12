@@ -13,4 +13,8 @@ public class HomeController {
     public String firstPorto () {
         return "/portoPage/firstPorto";
     }
+    @GetMapping("/item/firstLisbon")
+    public String firstLisbon () {
+        return "/lisbonPage/firstLisbon";
+    }
 }
