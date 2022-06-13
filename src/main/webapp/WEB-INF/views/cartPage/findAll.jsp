@@ -2,7 +2,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
-
 <html lang="ko">
 <head>
     <meta charset="utf-8">
@@ -89,6 +88,11 @@
         input {
             border-radius: 5px;
         }
+
+        th, td {
+            border-bottom: 1px solid #444444;
+            padding: 10px;
+        }
     </style>
 
 
@@ -161,26 +165,46 @@
                      style="background-color: #f9f2f9; padding:20px; font-family:'IM_Hyemin-Bold'; font-size: 22px; border-radius: 20px;">
                     <table style="width: 100%; border-top: 1px solid #444444;border-collapse: collapse;">
                         <tr id="firstTr">
-                            <th style="width: 50px">no</th>
+                            <%--                            <th style="width: 15px">선택</th>--%>
                             <th style="width: 50px">상품번호</th>
-                            <th style="width: 120px;">Title</th>
-                            <th style="width: 100px;">출발일자</th>
-                            <th style="width: 100px">투숙호텔</th>
-                            <th style="width: 100px">현지투어</th>
+                            <th style="width: 150px;">상품제목</th>
+                            <th style="width: 80px;">출발일자</th>
+                            <th style="width: 70px">투숙호텔</th>
+                            <th style="width: 70px">현지투어</th>
                             <th style="width: 60px">총금액</th>
+                            <th style="width: 15px">삭제</th>
                         </tr>
+
                         <c:forEach items="${cartList}" var="cart">
-                            <tr>
-                                <td>${cart.cart_id}</td>
-                                <td>${cart.i_id}</td>
-                                <td>${cart.itemTitle}</td>
-                                <td>${cart.bookingStartDate}</td>
-                                <td>${cart.hotel}</td>
-                                <td>${cart.tour}</td>
-                                <td>${cart.price}</td>
-                            </tr>
+                            <c:if test="${sessionScope.loginMemberId eq cart.memberId}">
+                                <tr>
+                                        <%--                                    <input type="hidden" value="${cart.cart_id}"/>--%>
+                                        <%--                                    <td><input type="checkbox" id="cart_chk_id" name="cart_chk_name"></td>--%>
+                                    <c:if test="${cart.i_id=='001'}">
+                                        <td>${cart.i_id}</td>
+                                    </c:if>
+                                    <c:if test="${cart.i_id=='002'}">
+                                        <td>${cart.i_id}</td>
+                                    </c:if>
+                                    <c:if test="${cart.itemTitle=='재즈와 함께하는 낭만의 포르투'}">
+                                        <td><a href="/item/firstPorto"/>${cart.itemTitle}</td>
+                                    </c:if>
+                                    <c:if test="${cart.itemTitle=='리스본의 역사 속으로 빠지는 여행'}">
+                                        <td><a href="/item/firstLisbon"/>${cart.itemTitle}</td>
+                                    </c:if>
+                                    <td>${cart.bookingStartDate}</td>
+                                    <td>${cart.hotel}</td>
+                                    <td>${cart.tour}</td>
+                                    <td>${cart.price}</td>
+                                    <td><a href="/cart/delete?cart_id=${cart.cart_id}">삭제</a></td>
+                                </tr>
+                            </c:if>
                         </c:forEach>
                     </table>
+                    <br>
+                    <div><input type="submit" onclick="selectDel()" value="선택삭제">
+                        <input type="submit" onclick="allDel()" value="전체삭제">
+                        <input type="submit" onclick="buy()" value="주문"></div>
                 </div>
             </div>
         </div>
@@ -227,5 +251,6 @@
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
 </body>
-
+<script>
+</script>
 </html>

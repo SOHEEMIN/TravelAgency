@@ -196,7 +196,8 @@
                                     </div>
                                 </div>
                                 <div class="col-6"><h1 style="font-weight: bold; font-size: 30px;" >🏹리스본의 오랜 역사 속으로 빠지는 여행</h1>
-                                    <input type="hidden" name="itemTitle" value="리스본의 오랜 역사 속으로 빠지는 여행">
+                                    <input type="hidden" name="itemTitle" value="리스본의 역사 속으로 빠지는 여행">
+                                    <input type="hidden" name="memberId" value="${sessionScope.loginMemberId}">
                                     <p></p>
                                     <div class="container">
                                         <div class="row">
@@ -205,7 +206,7 @@
                                             </div>
                                             <div class="col-9" style="font-size: 21px;">
                                                 002
-                                                <input type="hidden" name="i_id" value="001">
+                                                <input type="hidden" name="i_id" value="002">
                                             </div>
                                             <p></p>
                                             <div class="col-3" style="font-size: 21px;">

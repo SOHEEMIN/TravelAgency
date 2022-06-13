@@ -21,4 +21,12 @@ public class CartRepository {
     public List<CartDTO> findAll() {
         return sql.selectList("Cart.findAll");
     }
+
+    public void delete(long cart_id) {
+        sql.delete("Cart.delete", cart_id);
+    }
+
+    public CartDTO findById(long id) {
+        return sql.selectOne("Cart.findById", id);
+    }
 }

@@ -26,11 +26,14 @@ public class CartController {
     public String findAll(Model model){
         List<CartDTO> cartDTOList = cartService.findAll();
         model.addAttribute("cartList", cartDTOList);
-        for (CartDTO c: cartDTOList){
-            System.out.println("for문 동작");
-            System.out.println(c);
-        }
         return "cartPage/findAll";
+    }
+
+    @GetMapping("/delete")
+    public String delete(@RequestParam("cart_id")long cart_id, Model model){
+        model.addAttribute("cart", cartService.findById(cart_id));
+        cartService.delete(cart_id);
+        return "redirect:/cart/findAll";
     }
 
 

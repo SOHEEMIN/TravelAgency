@@ -9,17 +9,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7b9cca21-353e-4b46-86cc-2f9be7a51b06" name="Changes" comment="장바구니 기능 미완성">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/a7edc223-1c90-4f0a-9fec-5a6ce244da37.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/a7edc223-1c90-4f0a-9fec-5a6ce244da37.xml" afterDir="false" />
+    <list default="true" id="7b9cca21-353e-4b46-86cc-2f9be7a51b06" name="Changes" comment="장바구니 기능 구현">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/its/travelAgency/Controller/CartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/its/travelAgency/Controller/CartController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/its/travelAgency/DTO/CartDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/its/travelAgency/DTO/CartDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/CartMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/cartMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mybatis-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mybatis-config.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/its/travelAgency/Repository/CartRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/its/travelAgency/Repository/CartRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/its/travelAgency/Service/CartService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/its/travelAgency/Service/CartService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/cartMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/cartMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/cartPage/findAll.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/cartPage/findAll.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/index.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/lisbonPage/firstLisbon.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/lisbonPage/firstLisbon.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/portoPage/firstPorto.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/portoPage/firstPorto.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -232,7 +229,7 @@
       <workItem from="1654826604299" duration="19494000" />
       <workItem from="1654851351364" duration="3312000" />
       <workItem from="1654924817032" duration="8481000" />
-      <workItem from="1655076822312" duration="4883000" />
+      <workItem from="1655076822312" duration="22416000" />
     </task>
     <task id="LOCAL-00001" summary="git commit test">
       <created>1653971487845</created>
@@ -332,7 +329,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654852544344</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="장바구니 기능 구현">
+      <created>1655082037566</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1655082037566</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -360,6 +364,7 @@
     <MESSAGE value="여행상품 구현" />
     <MESSAGE value="여행상품 달력(datepicker)추가" />
     <MESSAGE value="장바구니 기능 미완성" />
-    <option name="LAST_COMMIT_MESSAGE" value="장바구니 기능 미완성" />
+    <MESSAGE value="장바구니 기능 구현" />
+    <option name="LAST_COMMIT_MESSAGE" value="장바구니 기능 구현" />
   </component>
 </project>

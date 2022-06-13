@@ -8,6 +8,12 @@
             value(#{i_id}, #{itemTitle}, #{memberId}, #{bookingStartDate}, #{hotel}, #{tour}, #{price})
     </insert>
     <select id="findAll" resultType="cart">
-        select * from cart_table;
+        select * from cart_table
+    </select>
+    <delete id="delete" parameterType="Long">
+        delete from cart_table where cart_id=#{cart_id}
+    </delete>
+    <select id="findById" parameterType="Long" resultType="cart">
+        select * from cart_table where cart_id=#{cart_id}
     </select>
 </mapper>
