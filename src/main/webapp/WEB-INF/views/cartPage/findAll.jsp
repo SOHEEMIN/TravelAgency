@@ -196,15 +196,17 @@
                                     <td>${cart.hotel}</td>
                                     <td>${cart.tour}</td>
                                     <td>${cart.price}</td>
-                                    <td><a href="/cart/delete?cart_id=${cart.cart_id}">삭제</a></td>
+<%--                                    <td><a href="/cart/delete?cart_id=${cart.cart_id}">삭제</a></td>--%>
+                                    <td><input type="submit" value="삭제" onclick="delCart()"></td>
                                 </tr>
                             </c:if>
+                            <div onload="totalPrice()" id="totalPrice"></div>
+                            <%--<input onblur="totalPrice()" id="totalPrice">--%>
                         </c:forEach>
                     </table>
                     <br>
-                    <div><input type="submit" onclick="selectDel()" value="선택삭제">
-                        <input type="submit" onclick="allDel()" value="전체삭제">
-                        <input type="submit" onclick="buy()" value="주문"></div>
+                    <div>
+                        <input type="submit" onclick="buy()" value="예약"></div>
                 </div>
             </div>
         </div>
@@ -252,5 +254,31 @@
         crossorigin="anonymous"></script>
 </body>
 <script>
+    function buy() {
+        location.href = "/booking/booking"
+    }
+    var sum=0;
+    <c:forEach items="${cartList}" var="cart">
+    function delCart(){
+        answer = confirm("삭제하시겠습니까?");
+        if (answer == true) {
+            location.href = "/cart/delete?cart_id=${cart.cart_id}";
+        }
+    }
+    function totalPrice() {
+        <%--const totalPrice = document.getElementById("totalPrice");--%>
+        <%--sum +=${cart.price};--%>
+        <%--totalPrice.innerHTML = sum;--%>
+        <%--sum += ${cart.price};--%>
+        <%--${cart.totalPrice} = sum;--%>
+        <%--console.log(sum);--%>
+        <%--totalPrice.innerHTML = ${cart.totalPrice};--%>
+        let price = document.getElementById("${cart.price}").value;
+        sum += price;
+        const result = document.getElementById("totalPrice");
+        result.innerHTML = sum;
+    }
+    </c:forEach>
+    // totalPrice.innerHTML = sum;
 </script>
 </html>

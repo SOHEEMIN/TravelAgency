@@ -17,4 +17,9 @@ public class HomeController {
     public String firstLisbon () {
         return "/lisbonPage/firstLisbon";
     }
+
+    @GetMapping("/booking/booking")
+    public String booking () {
+        return "/bookingPage/booking";
+    }
 }
