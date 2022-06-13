@@ -4,8 +4,8 @@
 
 <mapper namespace="Cart">
     <insert id="save" parameterType="cart">
-        insert into cart_table(i_id, itemTitle, memberId, bookingStartDate, Hotel, Tour, Price)
-            value(#{i_id}, #{itemTitle}, #{memberId}, #{bookingStartDate}, #{Hotel}, #{Tour}, #{Price})
+        insert into cart_table(i_id, itemTitle, memberId, bookingStartDate, hotel, tour, price)
+            value(#{i_id}, #{itemTitle}, #{memberId}, #{bookingStartDate}, #{hotel}, #{tour}, #{price})
     </insert>
     <select id="findAll" resultType="cart">
         select * from cart_table;

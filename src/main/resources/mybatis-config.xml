@@ -6,7 +6,7 @@
         <typeAlias type="com.its.travelAgency.DTO.MemberDTO" alias="member"></typeAlias>
         <typeAlias type="com.its.travelAgency.DTO.BoardDTO" alias="board"></typeAlias>
         <typeAlias type="com.its.travelAgency.DTO.CommentDTO" alias="comment"></typeAlias>
-        <typeAlias type="com.its.travelAgency.DTO.CommentDTO" alias="cart"></typeAlias>
+        <typeAlias type="com.its.travelAgency.DTO.CartDTO" alias="cart"></typeAlias>
 
 
     </typeAliases>

@@ -13,7 +13,8 @@
     <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/album/">
     <%--    <link href="/resources/css/bootstrap.min.css" rel="stylesheet">--%>
     <!-- CSS only -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Passion+One:wght@900&display=swap" rel="stylesheet">
@@ -82,7 +83,8 @@
             font-weight: normal;
             font-style: normal;
         }
-        .lead text-muted{
+
+        .lead text-muted {
             -webkit-text-stroke: 3px black;
         }
     </style>
@@ -125,7 +127,8 @@
                         <li><a href="/board/paging" class="text-white" style="font-size: 18px">Notice</a></li>
                         <li><a href="#" class="text-white" style="font-size: 18px">Event</a></li>
                         <c:if test="${sessionScope.loginMemberId == 'admin'}">
-                            <li><a href="/board/saveFile" class="text-white" style="font-size: 18px">Manage notice</a></li>
+                            <li><a href="/board/saveFile" class="text-white" style="font-size: 18px">Manage notice</a>
+                            </li>
                         </c:if>
 
                     </ul>
@@ -151,9 +154,12 @@
 <main>
     <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-indicators">
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
         </div>
         <div class="carousel-inner">
             <div class="carousel-item active">
@@ -162,12 +168,19 @@
                     <section class="py-5 text-center container">
                         <div class="row py-lg-5">
                             <div class="col-lg-8 col-md-8 mx-auto">
-                                <h1 class="fw-light" style="font-family: 'Pacifico', cursive; color: white; font-size: 50px;">SH Travel Agency</h1><br>
-                                <p class="lead text-muted" style="font-family: 'IM_Hyemin-Bold'; font-size: 30px; -webkit-text-stroke: 1px black;";>
-                                    Do you want to have the perfect trip in Portugal? <br> If so, welcome to SH travel agency                                </p>
+                                <h1 class="fw-light"
+                                    style="font-family: 'Pacifico', cursive; color: white; font-size: 50px;">SH Travel
+                                    Agency</h1><br>
+                                <p class="lead text-muted"
+                                   style="font-family: 'IM_Hyemin-Bold'; font-size: 30px; -webkit-text-stroke: 1px black;"
+                                   ;>
+                                    Do you want to have the perfect trip in Portugal? <br> If so, welcome to SH travel
+                                    agency </p>
                                 <p>
-                                    <a href="/item/firstPorto" class="btn btn-info my-2" style="font-weight: bold">Go Porto!</a>
-                                    <a href="/item/firstLisbon" class="btn btn-info my-2" style="font-weight: bold">Go Lisbon!</a>
+                                    <a href="/item/firstPorto" class="btn btn-info my-2" style="font-weight: bold">Go
+                                        Porto!</a>
+                                    <a href="/item/firstLisbon" class="btn btn-info my-2" style="font-weight: bold">Go
+                                        Lisbon!</a>
                                 </p>
                             </div>
                         </div>
@@ -182,16 +195,18 @@
                             <div class="col-lg-11 col-md-8 mx-auto" align="right">
                                 <h1 class="fw-light" style="font-family: 'Pacifico', cursive;">SH Travel Agency</h1><br>
                                 <p class="lead text-muted" style="font-family: 'IM_Hyemin-Bold'; font-weight:bold; font-size: 19px; -webkit-text-stroke: 1px black;
-                                    background-color: rgba( 255, 255, 255, 0.1 )";>
+                                    background-color: rgba( 255, 255, 255, 0.1 )" ;>
                                     포르투갈을 여행하시면 가장
                                     다양하고
                                     흥미로운 목적지를
-                                    방문하실 수 있습니다. <br> SH Travel Agency를 이용해 여행하며 알가르브(Algarve) 해변의 백사장, <br>맛있는 포르토 와인 그리고 리스본의 마법 같은
+                                    방문하실 수 있습니다. <br> SH Travel Agency를 이용해 여행하며 알가르브(Algarve) 해변의 백사장, <br>맛있는 포르토 와인
+                                    그리고 리스본의 마법 같은
                                     활력을
                                     느껴보세요.<br>
                                     SH Travel Agency가 이 모든 것을 경험하실 수 있는 곳으로 안내합니다.</p>
                                 <p>
-                                    <a href="/item/firstPorto" class="btn btn-info my-2" style="font-weight: bold">Go Porto!</a>
+                                    <a href="/item/firstPorto" class="btn btn-info my-2" style="font-weight: bold">Go
+                                        Porto!</a>
                                     <a href="#" class="btn btn-info my-2" style="font-weight: bold">Go Lisbon!</a>
                                 </p>
                             </div>
@@ -206,16 +221,20 @@
                         <div class="row py-lg-5">
                             <div class="col-lg-11 col-md-8 mx-auto" align="right">
                                 <h1 class="fw-light" style="font-family: 'Pacifico', cursive;">SH Travel Agency</h1><br>
-                                <p class="lead text-muted" style="font-family: 'IM_Hyemin-Bold'; font-weight:bold; font-size: 19px; -webkit-text-stroke: 1px black;";>
+                                <p class="lead text-muted"
+                                   style="font-family: 'IM_Hyemin-Bold'; font-weight:bold; font-size: 19px; -webkit-text-stroke: 1px black;"
+                                   ;>
                                     포르투갈을 여행하시면 가장
                                     다양하고
                                     흥미로운 목적지를
-                                    방문하실 수 있습니다. <br> SH Travel Agency를 이용해 여행하며 알가르브(Algarve) 해변의 백사장, <br>맛있는 포르토 와인 그리고 리스본의 마법 같은
+                                    방문하실 수 있습니다. <br> SH Travel Agency를 이용해 여행하며 알가르브(Algarve) 해변의 백사장, <br>맛있는 포르토 와인
+                                    그리고 리스본의 마법 같은
                                     활력을
                                     느껴보세요.<br>
                                     SH Travel Agency가 이 모든 것을 경험하실 수 있는 곳으로 안내합니다.</p>
                                 <p>
-                                    <a href="/item/firstPorto" class="btn btn-info my-2" style="font-weight: bold">Go Porto!</a>
+                                    <a href="/item/firstPorto" class="btn btn-info my-2" style="font-weight: bold">Go
+                                        Porto!</a>
                                     <a href="#" class="btn btn-info my-2" style="font-weight: bold">Go Lisbon!</a>
                                 </p>
                             </div>
@@ -224,11 +243,13 @@
                 </div>
             </div>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+                data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Previous</span>
         </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+                data-bs-slide="next">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
         </button>
@@ -238,8 +259,12 @@
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
                 <div class="col">
                     <div class="card shadow-sm">
-                            <img src="/resources/img/p2.jpg" onclick="location.href='/item/firstPorto'">
-                            <text x="50%" y="50%" fill="#eceeef" dy=".3em" style="font-family: 'IM_Hyemin-Bold'; font-size:21px; text-align: center;">🎼재즈와 함께하는 낭만의 포르투</text>
+                        <img src="/resources/img/p2.jpg" onclick="location.href='/item/firstPorto'">
+                        <br>
+                        <text x="50%" y="50%" fill="#eceeef" dy=".3em"
+                              style="font-family: 'IM_Hyemin-Bold'; font-size:21px; text-align: center;">🎼재즈와 함께하는 낭만의
+                            포르투
+                        </text>
                         <div class="card-body">
                             <p class="card-text" style="font-family:'IM_Hyemin-Bold'">
                                 포르투의 멋진 야경을 감상하며 재즈를 즐기는 낭만이 가득한 5박 6일 패키지여행 상품입니다.</p>
@@ -251,21 +276,14 @@
                 </div>
                 <div class="col">
                     <div class="card shadow-sm">
-                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225"
-                             xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail"
-                             preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title>
-                            <rect width="100%" height="100%" fill="#55595c"/>
-                            <text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text>
-                        </svg>
-
+                        <img src="/resources/img/p4.jpg" onclick="location.href='/item/firstLisbon'">
+                        <br>
+                        <text x="50%" y="50%" fill="#eceeef" dy=".3em" style="font-family: 'IM_Hyemin-Bold'; font-size:21px; text-align: center;">🏹리스본의 오랜 역사 속으로 빠지는 여행</text>
                         <div class="card-body">
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                                additional content. This content is a little bit longer.</p>
+                            <p class="card-text" style="font-family:'IM_Hyemin-Bold'">리스본의 고대 역사 및 종교적 의미에 대해 탐구해보는 5박 6일 패키지여행 상품입니다.
+                            </p>
                             <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                                </div>
+                                <a href="/item/firstLisbon" class="btn btn-outline-dark">View</a>
                                 <small class="text-muted">9 mins</small>
                             </div>
                         </div>
@@ -301,9 +319,12 @@
 
 <footer class="text-muted py-5">
     <p class="float-end mb-1">
-        <a href="#" style="color: #080808"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-up" viewBox="0 0 16 16">
-            <path d="M3.204 11h9.592L8 5.519 3.204 11zm-.753-.659 4.796-5.48a1 1 0 0 1 1.506 0l4.796 5.48c.566.647.106 1.659-.753 1.659H3.204a1 1 0 0 1-.753-1.659z"/>
-        </svg>Click! Go Up</a>
+        <a href="#" style="color: #080808">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-up"
+                 viewBox="0 0 16 16">
+                <path d="M3.204 11h9.592L8 5.519 3.204 11zm-.753-.659 4.796-5.48a1 1 0 0 1 1.506 0l4.796 5.48c.566.647.106 1.659-.753 1.659H3.204a1 1 0 0 1-.753-1.659z"/>
+            </svg>
+            Click! Go Up</a>
     <div class="container">
         <div class="row">
             <div class="col-sm-5">
@@ -316,7 +337,8 @@
             <div class="col-sm-7">
                 <ul class="list-unstyled" style="font-size: 12px">
                     <li><br>사업자등록번호: 123-45-6789 &nbsp;| 통신판매업신고: 인천중구 - 0001 | 관광사업자 등록번호: 제 2022 - 000001호</li>
-                    <li>개인정보관리책임자: 민소희 | 주소: 인천 중구 영종대로 123길 123호 &nbsp;| 대표번호:&nbsp;<a href="tel:010-1234-5678">010-1234-5678</a></li>
+                    <li>개인정보관리책임자: 민소희 | 주소: 인천 중구 영종대로 123길 123호 &nbsp;| 대표번호:&nbsp;<a href="tel:010-1234-5678">010-1234-5678</a>
+                    </li>
                     <li>e-mail:&nbsp;<a href="minsohee94@naver.com" target="_blank">minsohee94@naver.com</a>
                     </li>
                 </ul>
@@ -326,7 +348,7 @@
     <section class="py-5 text-center container">
         <div class="row py-lg-5">
             <div class="col-lg-6 col-md-8 mx-auto">
-                Copyrightⓒ 2022 IOS All Rights Reserved
+                Copyrightⓒ 2022 SH All Rights Reserved
             </div>
         </div>
     </section>

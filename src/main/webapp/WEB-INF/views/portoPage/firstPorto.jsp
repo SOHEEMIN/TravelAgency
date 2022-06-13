@@ -198,6 +198,7 @@
                                 <div class="col-6"><h1 style="font-weight: bold; font-size: 30px;" >🎼재즈와 함께하는 낭만의
                                     포르투</h1>
                                     <input type="hidden" name="itemTitle" value="재즈와 함께하는 낭만의 포르투">
+                                    <input type="hidden" name="memberId" value="${sessionScope.loginMemberId}">
                                     <p></p>
                                     <div class="container">
                                         <div class="row">
@@ -341,7 +342,7 @@
     <section class="py-5 text-center container">
         <div class="row py-lg-5">
             <div class="col-lg-6 col-md-8 mx-auto">
-                Copyrightⓒ 2022 IOS All Rights Reserved
+                Copyrightⓒ 2022 SH All Rights Reserved
             </div>
         </div>
     </section>

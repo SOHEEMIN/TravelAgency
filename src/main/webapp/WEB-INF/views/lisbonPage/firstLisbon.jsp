@@ -195,7 +195,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-6"><h1 style="font-weight: bold; font-size: 30px;" >🕯리스본의 오랜 역사 속으로 빠지는 여행</h1>
+                                <div class="col-6"><h1 style="font-weight: bold; font-size: 30px;" >🏹리스본의 오랜 역사 속으로 빠지는 여행</h1>
                                     <input type="hidden" name="itemTitle" value="리스본의 오랜 역사 속으로 빠지는 여행">
                                     <p></p>
                                     <div class="container">
@@ -338,7 +338,7 @@
     <section class="py-5 text-center container">
         <div class="row py-lg-5">
             <div class="col-lg-6 col-md-8 mx-auto">
-                Copyrightⓒ 2022 IOS All Rights Reserved
+                Copyrightⓒ 2022 SH All Rights Reserved
             </div>
         </div>
     </section>

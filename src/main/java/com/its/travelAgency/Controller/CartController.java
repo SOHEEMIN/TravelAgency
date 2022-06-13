@@ -26,6 +26,10 @@ public class CartController {
     public String findAll(Model model){
         List<CartDTO> cartDTOList = cartService.findAll();
         model.addAttribute("cartList", cartDTOList);
+        for (CartDTO c: cartDTOList){
+            System.out.println("for문 동작");
+            System.out.println(c);
+        }
         return "cartPage/findAll";
     }
 

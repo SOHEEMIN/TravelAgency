@@ -162,7 +162,8 @@
                     <table style="width: 100%; border-top: 1px solid #444444;border-collapse: collapse;">
                         <tr id="firstTr">
                             <th style="width: 50px">no</th>
-                            <th style="width: 120px;">title</th>
+                            <th style="width: 50px">상품번호</th>
+                            <th style="width: 120px;">Title</th>
                             <th style="width: 100px;">출발일자</th>
                             <th style="width: 100px">투숙호텔</th>
                             <th style="width: 100px">현지투어</th>
@@ -170,6 +171,7 @@
                         </tr>
                         <c:forEach items="${cartList}" var="cart">
                             <tr>
+                                <td>${cart.cart_id}</td>
                                 <td>${cart.i_id}</td>
                                 <td>${cart.itemTitle}</td>
                                 <td>${cart.bookingStartDate}</td>
@@ -215,7 +217,7 @@
     <section class="py-5 text-center container">
         <div class="row py-lg-5">
             <div class="col-lg-6 col-md-8 mx-auto">
-                Copyrightⓒ 2022 IOS All Rights Reserved
+                Copyrightⓒ 2022 SH All Rights Reserved
             </div>
         </div>
     </section>

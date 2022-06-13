@@ -17,7 +17,7 @@ public class CartDTO {
     private String memberId;
 //    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private String bookingStartDate;
-    private String Hotel;
-    private String Tour;
-    private int Price;
+    private String hotel;
+    private String tour;
+    private int price;
 }
