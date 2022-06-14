@@ -21,7 +21,6 @@ public class CartService {
         List<CartDTO> cartDTOList = cartRepository.findAll();
         return cartDTOList;
     }
-
     public void delete(long cart_id) {
         cartRepository.delete(cart_id);
     }
@@ -30,4 +29,8 @@ public class CartService {
         return cartRepository.findById(id);
     }
 
+
+    public CartDTO findMemberId(String memberId) {
+        return cartRepository.findMemberId(memberId);
+    }
 }

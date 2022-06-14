@@ -127,7 +127,8 @@
                         <li><a href="/board/paging" class="text-white" style="font-size: 18px">Notice</a></li>
                         <li><a href="#" class="text-white" style="font-size: 18px">Event</a></li>
                         <c:if test="${sessionScope.loginMemberId == 'admin'}">
-                            <li><a href="/board/saveFile" class="text-white" style="font-size: 18px">Manage notice</a></li>
+                            <li><a href="/board/saveFile" class="text-white" style="font-size: 18px">Manage notice</a>
+                            </li>
                         </c:if>
                     </ul>
                 </div>
@@ -160,8 +161,15 @@
                          style="background-color: #f9f2f9; padding:20px; font-family:'IM_Hyemin-Bold'; font-size: 22px; border-radius: 20px;">
                         <br>
                         작성자<br>
-                        <input class="form-control mb-2" type="text" name="memberId" value="${sessionScope.loginMemberId}"
+                        <input class="form-control mb-2" type="text" name="memberId"
+                               value="${sessionScope.loginMemberId}"
                                readonly><br>
+                        카테고리<br>
+                        <select class="form-select" aria-label="Default select example">
+                            <option selected>카테고리</option>
+                            <option value="1" onchange="">Notice</option>
+                            <option value="2">Event</option>
+                        </select><br>
                         제목<br>
                         <input class="form-control mb-2" type="text" name="boardTitle" placeholder="제목"><br>
                         내용<br>

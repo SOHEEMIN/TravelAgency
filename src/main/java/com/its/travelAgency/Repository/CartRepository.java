@@ -1,5 +1,6 @@
 package com.its.travelAgency.Repository;
 
+import com.its.travelAgency.DTO.BoardDTO;
 import com.its.travelAgency.DTO.CartDTO;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,5 +29,10 @@ public class CartRepository {
 
     public CartDTO findById(long id) {
         return sql.selectOne("Cart.findById", id);
+    }
+
+
+    public CartDTO findMemberId(String memberId) {
+        return sql.selectOne("Cart.findMemberId", memberId);
     }
 }

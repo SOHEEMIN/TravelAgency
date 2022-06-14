@@ -181,7 +181,6 @@
                         <tr>
                             <td colspan="2">No: ${board.b_id}</td>
                             <td>Date: ${board.boardCreatedDate}</td>
-
                         </tr>
                         <tr>
                             <td colspan="3" style="font-weight : bold ;">제목: ${board.boardTitle}</td>

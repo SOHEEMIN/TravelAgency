@@ -20,6 +20,7 @@ public class MemberController {
     public String saveFileForm(){
         return "/memberPage/saveFile";
     }
+
     @PostMapping("/saveFile")
     public String saveFile(@ModelAttribute MemberDTO memberDTO){
         boolean saveResult = memberService.saveFile(memberDTO);

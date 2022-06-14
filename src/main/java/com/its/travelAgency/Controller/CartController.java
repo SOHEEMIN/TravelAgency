@@ -1,5 +1,6 @@
 package com.its.travelAgency.Controller;
 
+import com.its.travelAgency.DTO.BoardDTO;
 import com.its.travelAgency.DTO.CartDTO;
 import com.its.travelAgency.DTO.CommentDTO;
 import com.its.travelAgency.Service.CartService;
@@ -36,6 +37,9 @@ public class CartController {
         cartService.delete(cart_id);
         return "redirect:/cart/findAll";
     }
-
-
 }
+//    @RequestParam("cart_id") Long cart_id
+//    cartdto = findbyid(cart_id)
+//        model.add
+//    return "pagename";
+//}

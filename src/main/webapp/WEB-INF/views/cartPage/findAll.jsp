@@ -163,50 +163,61 @@
                 <p class="lead text-muted" style="font-family: 'IM_Hyemin-Bold'; font-size: 24px;"><br>장바구니<br></p>
                 <div class="container1" align="center"
                      style="background-color: #f9f2f9; padding:20px; font-family:'IM_Hyemin-Bold'; font-size: 22px; border-radius: 20px;">
-                    <table style="width: 100%; border-top: 1px solid #444444;border-collapse: collapse;">
-                        <tr id="firstTr">
-                            <%--                            <th style="width: 15px">선택</th>--%>
-                            <th style="width: 50px">상품번호</th>
-                            <th style="width: 150px;">상품제목</th>
-                            <th style="width: 80px;">출발일자</th>
-                            <th style="width: 70px">투숙호텔</th>
-                            <th style="width: 70px">현지투어</th>
-                            <th style="width: 60px">총금액</th>
-                            <th style="width: 15px">삭제</th>
-                        </tr>
+                    <form name="form">
+                        <table style="width: 100%; border-top: 1px solid #444444;border-collapse: collapse;">
+                            <tr id="firstTr">
+                                <%--                            <th style="width: 15px">선택</th>--%>
+                                <th style="width: 15px">선택</th>
+                                <th style="width: 15px">상품번호</th>
+                                <th style="width: 150px;">상품제목</th>
+                                <th style="width: 80px;">출발일자</th>
+                                <th style="width: 70px">투숙호텔</th>
+                                <th style="width: 70px">현지투어</th>
+                                <th style="width: 60px">총금액</th>
+                                <th style="width: 15px">삭제</th>
+                                <th style="width: 15px">주문</th>
 
-                        <c:forEach items="${cartList}" var="cart">
-                            <c:if test="${sessionScope.loginMemberId eq cart.memberId}">
-                                <tr>
-                                        <%--                                    <input type="hidden" value="${cart.cart_id}"/>--%>
-                                        <%--                                    <td><input type="checkbox" id="cart_chk_id" name="cart_chk_name"></td>--%>
-                                    <c:if test="${cart.i_id=='001'}">
-                                        <td>${cart.i_id}</td>
-                                    </c:if>
-                                    <c:if test="${cart.i_id=='002'}">
-                                        <td>${cart.i_id}</td>
-                                    </c:if>
-                                    <c:if test="${cart.itemTitle=='재즈와 함께하는 낭만의 포르투'}">
-                                        <td><a href="/item/firstPorto"/>${cart.itemTitle}</td>
-                                    </c:if>
-                                    <c:if test="${cart.itemTitle=='리스본의 역사 속으로 빠지는 여행'}">
-                                        <td><a href="/item/firstLisbon"/>${cart.itemTitle}</td>
-                                    </c:if>
-                                    <td>${cart.bookingStartDate}</td>
-                                    <td>${cart.hotel}</td>
-                                    <td>${cart.tour}</td>
-                                    <td>${cart.price}</td>
-<%--                                    <td><a href="/cart/delete?cart_id=${cart.cart_id}">삭제</a></td>--%>
-                                    <td><input type="submit" value="삭제" onclick="delCart()"></td>
-                                </tr>
-                            </c:if>
-                            <div onload="totalPrice()" id="totalPrice"></div>
-                            <%--<input onblur="totalPrice()" id="totalPrice">--%>
-                        </c:forEach>
-                    </table>
-                    <br>
-                    <div>
-                        <input type="submit" onclick="buy()" value="예약"></div>
+                            </tr>
+                            <c:forEach items="${cartList}" var="cart">
+                                <c:if test="${sessionScope.loginMemberId eq cart.memberId}">
+                                    <tr>
+                                        <td>
+                                            <input name="box" type="checkbox" value="${cart.price}"
+                                                   onclick="itemSum(this.form);">
+                                        </td>
+                                        <c:if test="${cart.i_id=='001'}">
+                                            <td>${cart.i_id}</td>
+                                        </c:if>
+                                        <c:if test="${cart.i_id=='002'}">
+                                            <td>${cart.i_id}</td>
+                                        </c:if>
+                                        <c:if test="${cart.itemTitle=='재즈와 함께하는 낭만의 포르투'}">
+                                            <td><a href="/item/firstPorto"/>${cart.itemTitle}</td>
+                                        </c:if>
+                                        <c:if test="${cart.itemTitle=='리스본의 역사 속으로 빠지는 여행'}">
+                                            <td><a href="/item/firstLisbon"/>${cart.itemTitle}</td>
+                                        </c:if>
+                                        <td>${cart.bookingStartDate}</td>
+                                        <td>${cart.hotel}</td>
+                                        <td>${cart.tour}</td>
+                                        <td>${cart.price}</td>
+                                        <td><a href="/cart/delete?cart_id=${cart.cart_id}"/>삭제</td>
+                                        <form action="/booking/save" method="post" name="orderSubmitForm">
+                                            <input type="text" name="memberId" value="${sessionScope.loginMemberId}">
+                                            <input type="text" name="cart_id" value="${cart.cart_id}">
+                                            <input type="text" name="price" value="${cart.price}">
+                                            <td><input type="submit" value="주문"/></td>
+                                        </form>
+                                    </tr>
+                                </c:if>
+
+                            </c:forEach>
+                        </table>
+                        <br>
+                        <div>총금액:&nbsp;<input style="border:none" name="totalPrice" type="text" size="20" readonly>
+                        </div>
+                        <div><input type="button" onclick="Check(this.form)" value="예약"></div>
+                    </form>
                 </div>
             </div>
         </div>
@@ -255,30 +266,46 @@
 </body>
 <script>
     function buy() {
-        location.href = "/booking/booking"
+        location.href = "/cart/booking?memberId=${cart.memberId}";
+
     }
-    var sum=0;
-    <c:forEach items="${cartList}" var="cart">
-    function delCart(){
-        answer = confirm("삭제하시겠습니까?");
-        if (answer == true) {
-            location.href = "/cart/delete?cart_id=${cart.cart_id}";
+
+    <%--    <c:forEach items="${cartList}" var="cart">--%>
+    <%--    function delCart() {--%>
+    <%--        answer = confirm("삭제하시겠습니까?");--%>
+    <%--        if (answer == true) {--%>
+
+    <%--            location.href = "/cart/delete?cart_id=${cart}";--%>
+    <%--        }--%>
+    <%--    }--%>
+
+    <%--    </c:forEach>--%>
+
+    function itemSum(frm) {
+        let sum = 0;
+        const count = frm.box.length;
+        for (let i = 0; i < count; i++) {
+            if (frm.box[i].checked == true) {
+                sum += parseInt(frm.box[i].value);
+            }
         }
+        frm.totalPrice.value = sum;
     }
-    function totalPrice() {
-        <%--const totalPrice = document.getElementById("totalPrice");--%>
-        <%--sum +=${cart.price};--%>
-        <%--totalPrice.innerHTML = sum;--%>
-        <%--sum += ${cart.price};--%>
-        <%--${cart.totalPrice} = sum;--%>
-        <%--console.log(sum);--%>
-        <%--totalPrice.innerHTML = ${cart.totalPrice};--%>
-        let price = document.getElementById("${cart.price}").value;
-        sum += price;
-        const result = document.getElementById("totalPrice");
-        result.innerHTML = sum;
+
+    function Check(form) {
+        //'확인' 버튼을 클릭했을 때 실행되는 메서드
+        let msg = 0;
+        const count = form.box.length;
+        for (let i = 0; i < count; i++) {
+            if (form.box[i].checked == true) {
+                msg += parseInt(form.box[i].value);
+            }
+        }
+        alert(msg);
+        location.href = "/booking/booking?memberId=${cart.memberId}";
     }
-    </c:forEach>
-    // totalPrice.innerHTML = sum;
+    function orderSubmit() {
+        orderSubmitForm.submit();
+    }
 </script>
 </html>

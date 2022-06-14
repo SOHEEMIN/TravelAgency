@@ -157,7 +157,8 @@
         <div class="row py-lg-5">
             <div class="col-lg-12 col-md-8 mx-auto">
                 <h1 class="fw-light" style="font-family: 'Pacifico', cursive;">SH Travel Agency</h1>
-                <p class="lead text-muted" style="font-family: 'IM_Hyemin-Bold'; font-size: 24px;"><br>Trip to Lisbon<br>
+                <p class="lead text-muted" style="font-family: 'IM_Hyemin-Bold'; font-size: 24px;"><br>Trip to
+                    Lisbon<br>
                 </p>
                 <form action="/cart/save" method="post" name="cartSubmitForm">
                     <div align="left"
@@ -195,7 +196,8 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-6"><h1 style="font-weight: bold; font-size: 30px;" >🏹리스본의 오랜 역사 속으로 빠지는 여행</h1>
+                                <div class="col-6"><h1 style="font-weight: bold; font-size: 30px;">🏹리스본의 오랜 역사 속으로 빠지는
+                                    여행</h1>
                                     <input type="hidden" name="itemTitle" value="리스본의 역사 속으로 빠지는 여행">
                                     <input type="hidden" name="memberId" value="${sessionScope.loginMemberId}">
                                     <p></p>
@@ -239,7 +241,9 @@
                                                         aria-label=".form-select-lg example" onchange="hotel()"
                                                         id="selectHotel" name="Hotel">
                                                     <option value="0" id="basic">호텔 선택</option>
-                                                    <option value="200000" id="hotel1" name="인터컨티넨탈">인터컨티넨탈 리스본(+200,000원)</option>
+                                                    <option value="200000" id="hotel1" name="인터컨티넨탈">인터컨티넨탈
+                                                        리스본(+200,000원)
+                                                    </option>
                                                     <option value="0" id="hotel2" name="메리어트">메리어트 리스본(+0원)</option>
                                                 </select>
                                             </div>
@@ -252,8 +256,10 @@
                                                         aria-label=".form-select-lg example" onchange="tour()"
                                                         id="selectTour" name="Tour">
                                                     <option value="0" id="basic2">투어 선택</option>
-                                                    <option value="50000" id="wine" name="wine">미식 워킹 투어(+50,000원)</option>
-                                                    <option value="30000" id="nata" name="nata">벨렘 야경 투어(+30,000원)</option>
+                                                    <option value="50000" id="wine" name="wine">미식 워킹 투어(+50,000원)
+                                                    </option>
+                                                    <option value="30000" id="nata" name="nata">벨렘 야경 투어(+30,000원)
+                                                    </option>
                                                     <option value="0" id="no" name="no">투어 선택안함(+0원)</option>
                                                 </select>
                                             </div>
@@ -262,8 +268,10 @@
                                             </div>
                                             <div class="col-9" style="font-size: 21px;">
                                                 <div class="input-group input-daterange">
-                                                    <input type="date" class="form-control input1" name="bookingStartDate"
-                                                           id="datepicker" placeholder="Start Date" style="height: 50px; font-size: 21px;">
+                                                    <input type="date" class="form-control input1"
+                                                           name="bookingStartDate"
+                                                           id="datepicker" placeholder="Start Date"
+                                                           style="height: 50px; font-size: 21px;">
                                                 </div>
                                             </div>
                                             <p></p>
@@ -280,21 +288,36 @@
                                                 <li>총 금액</li>
                                             </div>
                                             <div class="col-9" style="font-size: 21px;">
-                                                <input type="text" id="result" value="0" style="border: none; width: 110px; background: transparent;" name="Price" readonly>원
+                                                <input type="text" id="result" value="0"
+                                                       style="border: none; width: 110px; background: transparent;"
+                                                       name="Price" readonly>원
                                             </div>
                                             <p></p>
                                             <div class="col-3" style="font-size: 21px;">
                                             </div>
                                             <div align="right" class="col-9" style="font-size: 21px;">
-                                                <img src="../../../resources/img/icon-twitter.png" onclick="javascript:shareTwitter();">
-                                                <img src="../../../resources/img/icon-facebook.png" onclick="javascript:shareFacebook();">
-                                                <img src="../../../resources/img/icon-kakao.png" id="kakao" onclick="javascript:shareKakao();">
+                                                <img src="../../../resources/img/icon-twitter.png"
+                                                     onclick="javascript:shareTwitter();">
+                                                <img src="../../../resources/img/icon-facebook.png"
+                                                     onclick="javascript:shareFacebook();">
+                                                <img src="../../../resources/img/icon-kakao.png" id="kakao"
+                                                     onclick="javascript:shareKakao();">
                                                 <button type="button" onclick="cart()" class="btn btn-outline-danger">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart-plus" viewBox="0 0 16 16">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                         fill="currentColor" class="bi bi-cart-plus"
+                                                         viewBox="0 0 16 16">
                                                         <path d="M9 5.5a.5.5 0 0 0-1 0V7H6.5a.5.5 0 0 0 0 1H8v1.5a.5.5 0 0 0 1 0V8h1.5a.5.5 0 0 0 0-1H9V5.5z"></path>
                                                         <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zm3.915 10L3.102 4h10.796l-1.313 7h-8.17zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"></path>
                                                     </svg>
                                                     장바구니
+                                                </button>
+                                                <button type="button" class="btn btn-outline-success">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                         fill="currentColor" class="bi bi-bag-heart-fill"
+                                                         viewBox="0 0 16 16">
+                                                        <path d="M11.5 4v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5ZM8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1Zm0 6.993c1.664-1.711 5.825 1.283 0 5.132-5.825-3.85-1.664-6.843 0-5.132Z"></path>
+                                                    </svg>
+                                                    예약하기
                                                 </button>
                                             </div>
                                         </div>
@@ -413,10 +436,11 @@
         $('#datepicker').datepicker('option', 'minDate', '0');
     });
 
-    function shareWith(){
+    function shareWith() {
 
     }
-    function cart(){
+
+    function cart() {
         cartSubmitForm.submit(); //노란줄있지만 잘되나..?
         // <a href="/cart/save"></a>
     }
@@ -451,7 +475,6 @@
             }
         });
     }
-
 
 
 </script>

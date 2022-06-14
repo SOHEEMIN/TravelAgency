@@ -16,4 +16,8 @@
     <select id="findById" parameterType="Long" resultType="cart">
         select * from cart_table where cart_id=#{cart_id}
     </select>
+    <select id="findMemberId" resultType="cart">
+        select * from cart_table where memberId=#{memberId}
+    </select>
+
 </mapper>
