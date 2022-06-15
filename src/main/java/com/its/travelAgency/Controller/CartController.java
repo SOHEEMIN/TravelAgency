@@ -37,9 +37,11 @@ public class CartController {
         cartService.delete(cart_id);
         return "redirect:/cart/findAll";
     }
+
+//    @GetMapping("/findById")
+//    public String findById(@RequestParam("cart_id")long cart_id, Model model){
+//        model.addAttribute("cart",cartService.findById(cart_id));
+//        System.out.println("카트아이디"+cart_id);
+//        return "bookingPage/booking";
+//    }
 }
-//    @RequestParam("cart_id") Long cart_id
-//    cartdto = findbyid(cart_id)
-//        model.add
-//    return "pagename";
-//}

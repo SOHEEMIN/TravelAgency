@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Order">
+    <insert id="save" parameterType="order">
+        insert into order_table(cart_id, memberId, price) values (#{cart_id}, #{memberId}, #{price})
+        <selectKey resultType="long" keyProperty="o_id" order="AFTER">
+            SELECT LAST_INSERT_ID()
+        </selectKey>
+    </insert>
+    <select id="booking" resultType="order">
+        select * from order_table
+    </select>
+    <select id="findById" resultType="order">
+        select * from order_table where o_id =#{o_id}
+    </select>
+    <update id="update" parameterType="order">
+        update order_table set o_id=#{o_id}, memberId=#{memberId}, cart_id=#{cart_id}, price=#{price}, orderCreatedDate={orderCreatedDate}
+    </update>
+
+
+</mapper>

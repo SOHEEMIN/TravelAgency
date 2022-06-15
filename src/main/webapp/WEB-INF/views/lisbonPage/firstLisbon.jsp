@@ -440,9 +440,18 @@
 
     }
 
-    function cart() {
-        cartSubmitForm.submit(); //노란줄있지만 잘되나..?
-        // <a href="/cart/save"></a>
+    function cart(){
+        if(${sessionScope.loginMemberId != null}){
+            answer=confirm("장바구니에 넣으시겠습니까?")
+            if (answer==true){
+                cartSubmitForm.submit();
+            }
+        } else {
+            answer=confirm("로그인 후 이용하실 수 있습니다.")
+            if(answer==true){
+                location.href="/member/login";
+            }
+        }
     }
 
     function shareTwitter() {

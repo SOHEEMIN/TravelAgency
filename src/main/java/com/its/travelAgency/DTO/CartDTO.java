@@ -20,5 +20,4 @@ public class CartDTO {
     private String hotel;
     private String tour;
     private int price;
-    private String totalPrice;
 }
