@@ -40,6 +40,11 @@ public class BoardController {
         boardService.saveFile(boardDTO);
         return "redirect:/board/paging";
     }
+    @GetMapping("/saveGoods")
+    public String saveGoods(HttpSession session){
+        return "/boardPage/saveGoods";
+    }
+
     @GetMapping("/paging")
     public String page(@RequestParam(value = "page", required = false, defaultValue = "1") int page, Model model){
         List<BoardDTO> boardList=boardService.pagingList(page);

@@ -2,6 +2,7 @@ package com.its.travelAgency.Service;
 
 import com.its.travelAgency.DTO.BoardDTO;
 import com.its.travelAgency.DTO.CartDTO;
+import com.its.travelAgency.DTO.JoinDTO;
 import com.its.travelAgency.Repository.CartRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -25,12 +26,7 @@ public class CartService {
         cartRepository.delete(cart_id);
     }
 
-    public CartDTO findById(long id) {
-        return cartRepository.findById(id);
-    }
-
-
-    public CartDTO findMemberId(String memberId) {
-        return cartRepository.findMemberId(memberId);
+    public CartDTO findById(long cart_id) {
+        return cartRepository.findById(cart_id);
     }
 }

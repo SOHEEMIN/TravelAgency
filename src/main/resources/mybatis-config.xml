@@ -8,7 +8,7 @@
         <typeAlias type="com.its.travelAgency.DTO.CommentDTO" alias="comment"></typeAlias>
         <typeAlias type="com.its.travelAgency.DTO.CartDTO" alias="cart"></typeAlias>
         <typeAlias type="com.its.travelAgency.DTO.OrderDTO" alias="order"></typeAlias>
-
+        <typeAlias type="com.its.travelAgency.DTO.JoinDTO" alias="join"></typeAlias>
 
     </typeAliases>
 </configuration>

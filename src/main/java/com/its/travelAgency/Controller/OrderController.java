@@ -1,8 +1,6 @@
 package com.its.travelAgency.Controller;
 
-import com.its.travelAgency.DTO.CartDTO;
-import com.its.travelAgency.DTO.CommentDTO;
-import com.its.travelAgency.DTO.OrderDTO;
+import com.its.travelAgency.DTO.*;
 import com.its.travelAgency.Service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -22,7 +20,7 @@ public class OrderController {
     public String save(@ModelAttribute OrderDTO orderDTO){
         OrderDTO orderDTO1 = orderService.save(orderDTO);
         System.out.println(orderDTO1);
-        return "redirect:/booking/booking?o_id="+orderDTO.getO_id();
+        return "redirect:/booking/booked?cart_id="+orderDTO1.getCart_id();
     }
 
     @GetMapping("/booking")
@@ -34,7 +32,7 @@ public class OrderController {
         model.addAttribute("order",orderDTO);
         List<OrderDTO> orderDTOList = orderService.booking();
         model.addAttribute("OrderList", orderDTOList);
-        return "bookingPage/booking";
+        return "/bookingPage/booking";
     }
 
     @PostMapping("/update")
@@ -42,12 +40,29 @@ public class OrderController {
         orderService.update(orderDTO);
         return "redirect:/booking/booking?o_id="+orderDTO.getCart_id();
     }
+    @GetMapping("/booked")
+    public String booked(@RequestParam("cart_id")long cart_id, Model model){
+        JoinDTO joinDTO = orderService.booked(cart_id);
+        model.addAttribute("join", joinDTO);
+        return "/bookingPage/booked";
+    }
+    @GetMapping("/findAll")
+    public String findAll(@RequestParam("memberId")String memberId, Model model){
+        List<OrderDTO> orderDTOList = orderService.findAll(memberId);
+        model.addAttribute("orderList", orderDTOList);
+        return "/bookingPage/detail";
+
+    }
+
+//    @GetMapping("/findAll")
+//    public String findAll(Model model) {
+//        long m_id = 0;
+//        List<MemberDTO> memberDTOList = memberService.findAll(m_id);
+//        model.addAttribute("memberList", memberDTOList);
+//        return "/memberPage/admin";
+//    }
+
 }
 
-//    @PostMapping("/update")
-//    public String update(@ModelAttribute BoardDTO boardDTO){
-//        boardService.update(boardDTO);
-//        return "redirect:/board/detail?b_id="+boardDTO.getB_id();
-//    }
 
 

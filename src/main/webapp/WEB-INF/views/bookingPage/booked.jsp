@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <html lang="ko">
 <head>
@@ -19,7 +19,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Passion+One:wght@900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
 
     <style>
         .bd-placeholder-img {
@@ -153,38 +153,39 @@
 <main>
     <section class="py-5 text-center container">
         <div class="row py-lg-5">
-            <div class="col-lg-5 col-md-8 mx-auto">
+            <div class="col-lg-15 col-md-14 mx-auto">
                 <h1 class="fw-light" style="font-family: 'Pacifico', cursive;">SH Travel Agency</h1>
-                <p class="lead text-muted" style="font-family: 'IM_Hyemin-Bold'; font-size: 24px;"><br>공지사항<br></p>
-                <form action="/board/saveFile" method="post" enctype="multipart/form-data">
-                    <div align="left"
-                         style="background-color: #f9f2f9; padding:20px; font-family:'IM_Hyemin-Bold'; font-size: 22px; border-radius: 20px;">
-                        <br>
-                        작성자<br>
-                        <input class="form-control mb-2" type="text" name="memberId"
-                               value="${sessionScope.loginMemberId}"
-                               readonly><br>
-                        카테고리<br>
-                        <select class="form-select" aria-label="Default select example">
-                            <option selected>카테고리</option>
-                            <option value="notice" onchange="">Notice</option>
-                            <option value="event">Event</option>
-                        </select><br>
-
-<%--                        <form method="post" name="form">--%>
-<%--                            <input type="submit" value="update" onclick="javascript: form.action='/manage/update';"/>--%>
-<%--                            <input type="submit" value="delete" onclick="javascript: form.action='/manage/delete';"/>--%>
-<%--                        </form>--%>
-
-                        제목<br>
-                        <input class="form-control mb-2" type="text" name="boardTitle" placeholder="제목"><br>
-                        내용<br>
-                        <textarea class="form-control mb-2" name="boardContents" rows="10" cols="50"></textarea><br>
-                        첨부파일<br>
-                        <input type="file" name="boardFile" value="file"><br><br>
-                        <input type="submit" id="SaveButton" value="글작성">
-                    </div>
-                </form>
+                <p class="lead text-muted" style="font-family: 'IM_Hyemin-Bold'; font-size: 24px;"><br>예약완료<br></p>
+                <div align="center"
+                     style="background-color: #f9f2f9; padding:20px; font-family:'IM_Hyemin-Bold'; font-size: 22px; border-radius: 20px;">
+                    <br>
+                    예약이 완료됐습니다!<br>
+                    <c:if test="${sessionScope.loginMemberId == join.memberId}">
+                        <table style="width: 100%; border-top: 1px solid #444444;border-collapse: collapse;">
+                            <tr id="firstTr">
+                                    <%--                            <th style="width: 15px">선택</th>--%>
+                                <th style="width: 15px">no</th>
+                                <th style="width: 80px">예약일자</th>
+                                <th style="width: 15px">상품번호</th>
+                                <th style="width: 150px;">상품제목</th>
+                                <th style="width: 80px;">출발일자</th>
+                                <th style="width: 50px">호텔옵션금액</th>
+                                <th style="width: 50px">현지투어금액</th>
+                                <th style="width: 1px">총금액</th>
+                            </tr>
+                            <tr>
+                                <td>${join.o_id}</td>
+                                <td>${join.orderCreatedDate}</td>
+                                <td>${join.i_id}</td>
+                                <td>${join.itemTitle}</td>
+                                <td>${join.bookingStartDate}</td>
+                                <td>${join.hotel}</td>
+                                <td>${join.tour}</td>
+                                <td>${join.price}</td>
+                            </tr>
+                        </table>
+                    </c:if>
+                </div>
             </div>
         </div>
     </section>

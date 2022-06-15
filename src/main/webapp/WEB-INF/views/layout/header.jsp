@@ -1,36 +1,162 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: user
-  Date: 2022-05-23
-  Time: 오후 3:27
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
+<!doctype html>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.98.0">
+    <title>SH Travel Agency</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/album/">
+    <%--    <link href="/resources/css/bootstrap.min.css" rel="stylesheet">--%>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Passion+One:wght@900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
+
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+
+        .b-example-divider {
+            height: 3rem;
+            background-color: rgba(0, 0, 0, .1);
+            border: solid rgba(0, 0, 0, .15);
+            border-width: 1px 0;
+            box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+        }
+
+        .b-example-vr {
+            flex-shrink: 0;
+            width: 1.5rem;
+            height: 100vh;
+        }
+
+        .bi {
+            vertical-align: -.125em;
+            fill: currentColor;
+        }
+
+        .nav-scroller {
+            position: relative;
+            z-index: 2;
+            height: 2.75rem;
+            overflow-y: hidden;
+        }
+
+        .nav-scroller .nav {
+            display: flex;
+            flex-wrap: nowrap;
+            padding-bottom: 1rem;
+            margin-top: -1px;
+            overflow-x: auto;
+            text-align: center;
+            white-space: nowrap;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        a {
+            text-decoration-line: none;
+        }
+
+        @font-face {
+            font-family: 'IM_Hyemin-Bold';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2106@1.1/IM_Hyemin-Bold.woff2') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        .lead text-muted {
+            -webkit-text-stroke: 3px black;
+        }
+    </style>
+
+
+</head>
+<body>
 <head>
     <link rel="stylesheet" href="/resources/css/bootstrap.min.css">
 
 </head>
-<body>
-<header class="p-3 bg-dark text-white">
-    <div class="container">
-        <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-            <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                <li><a href="/" class="nav-link px-2 text-secondary">Home</a></li>
-                <li><a href="/board/save" class="nav-link px-2 text-white">글쓰기</a></li>
-                <li><a href="/board/findAll" class="nav-link px-2 text-white">글목록</a></li>
-            </ul>
+<header>
+    <div class="collapse bg-dark" id="navbarHeader">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4 col-md-6 py-6">
+                    <p class="text-muted">Portuguese Republic is a country whose mainland is located on the Iberian
+                        Peninsula of Southwestern Europe</p>
+                </div>
+                <div class="col-sm-2 offset-md-0.1 py-0.1">
+                    <h4 class="text-white" style="font-family: 'Pacifico', cursive;font-size: 30px">Trip</h4>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white" style="font-size: 18px">Trip to Porto</a></li>
+                        <li><a href="#" class="text-white" style="font-size: 18px">Trip to Lisbon</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-2 offset-md-0.1 py-0.1">
+                    <h4 class="text-white" style="font-family: 'Pacifico', cursive; font-size: 30px">Reservation</h4>
+                    <ul class="list-unstyled">
+                        <li><a href="/booking/findAll?memberId=${sessionScope.loginMemberId}" class="text-white"
+                               style="font-size: 18px">Manage Booking</a></li>
+                        <li><a href="/cart/findAll" class="text-white" style="font-size: 18px">Cart</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-2 offset-md-0.1 py-0.1">
+                    <h4 class="text-white" style="font-family: 'Pacifico', cursive; font-size: 30px">members</h4>
+                    <ul class="list-unstyled">
+                        <c:if test="${sessionScope.loginMemberId == null}">
+                            <li><a href="/member/login" class="text-white" style="font-size: 18px">Login</a></li>
+                            <li><a href="/member/saveFile" class="text-white" style="font-size: 18px">Join us</a></li>
+                        </c:if>
+                        <c:if test="${sessionScope.loginMemberId != null}">
+                            <li><a href="/member/logout" class="text-white" style="font-size: 18px">Logout</a></li>
+                        </c:if>
+                        <li><a href="/board/paging" class="text-white" style="font-size: 18px">Notice</a></li>
+                        <li><a href="#" class="text-white" style="font-size: 18px">Event</a></li>
+                        <c:if test="${sessionScope.loginMemberId == 'admin'}">
+                            <li><a href="/board/saveFile" class="text-white" style="font-size: 18px">Manage notice</a>
+                            </li>
+                        </c:if>
 
-            <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
-                <input type="search" class="form-control form-control-dark text-white bg-dark" placeholder="Search..." aria-label="Search">
-            </form>
-
-            <div class="text-end">
-                <button type="button" class="btn btn-outline-light me-2">Login</button>
-                <button type="button" class="btn btn-warning">Sign-up</button>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
+    <div class="navbar navbar-dark bg-dark shadow-sm">
+        <div class="container">
+            <a href="/" class="navbar-brand d-flex align-items-center">
+
+                <strong style="font-family: 'Pacifico', cursive; font-size: 35px">SH Travel Agency</strong>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader"
+                    aria-controls="offcanvasRight" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+        </div>
+    </div>
 </header>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
 </body>
+
 </html>

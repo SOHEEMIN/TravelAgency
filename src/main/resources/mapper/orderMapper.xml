@@ -18,6 +18,11 @@
     <update id="update" parameterType="order">
         update order_table set o_id=#{o_id}, memberId=#{memberId}, cart_id=#{cart_id}, price=#{price}, orderCreatedDate={orderCreatedDate}
     </update>
-
+    <select id="booked" resultType="join" parameterType="long">
+        select * from order_table, cart_table where order_table.cart_id = cart_table.cart_id and cart_table.cart_id = #{cart_id};
+    </select>
+    <select id="findAll" resultType="order" parameterType="String">
+        select * from order_table where memberId=#{memberId}
+    </select>
 
 </mapper>

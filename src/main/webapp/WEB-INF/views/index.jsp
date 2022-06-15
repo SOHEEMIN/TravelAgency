@@ -110,7 +110,7 @@
                 <div class="col-sm-2 offset-md-0.1 py-0.1">
                     <h4 class="text-white" style="font-family: 'Pacifico', cursive; font-size: 30px">Reservation</h4>
                     <ul class="list-unstyled">
-                        <li><a href="#" class="text-white" style="font-size: 18px">Manage Booking</a></li>
+                        <li><a href="/booking/findAll?memberId=${sessionScope.loginMemberId}" class="text-white" style="font-size: 18px">Manage Booking</a></li>
                         <li><a href="/cart/findAll" class="text-white" style="font-size: 18px">Cart</a></li>
                     </ul>
                 </div>
@@ -128,6 +128,8 @@
                         <li><a href="#" class="text-white" style="font-size: 18px">Event</a></li>
                         <c:if test="${sessionScope.loginMemberId == 'admin'}">
                             <li><a href="/board/saveFile" class="text-white" style="font-size: 18px">Manage notice</a>
+                            </li>
+                            <li><a href="/board/saveGoods" class="text-white" style="font-size: 18px">Manage goods</a>
                             </li>
                         </c:if>
 

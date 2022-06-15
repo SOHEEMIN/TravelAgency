@@ -1,6 +1,7 @@
 package com.its.travelAgency.Service;
 
 import com.its.travelAgency.DTO.CartDTO;
+import com.its.travelAgency.DTO.JoinDTO;
 import com.its.travelAgency.DTO.OrderDTO;
 import com.its.travelAgency.Repository.OrderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,5 +29,13 @@ public class OrderService {
 
     public void update(OrderDTO orderDTO) {
         orderRepository.update(orderDTO);
+    }
+
+    public JoinDTO booked(long cart_id) {
+        return orderRepository.booked(cart_id);
+    }
+
+    public List<OrderDTO> findAll(String memberId) {
+        return orderRepository.findAll(memberId);
     }
 }

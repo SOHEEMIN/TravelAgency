@@ -201,6 +201,7 @@
                                             </form>
                                         </tr>
                                     </c:if>
+                                <a href=/booking/booked?cart_id=${cart.cart_id}>ㅇㅅㅇ</a>
                             </c:forEach>
                         </table>
                         <br>
