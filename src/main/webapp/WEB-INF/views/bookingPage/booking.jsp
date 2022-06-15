@@ -160,19 +160,37 @@
             <div class="col-lg-10 col-md-8 mx-auto">
                 <h1 class="fw-light" style="font-family: 'Pacifico', cursive;">SH Travel Agency</h1>
                 <p class="lead text-muted" style="font-family: 'IM_Hyemin-Bold'; font-size: 24px;"><br>여행 예약<br></p>
-                    <div align="center"
-                         style="background-color: #f9f2f9; padding:20px; font-family:'IM_Hyemin-Bold'; font-size: 22px; border-radius: 20px;">
-                        <br>
-                        결제페이지<br>
-                        ${order.o_id}
-                        ${order.price}
-                        ${order.cart_id}
-                        ${order.memberId}
-                        ${order.orderCreatedDate}
-                        ${cart.itemTitle}
-                    </div>
-                <button onclick="requestPay()">결제하기</button>
-
+                <div align="center"
+                     style="background-color: #f9f2f9; padding:20px; font-family:'IM_Hyemin-Bold'; font-size: 22px; border-radius: 20px;">
+                    <br>
+                    결제페이지<br>
+                    <table style="width: 100%; border-top: 1px solid #444444;border-collapse: collapse;">
+                        <tr id="firstTr">
+                            <%--                            <th style="width: 15px">선택</th>--%>
+                            <th style="width: 15px">상품번호</th>
+                            <th style="width: 150px;">상품제목</th>
+                            <th style="width: 80px;">출발일자</th>
+                            <th style="width: 70px">투숙호텔</th>
+                            <th style="width: 70px">현지투어</th>
+                            <th style="width: 60px">총금액</th>
+                        </tr>
+                        <tr>
+                            <td>${cart.i_id}</td>
+                            <td><a href="/item/firstPorto"/>${cart.itemTitle}</td>
+                            <td>${cart.bookingStartDate}</td>
+                            <td>${cart.hotel}</td>
+                            <td>${cart.tour}</td>
+                            <td>${cart.price}</td>
+                        </tr>
+                    </table>
+                    <br>
+                    <form action="/booking/save" method="post" name="paySubmitForm">
+                        <input type="hidden" name="memberId" value="${sessionScope.loginMemberId}">
+                        <input type="hidden" name="cart_id" value="${cart.cart_id}">
+                        <input type="hidden" name="price" value="${cart.price}">
+                        <input type="button" onclick="requestPay()" value="결제하기">
+                    </form>
+                </div>
             </div>
         </div>
     </section>
@@ -219,7 +237,6 @@
         crossorigin="anonymous"></script>
 </body>
 <script>
-<c:forEach items="${OrderList}" var="order">
     function requestPay() {
         var IMP = window.IMP;
         IMP.init('imp71505555');
@@ -228,7 +245,7 @@
             pay_method: 'card',
             merchant_uid: 'merchant_' + new Date().getTime(),
             name: '결제',
-            amount: ${order.price},
+            amount: ${cart.price},
             buyer_email: '구매자 이메일',
             buyer_name: '구매자 이름',
             buyer_tel: '구매자 번호',
@@ -238,15 +255,14 @@
         }, function (rsp) {
             if (rsp.success) {
                 var msg = '결제가 완료되었습니다.';
-                location.href = 'cart/findAll';
+                location.href = "/booking/booked?cart_id=${cart.cart_id}";
+                paySubmitForm.submit();
             } else {
                 var msg = '결제에 실패하였습니다.';
-                rsp.error_msg;
+                location.href = "/cart/findAll";
 
             }
         });
     }
-</c:forEach>
-
 </script>
 </html>

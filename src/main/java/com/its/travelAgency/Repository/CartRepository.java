@@ -2,6 +2,7 @@ package com.its.travelAgency.Repository;
 
 import com.its.travelAgency.DTO.BoardDTO;
 import com.its.travelAgency.DTO.CartDTO;
+import com.its.travelAgency.DTO.JoinDTO;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -27,10 +28,9 @@ public class CartRepository {
         sql.delete("Cart.delete", cart_id);
     }
 
-    public CartDTO findById(long id) {
-        return sql.selectOne("Cart.findById", id);
+    public CartDTO findById(long cart_id) {
+        return sql.selectOne("Cart.findById", cart_id);
     }
-
 
     public CartDTO findMemberId(String memberId) {
         return sql.selectOne("Cart.findMemberId", memberId);

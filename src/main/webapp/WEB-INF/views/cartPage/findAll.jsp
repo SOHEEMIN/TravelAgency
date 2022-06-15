@@ -179,9 +179,7 @@
                             </tr>
                             <c:forEach items="${cartList}" var="cart">
 <%--                                location.href = "/board/delete?b_id=${board.b_id}";--%>
-
-                                <form action="/booking/save" method="post" name="orderSubmitForm">
-                                    <c:if test="${sessionScope.loginMemberId eq cart.memberId}">
+                                 <c:if test="${sessionScope.loginMemberId eq cart.memberId}">
                                         <tr>
                                             <td>
                                                 <input name="box" type="checkbox" value="${cart.price}"
@@ -195,13 +193,14 @@
                                             <td>${cart.price}</td>
 <%--                                            <td><a href="/cart/delete?cart_id=${cart.cart_id}"/>삭제</td>--%>
                                             <td><button type="button"  style="border-radius: 15%;" onclick="location.href='/cart/delete?cart_id=${cart.cart_id}';">삭제</button></td>
+                                            <form action="/cart/findById" method="get" name="orderSubmitForm">
                                             <input type="hidden" name="memberId" value="${sessionScope.loginMemberId}">
                                             <input type="hidden" name="cart_id" value="${cart.cart_id}">
                                             <input type="hidden" name="price" value="${cart.price}">
                                             <td><input type="submit" value="주문"/></td>
+                                            </form>
                                         </tr>
                                     </c:if>
-                                </form>
                             </c:forEach>
                         </table>
                         <br>
@@ -272,29 +271,29 @@
 
         <%--</c:forEach>--%>
 
-    function itemSum(frm) {
-        let sum = 0;
-        const count = frm.box.length;
-        for (let i = 0; i < count; i++) {
-            if (frm.box[i].checked == true) {
-                sum += parseInt(frm.box[i].value);
-            }
-        }
-        frm.totalPrice.value = sum;
-    }
+    <%--function itemSum(frm) {--%>
+    <%--    let sum = 0;--%>
+    <%--    const count = frm.box.length;--%>
+    <%--    for (let i = 0; i < count; i++) {--%>
+    <%--        if (frm.box[i].checked == true) {--%>
+    <%--            sum += parseInt(frm.box[i].value);--%>
+    <%--        }--%>
+    <%--    }--%>
+    <%--    frm.totalPrice.value = sum;--%>
+    <%--}--%>
 
-    function Check(form) {
-        //'확인' 버튼을 클릭했을 때 실행되는 메서드
-        let msg = 0;
-        const count = form.box.length;
-        for (let i = 0; i < count; i++) {
-            if (form.box[i].checked == true) {
-                msg += parseInt(form.box[i].value);
-            }
-        }
-        alert(msg);
-        location.href = "/booking/booking?memberId=${cart.memberId}";
-    }
+    <%--function Check(form) {--%>
+    <%--    //'확인' 버튼을 클릭했을 때 실행되는 메서드--%>
+    <%--    let msg = 0;--%>
+    <%--    const count = form.box.length;--%>
+    <%--    for (let i = 0; i < count; i++) {--%>
+    <%--        if (form.box[i].checked == true) {--%>
+    <%--            msg += parseInt(form.box[i].value);--%>
+    <%--        }--%>
+    <%--    }--%>
+    <%--    alert(msg);--%>
+    <%--    location.href = "/booking/booking?memberId=${cart.memberId}";--%>
+    <%--}--%>
 
     function orderSubmit() {
         orderSubmitForm.submit();

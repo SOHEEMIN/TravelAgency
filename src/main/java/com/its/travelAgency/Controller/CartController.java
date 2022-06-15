@@ -1,8 +1,6 @@
 package com.its.travelAgency.Controller;
 
-import com.its.travelAgency.DTO.BoardDTO;
-import com.its.travelAgency.DTO.CartDTO;
-import com.its.travelAgency.DTO.CommentDTO;
+import com.its.travelAgency.DTO.*;
 import com.its.travelAgency.Service.CartService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -38,10 +36,11 @@ public class CartController {
         return "redirect:/cart/findAll";
     }
 
-//    @GetMapping("/findById")
-//    public String findById(@RequestParam("cart_id")long cart_id, Model model){
-//        model.addAttribute("cart",cartService.findById(cart_id));
-//        System.out.println("카트아이디"+cart_id);
-//        return "bookingPage/booking";
-//    }
+    @GetMapping("/findById")
+    public String findById(@RequestParam("cart_id")long cart_id, Model model){
+        model.addAttribute("cart",cartService.findById(cart_id));
+        System.out.println(cart_id);
+//        return "redirect:/booking/booking?cart_id="+cartDTO.getCart_id();
+        return "bookingPage/booking";
+    }
 }
