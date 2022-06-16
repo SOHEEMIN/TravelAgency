@@ -129,7 +129,7 @@
                         <c:if test="${sessionScope.loginMemberId == 'admin'}">
                             <li><a href="/board/saveFile" class="text-white" style="font-size: 18px">Manage notice</a>
                             </li>
-                            <li><a href="/board/saveGoods" class="text-white" style="font-size: 18px">Manage goods</a>
+                            <li><a href="/event/saveGoods" class="text-white" style="font-size: 18px">Manage goods</a>
                             </li>
                         </c:if>
 

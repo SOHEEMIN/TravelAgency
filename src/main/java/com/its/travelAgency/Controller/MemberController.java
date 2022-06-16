@@ -56,6 +56,7 @@ public class MemberController {
             model.addAttribute("loginMember", loginMember);
             session.setAttribute("loginMemberId", loginMember.getMemberId());
             session.setAttribute("loginId", loginMember.getM_id());
+            System.out.println("로그인"+loginMember);
             return "/index";
 
         }else {

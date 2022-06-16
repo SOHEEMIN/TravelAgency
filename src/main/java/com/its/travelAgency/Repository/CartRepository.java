@@ -3,6 +3,7 @@ package com.its.travelAgency.Repository;
 import com.its.travelAgency.DTO.BoardDTO;
 import com.its.travelAgency.DTO.CartDTO;
 import com.its.travelAgency.DTO.JoinDTO;
+import com.its.travelAgency.DTO.MemberDTO;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -32,7 +33,11 @@ public class CartRepository {
         return sql.selectOne("Cart.findById", cart_id);
     }
 
-    public CartDTO findMemberId(String memberId) {
-        return sql.selectOne("Cart.findMemberId", memberId);
+    public CartDTO findByOne(CartDTO cartDTO) {
+        return sql.selectOne("Cart.findByOne", cartDTO);
     }
+//    public MemberDTO login(MemberDTO memberDTO) {
+//        return sql.selectOne("Member.login", memberDTO);
+//    }
+
 }

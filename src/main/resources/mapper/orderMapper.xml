@@ -4,7 +4,7 @@
 
 <mapper namespace="Order">
     <insert id="save" parameterType="order">
-        insert into order_table(cart_id, memberId, price) values (#{cart_id}, #{memberId}, #{price})
+        insert into order_table(memberId, price,i_id) values (#{memberId}, #{price},#{i_id})
         <selectKey resultType="long" keyProperty="o_id" order="AFTER">
             SELECT LAST_INSERT_ID()
         </selectKey>
@@ -16,10 +16,10 @@
         select * from order_table where o_id =#{o_id}
     </select>
     <update id="update" parameterType="order">
-        update order_table set o_id=#{o_id}, memberId=#{memberId}, cart_id=#{cart_id}, price=#{price}, orderCreatedDate={orderCreatedDate}
+        update order_table set o_id=#{o_id}, memberId=#{memberId}, price=#{price}, orderCreatedDate={orderCreatedDate}
     </update>
-    <select id="booked" resultType="join" parameterType="long">
-        select * from order_table, cart_table where order_table.cart_id = cart_table.cart_id and cart_table.cart_id = #{cart_id};
+    <select id="booked" resultType="join" parameterType="Long">
+        select * from order_table, cart_table where order_table.i_id = cart_table.i_id and order_table.o_id = #{o_id};
     </select>
     <select id="findAll" resultType="order" parameterType="String">
         select * from order_table where memberId=#{memberId}

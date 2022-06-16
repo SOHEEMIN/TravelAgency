@@ -195,13 +195,13 @@
                                             <td><button type="button"  style="border-radius: 15%;" onclick="location.href='/cart/delete?cart_id=${cart.cart_id}';">삭제</button></td>
                                             <form action="/cart/findById" method="get" name="orderSubmitForm">
                                             <input type="hidden" name="memberId" value="${sessionScope.loginMemberId}">
+                                            <input type="hidden" name="i_id" value="${cart.i_id}">
                                             <input type="hidden" name="cart_id" value="${cart.cart_id}">
                                             <input type="hidden" name="price" value="${cart.price}">
                                             <td><input type="submit" value="주문"/></td>
                                             </form>
                                         </tr>
                                     </c:if>
-                                <a href=/booking/booked?cart_id=${cart.cart_id}>ㅇㅅㅇ</a>
                             </c:forEach>
                         </table>
                         <br>
@@ -272,16 +272,16 @@
 
         <%--</c:forEach>--%>
 
-    <%--function itemSum(frm) {--%>
-    <%--    let sum = 0;--%>
-    <%--    const count = frm.box.length;--%>
-    <%--    for (let i = 0; i < count; i++) {--%>
-    <%--        if (frm.box[i].checked == true) {--%>
-    <%--            sum += parseInt(frm.box[i].value);--%>
-    <%--        }--%>
-    <%--    }--%>
-    <%--    frm.totalPrice.value = sum;--%>
-    <%--}--%>
+    // function itemSum(frm) {
+    //     let sum = 0;
+    //     const count = frm.box.length;
+    //     for (let i = 0; i < count; i++) {
+    //         if (frm.box[i].checked == true) {
+    //             sum += parseInt(frm.box[i].value);
+    //         }
+    //     }
+    //     frm.totalPrice.value = sum;
+    // }
 
     <%--function Check(form) {--%>
     <%--    //'확인' 버튼을 클릭했을 때 실행되는 메서드--%>
@@ -296,8 +296,8 @@
     <%--    location.href = "/booking/booking?memberId=${cart.memberId}";--%>
     <%--}--%>
 
-    function orderSubmit() {
-        orderSubmitForm.submit();
-    }
+    // function orderSubmit() {
+    //     orderSubmitForm.submit();
+    // }
 </script>
 </html>

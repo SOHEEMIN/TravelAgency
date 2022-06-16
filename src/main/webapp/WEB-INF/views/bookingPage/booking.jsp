@@ -184,10 +184,10 @@
                         </tr>
                     </table>
                     <br>
-                    <form action="/booking/save" method="post" name="paySubmitForm">
+                    <form action="/booking/booked" method="post" name="paySubmitForm">
                         <input type="hidden" name="memberId" value="${sessionScope.loginMemberId}">
-                        <input type="hidden" name="cart_id" value="${cart.cart_id}">
                         <input type="hidden" name="price" value="${cart.price}">
+                        <input type="hidden" name="i_id" value="${cart.i_id}">
                         <input type="button" onclick="requestPay()" value="결제하기">
                     </form>
                 </div>
@@ -255,7 +255,7 @@
         }, function (rsp) {
             if (rsp.success) {
                 var msg = '결제가 완료되었습니다.';
-                location.href = "/booking/booked?cart_id=${cart.cart_id}";
+                location.href = "/";
                 paySubmitForm.submit();
             } else {
                 var msg = '결제에 실패하였습니다.';

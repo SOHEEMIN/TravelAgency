@@ -3,6 +3,7 @@ package com.its.travelAgency.Service;
 import com.its.travelAgency.DTO.BoardDTO;
 import com.its.travelAgency.DTO.CartDTO;
 import com.its.travelAgency.DTO.JoinDTO;
+import com.its.travelAgency.DTO.MemberDTO;
 import com.its.travelAgency.Repository.CartRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -29,4 +30,13 @@ public class CartService {
     public CartDTO findById(long cart_id) {
         return cartRepository.findById(cart_id);
     }
+
+    public CartDTO findByOne(CartDTO cartDTO) {
+        CartDTO cartDTO1 = cartRepository.findByOne(cartDTO);
+        return cartDTO1;
+    }
+//    public MemberDTO login(MemberDTO memberDTO) {
+//        MemberDTO loginMember = memberRepository.login(memberDTO);
+//        return loginMember;
+//    }
 }

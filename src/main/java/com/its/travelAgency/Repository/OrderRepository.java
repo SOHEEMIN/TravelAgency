@@ -31,8 +31,8 @@ public class OrderRepository {
         sql.update("Order.update", orderDTO);
     }
 
-    public JoinDTO booked(long cart_id) {
-        return sql.selectOne("Order.booked", cart_id);
+    public JoinDTO booked(Long o_id) {
+        return sql.selectOne("Order.booked", o_id);
     }
 
     public List<OrderDTO> findAll(String memberId) {

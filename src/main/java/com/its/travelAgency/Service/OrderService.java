@@ -31,8 +31,8 @@ public class OrderService {
         orderRepository.update(orderDTO);
     }
 
-    public JoinDTO booked(long cart_id) {
-        return orderRepository.booked(cart_id);
+    public JoinDTO booked(Long o_id) {
+        return orderRepository.booked(o_id);
     }
 
     public List<OrderDTO> findAll(String memberId) {
