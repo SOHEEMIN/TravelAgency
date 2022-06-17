@@ -7,6 +7,7 @@ import com.its.travelAgency.DTO.MemberDTO;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.List;
 
@@ -17,8 +18,13 @@ public class CartRepository {
 
     public void save(CartDTO cartDTO) {
         System.out.println("CartRepository.save");
-        System.out.println("cartDTO = " + cartDTO);
+
         sql.insert("Cart.save", cartDTO);
+    }
+
+    public CartDTO duplicateCheck(CartDTO cartDTO) {
+        System.out.println("CartRepository.duplicateCheck");
+        return sql.selectOne("Cart.duplicateCheck", cartDTO);
     }
 
     public List<CartDTO> findAll() {

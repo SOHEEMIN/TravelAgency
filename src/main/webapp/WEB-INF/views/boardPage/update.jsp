@@ -99,17 +99,12 @@
                         Peninsula of Southwestern Europe</p>
                 </div>
                 <div class="col-sm-2 offset-md-0.1 py-0.1">
-                    <h4 class="text-white" style="font-family: 'Pacifico', cursive;font-size: 30px">Trip</h4>
-                    <ul class="list-unstyled">
-                        <li><a href="" class="text-white" style="font-size: 18px">Trip to Porto</a></li>
-                        <li><a href="#" class="text-white" style="font-size: 18px">Trip to Lisbon</a></li>
-                    </ul>
                 </div>
                 <div class="col-sm-2 offset-md-0.1 py-0.1">
                     <h4 class="text-white" style="font-family: 'Pacifico', cursive; font-size: 30px">Reservation</h4>
                     <ul class="list-unstyled">
-                        <li><a href="#" class="text-white" style="font-size: 18px">Manage Booking</a></li>
-                        <li><a href="#" class="text-white" style="font-size: 18px">Cart</a></li>
+                        <li><a href="/booking/findAll?memberId=${sessionScope.loginMemberId}" class="text-white" style="font-size: 18px">Manage Booking</a></li>
+                        <li><a href="/cart/findAll" class="text-white" style="font-size: 18px">Cart</a></li>
                     </ul>
                 </div>
                 <div class="col-sm-2 offset-md-0.1 py-0.1">
@@ -123,10 +118,14 @@
                             <li><a href="/member/logout" class="text-white" style="font-size: 18px">Logout</a></li>
                         </c:if>
                         <li><a href="/board/paging" class="text-white" style="font-size: 18px">Notice</a></li>
-                        <li><a href="#" class="text-white" style="font-size: 18px">Event</a></li>
+                        <li><a href="/board/event" class="text-white" style="font-size: 18px">Event</a></li>
                         <c:if test="${sessionScope.loginMemberId == 'admin'}">
-                            <li><a href="/board/saveFile" class="text-white" style="font-size: 18px">Manage notice</a></li>
+                            <li><a href="/board/saveFile" class="text-white" style="font-size: 18px">Manage notice</a>
+                            </li>
+                            <li><a href="/event/saveGoods" class="text-white" style="font-size: 18px">Manage goods</a>
+                            </li>
                         </c:if>
+
                     </ul>
                 </div>
             </div>

@@ -2,7 +2,6 @@ package com.its.travelAgency.Controller;
 
 import com.its.travelAgency.DTO.*;
 import com.its.travelAgency.Service.CartService;
-import com.its.travelAgency.Service.SaveService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,14 +15,17 @@ import java.util.List;
 public class CartController {
     @Autowired
     private CartService cartService;
-    @Autowired
-    private SaveService saveService;
 
+    @GetMapping("/save")
+    public String save(@ModelAttribute CartDTO cartDTO) {
+        System.out.println("CartController.save");
 
-    @PostMapping("/save")
-    public String save(@ModelAttribute CartDTO cartDTO, HttpSession session, Model model) {
         cartService.save(cartDTO);
-//        saveService.save(cartDTO);
+        return "redirect:/cart/findAll";
+    }
+
+    @GetMapping("/findAll")
+    public String findAll(Model model, @ModelAttribute CartDTO cartDTO, HttpSession session) {
         CartDTO cartDTO1 = cartService.findByOne(cartDTO);
         List<CartDTO> cartDTOList = cartService.findAll();
         model.addAttribute("cartList", cartDTOList);
@@ -31,16 +33,14 @@ public class CartController {
             model.addAttribute("cartDTO1", cartDTO1);
             session.setAttribute("cartI_id", cartDTO.getI_id());
             session.setAttribute("cart_title", cartDTO.getItemTitle());
+            session.setAttribute("cart_memberId", cartDTO.getMemberId());
+            session.setAttribute("cart_bookingStartDate", cartDTO.getBookingStartDate());
+            session.setAttribute("cart_hotel", cartDTO.getHotel());
+            session.setAttribute("cart_tour", cartDTO.getTour());
+            session.setAttribute("cart_price", cartDTO.getPrice());
             System.out.println("카트1DTO"+cartDTO1);
             return "/portoPage/firstPorto";
         }
-        return "redirect:/cart/findAll";
-    }
-
-    @GetMapping("/findAll")
-    public String findAll(Model model) {
-        List<CartDTO> cartDTOList = cartService.findAll();
-        model.addAttribute("cartList", cartDTOList);
         return "cartPage/findAll";
     }
 
@@ -72,4 +72,19 @@ public class CartController {
 //            return "/memberPage/login";
 //        }
 //    }
+
+    @GetMapping("/duplicateCheck")
+    public @ResponseBody String duplicateCheck(@RequestParam("i_id") String i_id, @RequestParam("memberId") String memberId) {
+
+        System.out.println("i_id = " + i_id);
+        System.out.println("memberId = " + memberId);
+
+        CartDTO cartDTO = new CartDTO();
+        cartDTO.setI_id(i_id);
+        cartDTO.setMemberId(memberId);
+
+        System.out.println(cartDTO);
+
+        return cartService.duplicateCheck(cartDTO);
+    }
 }

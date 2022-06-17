@@ -98,61 +98,58 @@
 
 </head>
 <body>
-<header>
-    <div class="collapse bg-dark" id="navbarHeader">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-4 col-md-6 py-6">
-                    <p class="text-muted">Portuguese Republic is a country whose mainland is located on the Iberian
-                        Peninsula of Southwestern Europe</p>
-                </div>
-                <div class="col-sm-2 offset-md-0.1 py-0.1">
-                    <h4 class="text-white" style="font-family: 'Pacifico', cursive;font-size: 30px">Trip</h4>
-                    <ul class="list-unstyled">
-                        <li><a href="" class="text-white" style="font-size: 18px">Trip to Porto</a></li>
-                        <li><a href="#" class="text-white" style="font-size: 18px">Trip to Lisbon</a></li>
-                    </ul>
-                </div>
-                <div class="col-sm-2 offset-md-0.1 py-0.1">
-                    <h4 class="text-white" style="font-family: 'Pacifico', cursive; font-size: 30px">Reservation</h4>
-                    <ul class="list-unstyled">
-                        <li><a href="#" class="text-white" style="font-size: 18px">Manage Booking</a></li>
-                        <li><a href="#" class="text-white" style="font-size: 18px">Cart</a></li>
-                    </ul>
-                </div>
-                <div class="col-sm-2 offset-md-0.1 py-0.1">
-                    <h4 class="text-white" style="font-family: 'Pacifico', cursive; font-size: 30px">members</h4>
-                    <ul class="list-unstyled">
-                        <c:if test="${sessionScope.loginMemberId == null}">
-                            <li><a href="/member/login" class="text-white" style="font-size: 18px">Login</a></li>
-                            <li><a href="/member/saveFile" class="text-white" style="font-size: 18px">Join us</a></li>
-                        </c:if>
-                        <c:if test="${sessionScope.loginMemberId != null}">
-                            <li><a href="/member/logout" class="text-white" style="font-size: 18px">Logout</a></li>
-                        </c:if>
-                        <li><a href="/board/paging" class="text-white" style="font-size: 18px">Notice</a></li>
-                        <li><a href="#" class="text-white" style="font-size: 18px">Event</a></li>
-                        <c:if test="${sessionScope.loginMemberId == 'admin'}">
-                            <li><a href="/board/saveFile" class="text-white" style="font-size: 18px">Manage notice</a>
-                            </li>
-                        </c:if>
-                    </ul>
-                </div>
+<div class="collapse bg-dark" id="navbarHeader">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4 col-md-6 py-6">
+                <p class="text-muted">Portuguese Republic is a country whose mainland is located on the Iberian
+                    Peninsula of Southwestern Europe</p>
+            </div>
+            <div class="col-sm-2 offset-md-0.1 py-0.1">
+            </div>
+            <div class="col-sm-2 offset-md-0.1 py-0.1">
+                <h4 class="text-white" style="font-family: 'Pacifico', cursive; font-size: 30px">Reservation</h4>
+                <ul class="list-unstyled">
+                    <li><a href="/booking/findAll?memberId=${sessionScope.loginMemberId}" class="text-white"
+                           style="font-size: 18px">Manage Booking</a></li>
+                    <li><a href="/cart/findAll" class="text-white" style="font-size: 18px">Cart</a></li>
+                </ul>
+            </div>
+            <div class="col-sm-2 offset-md-0.1 py-0.1">
+                <h4 class="text-white" style="font-family: 'Pacifico', cursive; font-size: 30px">members</h4>
+                <ul class="list-unstyled">
+                    <c:if test="${sessionScope.loginMemberId == null}">
+                        <li><a href="/member/login" class="text-white" style="font-size: 18px">Login</a></li>
+                        <li><a href="/member/saveFile" class="text-white" style="font-size: 18px">Join us</a></li>
+                    </c:if>
+                    <c:if test="${sessionScope.loginMemberId != null}">
+                        <li><a href="/member/logout" class="text-white" style="font-size: 18px">Logout</a></li>
+                    </c:if>
+                    <li><a href="/board/paging" class="text-white" style="font-size: 18px">Notice</a></li>
+                    <li><a href="/board/event" class="text-white" style="font-size: 18px">Event</a></li>
+                    <c:if test="${sessionScope.loginMemberId == 'admin'}">
+                        <li><a href="/board/saveFile" class="text-white" style="font-size: 18px">Manage notice</a>
+                        </li>
+                        <li><a href="/event/saveGoods" class="text-white" style="font-size: 18px">Manage goods</a>
+                        </li>
+                    </c:if>
+                </ul>
             </div>
         </div>
     </div>
-    <div class="navbar navbar-dark bg-dark shadow-sm">
-        <div class="container">
-            <a href="/" class="navbar-brand d-flex align-items-center">
+</div>
+<div class="navbar navbar-dark bg-dark shadow-sm">
+    <div class="container">
+        <a href="/" class="navbar-brand d-flex align-items-center">
 
-                <strong style="font-family: 'Pacifico', cursive; font-size: 35px">SH Travel Agency</strong>
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader"
-                    aria-controls="offcanvasRight" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-        </div>
+            <strong style="font-family: 'Pacifico', cursive; font-size: 35px">SH Travel Agency</strong>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader"
+                aria-controls="offcanvasRight" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
     </div>
+</div>
 </header>
 
 <main>
@@ -163,52 +160,56 @@
                 <p class="lead text-muted" style="font-family: 'IM_Hyemin-Bold'; font-size: 24px;"><br>장바구니<br></p>
                 <div class="container1" align="center"
                      style="background-color: #f9f2f9; padding:20px; font-family:'IM_Hyemin-Bold'; font-size: 22px; border-radius: 20px;">
-<%--                    <form name="form">--%>
-                        <table style="width: 100%; border-top: 1px solid #444444;border-collapse: collapse;">
-                            <tr id="firstTr">
-                                <%--                            <th style="width: 15px">선택</th>--%>
-                                <th style="width: 15px">선택</th>
-                                <th style="width: 15px">상품번호</th>
-                                <th style="width: 150px;">상품제목</th>
-                                <th style="width: 80px;">출발일자</th>
-                                <th style="width: 70px">투숙호텔</th>
-                                <th style="width: 70px">현지투어</th>
-                                <th style="width: 60px">총금액</th>
-                                <th style="width: 15px">삭제</th>
-                                <th style="width: 15px">주문</th>
-                            </tr>
-                            <c:forEach items="${cartList}" var="cart">
-<%--                                location.href = "/board/delete?b_id=${board.b_id}";--%>
-                                 <c:if test="${sessionScope.loginMemberId eq cart.memberId}">
-                                        <tr>
-                                            <td>
-                                                <input name="box" type="checkbox" value="${cart.price}"
-                                                       onclick="itemSum(this.form);">
-                                            </td>
-                                            <td>${cart.i_id}</td>
-                                            <td><a href="/item/firstPorto"/>${cart.itemTitle}</td>
-                                            <td>${cart.bookingStartDate}</td>
-                                            <td>${cart.hotel}</td>
-                                            <td>${cart.tour}</td>
-                                            <td>${cart.price}</td>
-<%--                                            <td><a href="/cart/delete?cart_id=${cart.cart_id}"/>삭제</td>--%>
-                                            <td><button type="button"  style="border-radius: 15%;" onclick="location.href='/cart/delete?cart_id=${cart.cart_id}';">삭제</button></td>
-                                            <form action="/cart/findById" method="get" name="orderSubmitForm">
-                                            <input type="hidden" name="memberId" value="${sessionScope.loginMemberId}">
-                                            <input type="hidden" name="i_id" value="${cart.i_id}">
-                                            <input type="hidden" name="cart_id" value="${cart.cart_id}">
-                                            <input type="hidden" name="price" value="${cart.price}">
-                                            <td><input type="submit" value="주문"/></td>
-                                            </form>
-                                        </tr>
-                                    </c:if>
-                            </c:forEach>
-                        </table>
-                        <br>
-<%--                        <div>총금액:&nbsp;<input style="border:none" name="totalPrice" type="text" size="20" readonly>--%>
-<%--                        </div>--%>
-<%--                        <div><input type="button" onclick="Check(this.form)" value="예약"></div>--%>
-<%--                    </form>--%>
+                    <%--                    <form name="form">--%>
+                    <table style="width: 100%; border-top: 1px solid #444444;border-collapse: collapse;">
+                        <tr id="firstTr">
+                            <%--                            <th style="width: 15px">선택</th>--%>
+                            <th style="width: 15px">선택</th>
+                            <th style="width: 15px">상품번호</th>
+                            <th style="width: 150px;">상품제목</th>
+                            <th style="width: 80px;">출발일자</th>
+                            <th style="width: 70px">투숙호텔</th>
+                            <th style="width: 70px">현지투어</th>
+                            <th style="width: 60px">총금액</th>
+                            <th style="width: 15px">삭제</th>
+                            <th style="width: 15px">주문</th>
+                        </tr>
+                        <c:forEach items="${cartList}" var="cart">
+                            <%--                                location.href = "/board/delete?b_id=${board.b_id}";--%>
+                            <c:if test="${sessionScope.loginMemberId eq cart.memberId}">
+                                <tr>
+                                    <td>
+                                        <input name="box" type="checkbox" value="${cart.price}"
+                                               onclick="itemSum(this.form);">
+                                    </td>
+                                    <td>${cart.i_id}</td>
+                                    <td><a href="/item/firstPorto"/>${cart.itemTitle}</td>
+                                    <td>${cart.bookingStartDate}</td>
+                                    <td>${cart.hotel}</td>
+                                    <td>${cart.tour}</td>
+                                    <td>${cart.price}</td>
+                                        <%--                                            <td><a href="/cart/delete?cart_id=${cart.cart_id}"/>삭제</td>--%>
+                                    <td>
+                                        <button type="button" style="border-radius: 15%;"
+                                                onclick="location.href='/cart/delete?cart_id=${cart.cart_id}';">삭제
+                                        </button>
+                                    </td>
+                                    <form action="/cart/findById" method="get" name="orderSubmitForm">
+                                        <input type="hidden" name="memberId" value="${sessionScope.loginMemberId}">
+                                        <input type="hidden" name="i_id" value="${cart.i_id}">
+                                        <input type="hidden" name="cart_id" value="${cart.cart_id}">
+                                        <input type="hidden" name="price" value="${cart.price}">
+                                        <td><input type="submit" value="주문"/></td>
+                                    </form>
+                                </tr>
+                            </c:if>
+                        </c:forEach>
+                    </table>
+                    <br>
+                    <%--                        <div>총금액:&nbsp;<input style="border:none" name="totalPrice" type="text" size="20" readonly>--%>
+                    <%--                        </div>--%>
+                    <%--                        <div><input type="button" onclick="Check(this.form)" value="예약"></div>--%>
+                    <%--                    </form>--%>
                 </div>
             </div>
         </div>
@@ -261,16 +262,16 @@
 
     }
 
-        <%--<c:forEach items="${cartList}" var="cart">--%>
-        <%--function delCart() {--%>
-        <%--    answer = confirm("삭제하시겠습니까?");--%>
-        <%--    if (answer == true) {--%>
+    <%--<c:forEach items="${cartList}" var="cart">--%>
+    <%--function delCart() {--%>
+    <%--    answer = confirm("삭제하시겠습니까?");--%>
+    <%--    if (answer == true) {--%>
 
-        <%--        location.href = "/cart/delete?cart_id=${cart}";--%>
-        <%--    }--%>
-        <%--}--%>
+    <%--        location.href = "/cart/delete?cart_id=${cart}";--%>
+    <%--    }--%>
+    <%--}--%>
 
-        <%--</c:forEach>--%>
+    <%--</c:forEach>--%>
 
     // function itemSum(frm) {
     //     let sum = 0;

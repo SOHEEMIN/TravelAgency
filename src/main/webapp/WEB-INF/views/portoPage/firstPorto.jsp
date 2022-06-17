@@ -103,17 +103,12 @@
                         Peninsula of Southwestern Europe</p>
                 </div>
                 <div class="col-sm-2 offset-md-0.1 py-0.1">
-                    <h4 class="text-white" style="font-family: 'Pacifico', cursive;font-size: 30px">Trip</h4>
-                    <ul class="list-unstyled">
-                        <li><a href="#" class="text-white" style="font-size: 18px">Trip to Porto</a></li>
-                        <li><a href="#" class="text-white" style="font-size: 18px">Trip to Lisbon</a></li>
-                    </ul>
                 </div>
                 <div class="col-sm-2 offset-md-0.1 py-0.1">
                     <h4 class="text-white" style="font-family: 'Pacifico', cursive; font-size: 30px">Reservation</h4>
                     <ul class="list-unstyled">
-                        <li><a href="#" class="text-white" style="font-size: 18px">Manage Booking</a></li>
-                        <li><a href="#" class="text-white" style="font-size: 18px">Cart</a></li>
+                        <li><a href="/booking/findAll?memberId=${sessionScope.loginMemberId}" class="text-white" style="font-size: 18px">Manage Booking</a></li>
+                        <li><a href="/cart/findAll" class="text-white" style="font-size: 18px">Cart</a></li>
                     </ul>
                 </div>
                 <div class="col-sm-2 offset-md-0.1 py-0.1">
@@ -127,11 +122,14 @@
                             <li><a href="/member/logout" class="text-white" style="font-size: 18px">Logout</a></li>
                         </c:if>
                         <li><a href="/board/paging" class="text-white" style="font-size: 18px">Notice</a></li>
-                        <li><a href="#" class="text-white" style="font-size: 18px">Event</a></li>
+                        <li><a href="/board/event" class="text-white" style="font-size: 18px">Event</a></li>
                         <c:if test="${sessionScope.loginMemberId == 'admin'}">
                             <li><a href="/board/saveFile" class="text-white" style="font-size: 18px">Manage notice</a>
                             </li>
+                            <li><a href="/event/saveGoods" class="text-white" style="font-size: 18px">Manage goods</a>
+                            </li>
                         </c:if>
+
                     </ul>
                 </div>
             </div>
@@ -159,7 +157,7 @@
                 <h1 class="fw-light" style="font-family: 'Pacifico', cursive;">SH Travel Agency</h1>
                 <p class="lead text-muted" style="font-family: 'IM_Hyemin-Bold'; font-size: 24px;"><br>Trip to Porto<br>
                 </p>
-                <form action="/cart/save" method="post" name="cartSubmitForm">
+                <form action="/cart/save" method="get" name="cartSubmitForm">
                     <div align="left"
                          style="background-color: #f9f2f9; padding:20px; font-family:'IM_Hyemin-Bold'; font-size: 22px; border-radius: 20px;">
                         <br>
@@ -207,7 +205,7 @@
                                             </div>
                                             <div class="col-9" style="font-size: 21px;">
                                                 001
-                                                <input type="hidden" name="i_id" value="001">
+                                                <input type="hidden" id="i_id" name="i_id" value="001">
                                             </div>
                                             <p></p>
                                             <div class="col-3" style="font-size: 21px;">
@@ -429,11 +427,9 @@
         $('#datepicker').datepicker('option', 'minDate', '0');
     });
 
-    function shareWith() {
-
-    }
-
     function addToCart() {
+        const memberId = '${sessionScope.loginMemberId}';
+        const i_id = document.getElementById("i_id").value;
         if (${sessionScope.loginMemberId == null}) {
             answer = confirm("로그인 후 이용하실 수 있습니다.")
             if (answer == true) {
@@ -443,23 +439,46 @@
             if(${sessionScope.cartI_id == null}){
                 answer = confirm("장바구니에 담으시겠습니까?")
                 if(answer == true) {
-                    cartSubmitForm.submit();
-                }
+                    $.ajax({
+                        url: '/cart/duplicateCheck',
+                        type: 'get',
+                        data: {"memberId": memberId,
+                            "i_id": i_id,},
+                        success: function (result){
+                            console.log(result);
+
+                            if(result == 'no' ){
+                                alert("이미 장바구니에 있는 상품입니다.");
+                            } else {
+                                alert('장바구니 담기 성공!');
+                                cartSubmitForm.submit();
+                            }
+                        },
+                        err: function (){
+                            alert('에러');
+                        }
+                    });                }
             } else {
                 alert("동일한 상품은 장바구니에 담을 수 없습니다.");
             }
         }
     }
     <%--function addToCart() {--%>
-    <%--    if (${sessionScope.cartI_id == null}) {--%>
-    <%--        answer = confirm("장바구니 넣을래?.")--%>
+    <%--    if (${sessionScope.loginMemberId == null}) {--%>
+    <%--        answer = confirm("로그인 후 이용하실 수 있습니다.")--%>
     <%--        if (answer == true) {--%>
-    <%--            cartSubmitForm.submit();--%>
+    <%--            location.href = "/member/login";--%>
     <%--        }--%>
-    <%--    } else {--%>
-    <%--        alert("동일한 상품은 못넣음");--%>
+    <%--    } else if (${sessionScope.loginMemberId != null}){--%>
+    <%--        if(${sessionScope.cartI_id == null}){--%>
+    <%--            answer = confirm("장바구니에 담으시겠습니까?")--%>
+    <%--            if(answer == true) {--%>
+    <%--                cartSubmitForm.submit();--%>
+    <%--            }--%>
+    <%--        } else {--%>
+    <%--            alert("동일한 상품은 장바구니에 담을 수 없습니다.");--%>
+    <%--        }--%>
     <%--    }--%>
-
     <%--}--%>
 
     function shareTwitter() {

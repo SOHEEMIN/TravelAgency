@@ -10,6 +10,8 @@
         <typeAlias type="com.its.travelAgency.DTO.OrderDTO" alias="order"></typeAlias>
         <typeAlias type="com.its.travelAgency.DTO.JoinDTO" alias="join"></typeAlias>
         <typeAlias type="com.its.travelAgency.DTO.CartDTO" alias="save"></typeAlias>
+        <typeAlias type="com.its.travelAgency.DTO.EventDTO" alias="event"></typeAlias>
+
 
 
     </typeAliases>

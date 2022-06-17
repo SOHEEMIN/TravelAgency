@@ -7,6 +7,11 @@
         insert into cart_table(i_id, itemTitle, memberId, bookingStartDate, hotel, tour, price)
             value(#{i_id}, #{itemTitle}, #{memberId}, #{bookingStartDate}, #{hotel}, #{tour}, #{price})
     </insert>
+
+    <select id="duplicateCheck" parameterType="cart" resultType="cart">
+        SELECT * FROM cart_table WHERE memberId = #{memberId} AND i_id = #{i_id}
+    </select>
+
     <select id="findAll" resultType="cart">
         select * from cart_table
     </select>

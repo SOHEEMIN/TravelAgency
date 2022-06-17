@@ -15,7 +15,12 @@ public class CartService {
     @Autowired
     private CartRepository cartRepository;
 
+    //    public void save(CartDTO cartDTO) {
+//        cartRepository.save(cartDTO);
+//    }
     public void save(CartDTO cartDTO) {
+        System.out.println("CartService.save");
+
         cartRepository.save(cartDTO);
     }
 
@@ -23,6 +28,7 @@ public class CartService {
         List<CartDTO> cartDTOList = cartRepository.findAll();
         return cartDTOList;
     }
+
     public void delete(long cart_id) {
         cartRepository.delete(cart_id);
     }
@@ -34,6 +40,16 @@ public class CartService {
     public CartDTO findByOne(CartDTO cartDTO) {
         CartDTO cartDTO1 = cartRepository.findByOne(cartDTO);
         return cartDTO1;
+    }
+
+    public String duplicateCheck(CartDTO cartDTO) {
+        CartDTO cartDTO1 = new CartDTO();
+        cartDTO1 = cartRepository.duplicateCheck(cartDTO);
+        if (cartDTO1 != null) {
+            return "no";
+        } else {
+            return "ok";
+        }
     }
 //    public MemberDTO login(MemberDTO memberDTO) {
 //        MemberDTO loginMember = memberRepository.login(memberDTO);
