@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Event">
+    <insert id="save" parameterType="event">
+        insert into event_table(eventName, eventContents, eventPrice, eventStock, eventImageName)
+            value(#{eventName}, #{eventContents}, #{eventPrice}, #{eventStock}, #{eventImageName})
+    </insert>
+    <select id="findAll" resultType="event">
+        SELECT * FROM event_table
+    </select>
+    <select id="findById" parameterType="Long" resultType="event">
+        select * from event_table where id=#{id}
+    </select>
+</mapper>
