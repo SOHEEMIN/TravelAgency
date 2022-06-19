@@ -16,6 +16,8 @@ import java.util.List;
 public class CommentController {
     @Autowired
     CommentService commentService;
+
+    //댓글 저장
     @PostMapping("/save")
     public @ResponseBody List<CommentDTO> save(@ModelAttribute CommentDTO commentDTO) {
         System.out.println("commentDTO = " + commentDTO);

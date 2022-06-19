@@ -16,6 +16,7 @@ public class CartController {
     @Autowired
     private CartService cartService;
 
+    //장바구니로 저장
     @GetMapping("/save")
     public String save(@ModelAttribute CartDTO cartDTO) {
         System.out.println("CartController.save");
@@ -24,6 +25,7 @@ public class CartController {
         return "redirect:/cart/findAll";
     }
 
+    //장바구니에 담긴 목록 출력
     @GetMapping("/findAll")
     public String findAll(Model model, @ModelAttribute CartDTO cartDTO, HttpSession session) {
         CartDTO cartDTO1 = cartService.findByOne(cartDTO);
@@ -32,47 +34,27 @@ public class CartController {
         if(cartDTO1!=null){
             model.addAttribute("cartDTO1", cartDTO1);
             session.setAttribute("cartI_id", cartDTO.getI_id());
-            session.setAttribute("cart_title", cartDTO.getItemTitle());
             session.setAttribute("cart_memberId", cartDTO.getMemberId());
-            session.setAttribute("cart_bookingStartDate", cartDTO.getBookingStartDate());
-            session.setAttribute("cart_hotel", cartDTO.getHotel());
-            session.setAttribute("cart_tour", cartDTO.getTour());
-            session.setAttribute("cart_price", cartDTO.getPrice());
             System.out.println("카트1DTO"+cartDTO1);
             return "/portoPage/firstPorto";
         }
         return "cartPage/findAll";
     }
-
-
+    //장바구니 삭제
     @GetMapping("/delete")
     public String delete(@RequestParam("cart_id") long cart_id, Model model) {
         model.addAttribute("cart", cartService.findById(cart_id));
         cartService.delete(cart_id);
         return "redirect:/cart/findAll";
     }
-
+    //주문페이지로 이동
     @GetMapping("/findById")
     public String findById(@RequestParam("cart_id")long cart_id, Model model, @ModelAttribute CartDTO cartDTO, HttpSession session){
         model.addAttribute("cart",cartService.findById(cart_id));
         System.out.println(cart_id);
         return "bookingPage/booking";
     }
-
-//    @PostMapping("/login")
-//    public String login(@ModelAttribute MemberDTO memberDTO, Model model, HttpSession session){
-//        MemberDTO loginMember = memberService.login(memberDTO);
-//        if(loginMember!=null){
-//            model.addAttribute("loginMember", loginMember);
-//            session.setAttribute("loginMemberId", loginMember.getMemberId());
-//            session.setAttribute("loginId", loginMember.getM_id());
-//            return "/index";
-//
-//        }else {
-//            return "/memberPage/login";
-//        }
-//    }
-
+    //장바구니 아이템 중복체크
     @GetMapping("/duplicateCheck")
     public @ResponseBody String duplicateCheck(@RequestParam("i_id") String i_id, @RequestParam("memberId") String memberId) {
 

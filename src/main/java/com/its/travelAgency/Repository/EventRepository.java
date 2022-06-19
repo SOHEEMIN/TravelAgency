@@ -27,8 +27,8 @@ public class EventRepository {
 
     }
 
-//    public ProductDTO findById(Long id) {
-//        System.out.println("ProductRepository.findById");
-//        return sql.selectOne("Product.findById", id);
-//    }
+    public void delete(Long id) {
+        sql.delete("Event.delete", id);
+    }
+
 }

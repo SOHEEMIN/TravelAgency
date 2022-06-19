@@ -20,11 +20,18 @@ public class MemberRepository {
         return sql.selectOne("Member.duplicateCheck", memberId);
     }
 
-    public List<MemberDTO> findAll(long m_id) {
-        return sql.selectList("Member.findAll");
-    }
-
     public MemberDTO login(MemberDTO memberDTO) {
         return sql.selectOne("Member.login", memberDTO);
+    }
+
+    public MemberDTO findById(Long m_id) {
+        return sql.selectOne("Member.detail",m_id);
+    }
+    public void delete(long m_id) {
+        sql.delete("Member.delete", m_id);
+    }
+    public List<MemberDTO> list() {
+        System.out.println("MemberRepository.list");
+        return sql.selectList("Member.list");
     }
 }

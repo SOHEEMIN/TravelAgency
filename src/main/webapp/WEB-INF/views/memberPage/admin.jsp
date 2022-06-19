@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-
 <html lang="ko">
 <head>
     <meta charset="utf-8">
@@ -19,7 +18,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Passion+One:wght@900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
 
     <style>
         .bd-placeholder-img {
@@ -105,7 +104,8 @@
                 <div class="col-sm-2 offset-md-0.1 py-0.1">
                     <h4 class="text-white" style="font-family: 'Pacifico', cursive; font-size: 30px">Reservation</h4>
                     <ul class="list-unstyled">
-                        <li><a href="/booking/findAll?memberId=${sessionScope.loginMemberId}" class="text-white" style="font-size: 18px">Manage Booking</a></li>
+                        <li><a href="/booking/findAll?memberId=${sessionScope.loginMemberId}" class="text-white"
+                               style="font-size: 18px">Manage Booking</a></li>
                         <li><a href="/cart/findAll" class="text-white" style="font-size: 18px">Cart</a></li>
                     </ul>
                 </div>
@@ -127,6 +127,7 @@
                             <li><a href="/event/saveGoods" class="text-white" style="font-size: 18px">Write event</a>
                             </li>
                         </c:if>
+
                     </ul>
                 </div>
             </div>
@@ -150,38 +151,31 @@
 <main>
     <section class="py-5 text-center container">
         <div class="row py-lg-5">
-            <div class="col-lg-5 col-md-8 mx-auto">
+            <div class="col-lg-10 col-md-8 mx-auto">
                 <h1 class="fw-light" style="font-family: 'Pacifico', cursive;">SH Travel Agency</h1>
-                <p class="lead text-muted" style="font-family: 'IM_Hyemin-Bold'; font-size: 24px;"><br>공지사항<br></p>
-                <form action="/board/saveFile" method="post" enctype="multipart/form-data">
-                    <div align="left"
-                         style="background-color: #f9f2f9; padding:20px; font-family:'IM_Hyemin-Bold'; font-size: 22px; border-radius: 20px;">
-                        <br>
-                        작성자<br>
-                        <input class="form-control mb-2" type="text" name="memberId"
-                               value="${sessionScope.loginMemberId}"
-                               readonly><br>
-                        카테고리<br>
-                        <select class="form-select" aria-label="Default select example">
-                            <option selected>카테고리</option>
-                            <option value="notice" onchange="">Notice</option>
-                            <option value="event">Event</option>
-                        </select><br>
-
-<%--                        <form method="post" name="form">--%>
-<%--                            <input type="submit" value="update" onclick="javascript: form.action='/manage/update';"/>--%>
-<%--                            <input type="submit" value="delete" onclick="javascript: form.action='/manage/delete';"/>--%>
-<%--                        </form>--%>
-
-                        제목<br>
-                        <input class="form-control mb-2" type="text" name="boardTitle" placeholder="제목"><br>
-                        내용<br>
-                        <textarea class="form-control mb-2" name="boardContents" rows="10" cols="50"></textarea><br>
-                        첨부파일<br>
-                        <input type="file" name="boardFile" value="file"><br><br>
-                        <input type="submit" id="SaveButton" value="글작성">
-                    </div>
-                </form>
+                <p class="lead text-muted" style="font-family: 'IM_Hyemin-Bold'; font-size: 24px;"><br>회원관리<br></p>
+                <table style="width: 100%; border-top: 1px solid #444444;border-collapse: collapse;">
+                    <tr id="firstTr">
+                        <th style="width: 50px">회원번호</th>
+                        <th style="width: 50px">아이디</th>
+                        <th style="width: 50px;">이름</th>
+                        <th style="width: 80px;">생년월일</th>
+                        <th style="width: 70px">전화번호</th>
+                        <th style="width: 70px">이메일주소</th>
+                        <th style="width: 70px">회원탈퇴</th>
+                    </tr>
+                    <c:forEach items="${memberList}" var="member">
+                        <tr>
+                            <td>${member.m_id}</td>
+                            <td>${member.memberId}</td>
+                            <td>${member.memberName}</td>
+                            <td>${member.memberBirth}</td>
+                            <td>${member.memberPhone}</td>
+                            <td>${member.memberEmail}</td>
+                            <td><a href="/member/delete?m_id=${member.m_id}">탈퇴</a></td>
+                        </tr>
+                    </c:forEach>
+                </table>
             </div>
         </div>
     </section>

@@ -13,4 +13,7 @@
     <select id="findById" parameterType="Long" resultType="event">
         select * from event_table where id=#{id}
     </select>
+    <delete id="delete" parameterType="Long">
+        DELETE FROM event_table WHERE id = #{id}
+    </delete>
 </mapper>

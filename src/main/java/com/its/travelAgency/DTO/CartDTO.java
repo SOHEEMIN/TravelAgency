@@ -11,13 +11,12 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 public class CartDTO {
-    private Long cart_id;
-    private String i_id;
-    private String itemTitle;
-    private String memberId;
-//    @DateTimeFormat(pattern = "yyyy-MM-dd")
-    private String bookingStartDate;
-    private String hotel;
-    private String tour;
-    private int price;
+    private Long cart_id; //장바구니 번호
+    private String i_id; //상품 번호
+    private String itemTitle; //상품 이름
+    private String memberId; //회원 아이디
+    private String bookingStartDate; //예약 출발일자
+    private String hotel; //예약 호텔
+    private String tour; //예약 투어
+    private int price; //예약 가격
 }

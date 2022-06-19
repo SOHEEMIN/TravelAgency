@@ -124,11 +124,11 @@
                             <li><a href="/member/logout" class="text-white" style="font-size: 18px">Logout</a></li>
                         </c:if>
                         <li><a href="/board/paging" class="text-white" style="font-size: 18px">Notice</a></li>
-                        <li><a href="/board/event" class="text-white" style="font-size: 18px">Event</a></li>
+                        <li><a href="/event/list" class="text-white" style="font-size: 18px">Event</a></li>
                         <c:if test="${sessionScope.loginMemberId == 'admin'}">
-                            <li><a href="/board/saveFile" class="text-white" style="font-size: 18px">Manage notice</a>
+                            <li><a href="/board/saveFile" class="text-white" style="font-size: 18px">Write notice</a>
                             </li>
-                            <li><a href="/event/saveGoods" class="text-white" style="font-size: 18px">Manage goods</a>
+                            <li><a href="/event/saveGoods" class="text-white" style="font-size: 18px">Write event</a>
                             </li>
                         </c:if>
 
@@ -171,7 +171,7 @@
                         </c:when>
                     </c:choose>
                     <div>
-                        <img src="/upload/${event.eventImageName}" alt="...">
+                        <img src="/upload/${event.eventImageName}" height="100" width="100" alt="...">
                     </div>
                     <div>
                         <h2>${event.eventName}</h2>
@@ -204,9 +204,12 @@
                         </select>
                     </div>
                     <div>
-                        <button onclick="productPay(${event.id})" class="btn w-100 btn-dark mb-2">구매하기
-                            <i class="fa fa-shopping-cart ms-2"></i>
-                        </button>
+                        <form action="/booking/booked" method="post" name="paySubmitForm">
+                            <input type="hidden" name="memberId" value="${sessionScope.loginMemberId}">
+                            <input type="hidden" name="price" value="${event.eventPrice}">
+                            <input type="hidden" name="i_id" value="${event.id}">
+                            <input type="button" onclick="productPay()" value="결제하기">
+                        </form>
                     </div>
                 </div>
             </div>
@@ -260,8 +263,7 @@
         location.href = '/event/delete?id=' + id;
     }
 
-    const productPay = (id) => {
-        const memberId = '${sessionScope.loginMemberId}';
+    const productPay = () => {
         const eventQuantity = document.querySelector('.form-select').value;
         const eventStock = '${event.eventStock}';
         const eventQuantityToBuy = eventStock - eventQuantity;
@@ -294,13 +296,14 @@
             }, function (rsp) {
                 if (rsp.success) {
                     var msg = '결제가 완료되었습니다.';
+                    paySubmitForm.submit();
                 } else {
                     var msg = '결제에 실패하였습니다.';
                 }
             });
         }
 
-    }
 
+    }
 </script>
 </html>

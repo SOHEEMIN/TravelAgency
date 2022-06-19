@@ -37,8 +37,8 @@ public class EventService {
 
     }
 
-//    public ProductDTO findById(Long id) {
-//        System.out.println("ProductService.findById");
-//        return productRepository.findById(id);
-//    }
+    public void delete(Long id) {
+        eventRepository.delete(id);
+    }
+
 }

@@ -10,14 +10,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7b9cca21-353e-4b46-86cc-2f9be7a51b06" name="Changes" comment="주문시 오류 수정">
-      <change beforePath="$PROJECT_DIR$/.idea/webContexts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/its/travelAgency/Controller/BoardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/its/travelAgency/Controller/BoardController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/its/travelAgency/Controller/CartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/its/travelAgency/Controller/CartController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/its/travelAgency/Repository/CartRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/its/travelAgency/Repository/CartRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/its/travelAgency/Service/CartService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/its/travelAgency/Service/CartService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/its/travelAgency/Controller/CommentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/its/travelAgency/Controller/CommentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/its/travelAgency/Controller/EventController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/its/travelAgency/Controller/EventController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/its/travelAgency/Controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/its/travelAgency/Controller/HomeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/its/travelAgency/Controller/MemberController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/its/travelAgency/Controller/MemberController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/its/travelAgency/Controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/its/travelAgency/Controller/OrderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/its/travelAgency/DTO/BoardDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/its/travelAgency/DTO/BoardDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/its/travelAgency/DTO/CartDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/its/travelAgency/DTO/CartDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/its/travelAgency/DTO/CommentDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/its/travelAgency/DTO/CommentDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/its/travelAgency/DTO/EventDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/its/travelAgency/DTO/EventDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/its/travelAgency/DTO/JoinDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/its/travelAgency/DTO/JoinDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/its/travelAgency/DTO/MemberDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/its/travelAgency/DTO/MemberDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/its/travelAgency/DTO/OrderDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/its/travelAgency/DTO/OrderDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/its/travelAgency/Repository/EventRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/its/travelAgency/Repository/EventRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/its/travelAgency/Repository/MemberRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/its/travelAgency/Repository/MemberRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/its/travelAgency/Service/EventService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/its/travelAgency/Service/EventService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/its/travelAgency/Service/MemberService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/its/travelAgency/Service/MemberService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/cartMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/cartMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mybatis-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mybatis-config.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/eventMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/eventMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/memberMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/memberMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/saveMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/EventPage/detail.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/EventPage/detail.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/EventPage/list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/EventPage/list.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/EventPage/paying.jsp" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/EventPage/saveGoods.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/EventPage/saveGoods.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/boardPage/detail.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/boardPage/detail.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/boardPage/pagingList.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/boardPage/pagingList.jsp" afterDir="false" />
@@ -28,6 +45,7 @@
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/bookingPage/detail.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/bookingPage/detail.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/cartPage/findAll.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/cartPage/findAll.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/layout/header.jsp" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/lisbonPage/firstLisbon.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/lisbonPage/firstLisbon.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/memberPage/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/memberPage/login.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/memberPage/saveFile.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/memberPage/saveFile.jsp" afterDir="false" />
@@ -69,27 +87,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/seonju&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;File.Encoding&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;1e172d47f51675d2696dacab927f0ec9&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "D:/SpringMVC_Project_Piany",
+    "list.type.of.created.stylesheet": "CSS",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "File.Encoding",
+    "spring.configuration.checksum": "1e172d47f51675d2696dacab927f0ec9"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mysql&quot;,
-      &quot;bigquery&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql",
+      "bigquery"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\travel\TravelAgency\src\main\webapp\resources\img" />
@@ -112,7 +130,7 @@
       <recent name="com.its.travelAgency.Controller" />
     </key>
   </component>
-  <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.62">
+  <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.63">
     <configuration name="mapper in travelAgency" type="JUnit" factoryName="JUnit" nameIsGenerated="true">
       <module name="travelAgency" />
       <extension name="coverage">
@@ -127,7 +145,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Tomcat 9.0.62" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.62" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
+    <configuration name="Tomcat 9.0.63" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.63" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
       <option name="COMMON_VM_ARGUMENTS" value="-Dfile.encoding=UTF-8" />
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
@@ -220,7 +238,7 @@
     </configuration>
     <list>
       <item itemvalue="JUnit.mapper in travelAgency" />
-      <item itemvalue="Tomcat Server.Tomcat 9.0.62" />
+      <item itemvalue="Tomcat Server.Tomcat 9.0.63" />
     </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -251,6 +269,7 @@
       <workItem from="1655334555799" duration="12161000" />
       <workItem from="1655347756571" duration="16192000" />
       <workItem from="1655422183965" duration="29299000" />
+      <workItem from="1655613718960" duration="17294000" />
     </task>
     <task id="LOCAL-00001" summary="git commit test">
       <created>1653971487845</created>

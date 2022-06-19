@@ -10,11 +10,16 @@
     <select id="duplicateCheck" parameterType="String" resultType="String">
         select memberId from member_table where memberId = #{memberId}
     </select>
-    <select id="findAll" resultType="member">
-        select * from member_table;
-    </select>
     <select id="login" parameterType="member" resultType="member">
         select * from member_table where memberId = #{memberId} and memberPassword = #{memberPassword}
     </select>
-
+    <select id="detail" parameterType="Long" resultType="member">
+        select * from member_table where m_id =#{m_id}
+    </select>
+    <delete id="delete" parameterType="Long">
+        delete from member_table where m_id = #{m_id}
+    </delete>
+    <select id="list" resultType="member">
+        SELECT * FROM member_table
+    </select>
 </mapper>

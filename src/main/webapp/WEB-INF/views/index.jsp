@@ -100,12 +100,22 @@
                     <p class="text-muted">Portuguese Republic is a country whose mainland is located on the Iberian
                         Peninsula of Southwestern Europe</p>
                 </div>
-                <div class="col-sm-2 offset-md-0.1 py-0.1">
-                </div>
+                <c:if test="${sessionScope.loginMemberId == 'admin'}">
+                    <div class="col-sm-2 offset-md-0.1 py-0.1">
+                        <h4 class="text-white" style="font-family: 'Pacifico', cursive; font-size: 30px">admin</h4>
+                        <li><a href="/board/saveFile" class="text-white" style="font-size: 18px">Write notice</a>
+                        </li>
+                        <li><a href="/event/saveGoods" class="text-white" style="font-size: 18px">Write event</a>
+                        </li>
+                        <li><a href="/member/list" class="text-white" style="font-size: 18px">Manage member</a>
+                        </li>
+                    </div>
+                </c:if>
                 <div class="col-sm-2 offset-md-0.1 py-0.1">
                     <h4 class="text-white" style="font-family: 'Pacifico', cursive; font-size: 30px">Reservation</h4>
                     <ul class="list-unstyled">
-                        <li><a href="/booking/findAll?memberId=${sessionScope.loginMemberId}" class="text-white" style="font-size: 18px">Manage Booking</a></li>
+                        <li><a href="/booking/findAll?memberId=${sessionScope.loginMemberId}" class="text-white"
+                               style="font-size: 18px">Manage Booking</a></li>
                         <li><a href="/cart/findAll" class="text-white" style="font-size: 18px">Cart</a></li>
                     </ul>
                 </div>
@@ -117,17 +127,13 @@
                             <li><a href="/member/saveFile" class="text-white" style="font-size: 18px">Join us</a></li>
                         </c:if>
                         <c:if test="${sessionScope.loginMemberId != null}">
+                            <li><a href="/member/detail?m_id=${sessionScope.loginMemberId}" class="text-white"
+                                   style="font-size: 18px">My Page</a>
+                            </li>
                             <li><a href="/member/logout" class="text-white" style="font-size: 18px">Logout</a></li>
                         </c:if>
                         <li><a href="/board/paging" class="text-white" style="font-size: 18px">Notice</a></li>
                         <li><a href="/event/list" class="text-white" style="font-size: 18px">Event</a></li>
-                        <c:if test="${sessionScope.loginMemberId == 'admin'}">
-                            <li><a href="/board/saveFile" class="text-white" style="font-size: 18px">Manage notice</a>
-                            </li>
-                            <li><a href="/event/saveGoods" class="text-white" style="font-size: 18px">Manage goods</a>
-                            </li>
-                        </c:if>
-
                     </ul>
                 </div>
             </div>
@@ -275,9 +281,13 @@
                     <div class="card shadow-sm">
                         <img src="/resources/img/p4.jpg" onclick="location.href='/item/firstLisbon'">
                         <br>
-                        <text x="50%" y="50%" fill="#eceeef" dy=".3em" style="font-family: 'IM_Hyemin-Bold'; font-size:21px; text-align: center;">🏹리스본의 오랜 역사 속으로 빠지는 여행</text>
+                        <text x="50%" y="50%" fill="#eceeef" dy=".3em"
+                              style="font-family: 'IM_Hyemin-Bold'; font-size:21px; text-align: center;">🏹리스본의 오랜 역사
+                            속으로 빠지는 여행
+                        </text>
                         <div class="card-body">
-                            <p class="card-text" style="font-family:'IM_Hyemin-Bold'">리스본의 고대 역사 및 종교적 의미에 대해 탐구해보는 5박 6일 패키지여행 상품입니다.
+                            <p class="card-text" style="font-family:'IM_Hyemin-Bold'">리스본의 고대 역사 및 종교적 의미에 대해 탐구해보는 5박
+                                6일 패키지여행 상품입니다.
                             </p>
                             <div class="d-flex justify-content-between align-items-center">
                                 <a href="/item/firstLisbon" class="btn btn-outline-dark">View</a>
@@ -288,21 +298,18 @@
                 </div>
                 <div class="col">
                     <div class="card shadow-sm">
-                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225"
-                             xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail"
-                             preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title>
-                            <rect width="100%" height="100%" fill="#55595c"/>
-                            <text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text>
-                        </svg>
-
+                        <img src="/resources/img/p3.jpg" onclick="location.href='/event/list'">
+                        <br>
+                        <text x="50%" y="50%" fill="#eceeef" dy=".3em"
+                              style="font-family: 'IM_Hyemin-Bold'; font-size:21px; text-align: center;">💌Surprise
+                            Event!
+                        </text>
                         <div class="card-body">
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                                additional content. This content is a little bit longer.</p>
+                            <p class="card-text" style="font-family:'IM_Hyemin-Bold'">고객여러분들의 성원에 보답하고자 SH Travel
+                                Agency의 깜짝 선물!
+                            </p>
                             <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                                </div>
+                                <a href="/event/list" class="btn btn-outline-dark">View</a>
                                 <small class="text-muted">9 mins</small>
                             </div>
                         </div>

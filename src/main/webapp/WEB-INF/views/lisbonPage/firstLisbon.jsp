@@ -122,11 +122,11 @@
                             <li><a href="/member/logout" class="text-white" style="font-size: 18px">Logout</a></li>
                         </c:if>
                         <li><a href="/board/paging" class="text-white" style="font-size: 18px">Notice</a></li>
-                        <li><a href="/board/event" class="text-white" style="font-size: 18px">Event</a></li>
+                        <li><a href="/event/list" class="text-white" style="font-size: 18px">Event</a></li>
                         <c:if test="${sessionScope.loginMemberId == 'admin'}">
-                            <li><a href="/board/saveFile" class="text-white" style="font-size: 18px">Manage notice</a>
+                            <li><a href="/board/saveFile" class="text-white" style="font-size: 18px">Write notice</a>
                             </li>
-                            <li><a href="/event/saveGoods" class="text-white" style="font-size: 18px">Manage goods</a>
+                            <li><a href="/event/saveGoods" class="text-white" style="font-size: 18px">Write event</a>
                             </li>
                         </c:if>
 
@@ -205,8 +205,8 @@
                                                 <li>상품 번호</li>
                                             </div>
                                             <div class="col-9" style="font-size: 21px;">
-                                                002
-                                                <input type="hidden" id="i_id" name="i_id" value="002">
+                                                lisbon001
+                                                <input type="hidden" id="i_id" name="i_id" value="lisbon001">
                                             </div>
                                             <p></p>
                                             <div class="col-3" style="font-size: 21px;">

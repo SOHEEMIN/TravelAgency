@@ -30,12 +30,21 @@ public class MemberService {
             return "no";
         }
     }
-    public List<MemberDTO> findAll(long m_id) {
-        return memberRepository.findAll(m_id);
-    }
-
     public MemberDTO login(MemberDTO memberDTO) {
         MemberDTO loginMember = memberRepository.login(memberDTO);
         return loginMember;
+    }
+
+    public MemberDTO findById(Long m_id) {
+        MemberDTO memberDTO = memberRepository.findById(m_id);
+        return memberDTO;
+    }
+
+    public void delete(long m_id) {
+        memberRepository.delete(m_id);
+    }
+    public List<MemberDTO> list() {
+        System.out.println("MemberService.list");
+        return memberRepository.list();
     }
 }

@@ -120,14 +120,13 @@
                             <li><a href="/member/logout" class="text-white" style="font-size: 18px">Logout</a></li>
                         </c:if>
                         <li><a href="/board/paging" class="text-white" style="font-size: 18px">Notice</a></li>
-                        <li><a href="/board/event" class="text-white" style="font-size: 18px">Event</a></li>
+                        <li><a href="/event/list" class="text-white" style="font-size: 18px">Event</a></li>
                         <c:if test="${sessionScope.loginMemberId == 'admin'}">
-                            <li><a href="/board/saveFile" class="text-white" style="font-size: 18px">Manage notice</a>
+                            <li><a href="/board/saveFile" class="text-white" style="font-size: 18px">Write notice</a>
                             </li>
-                            <li><a href="/event/saveGoods" class="text-white" style="font-size: 18px">Manage goods</a>
+                            <li><a href="/event/saveGoods" class="text-white" style="font-size: 18px">Write event</a>
                             </li>
                         </c:if>
-
                     </ul>
                 </div>
             </div>
@@ -153,7 +152,7 @@
         <div class="row py-lg-5">
             <div class="col-lg-10 col-md-8 mx-auto">
                 <h1 class="fw-light" style="font-family: 'Pacifico', cursive;">SH Travel Agency</h1>
-                <p class="lead text-muted" style="font-family: 'IM_Hyemin-Bold'; font-size: 24px;"><br>예약조회<br></p>
+                <p class="lead text-muted" style="font-family: 'IM_Hyemin-Bold'; font-size: 24px;"><br>주문 및 예약조회<br></p>
                 <form action="/member/login" method="post">
                     <div align="center"
                          style="background-color: #f9f2f9; padding:20px; font-family:'IM_Hyemin-Bold'; font-size: 22px; border-radius: 20px;">

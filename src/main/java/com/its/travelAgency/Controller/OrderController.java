@@ -17,13 +17,7 @@ public class OrderController {
     @Autowired
     private OrderService orderService;
 
-//    @PostMapping("/save")
-//    public String save(@ModelAttribute OrderDTO orderDTO){
-//        OrderDTO orderDTO1 = orderService.save(orderDTO);
-//        System.out.println(orderDTO1);
-//        return "redirect:/booking/booked?o_id="+orderDTO1.getO_id();
-//    }
-
+    //주문 처리
     @PostMapping("/booked")
     public String booked(@ModelAttribute OrderDTO orderDTO, Long o_id, Model model){
         System.out.println("booked 호출");
@@ -35,7 +29,7 @@ public class OrderController {
         model.addAttribute("join", joinDTO);
         return "/bookingPage/booked";
     }
-
+    //주문 목록
     @GetMapping("/findAll")
     public String findAll(@RequestParam("memberId")String memberId, Model model){
         List<OrderDTO> orderDTOList = orderService.findAll(memberId);
@@ -43,14 +37,6 @@ public class OrderController {
         return "/bookingPage/detail";
 
     }
-
-//    @GetMapping("/findAll")
-//    public String findAll(Model model) {
-//        long m_id = 0;
-//        List<MemberDTO> memberDTOList = memberService.findAll(m_id);
-//        model.addAttribute("memberList", memberDTOList);
-//        return "/memberPage/admin";
-//    }
 
 }
 
